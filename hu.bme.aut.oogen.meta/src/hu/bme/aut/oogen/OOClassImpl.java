@@ -426,5 +426,20 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 		result.append(')');
 		return result.toString();
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated not
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof OOClass) {
+			OOClass other = (OOClass) obj;
+			return other.getName().equals(this.getName());
+		} else {
+			return false;
+		}
+	}
 
 } //OOClassImpl
