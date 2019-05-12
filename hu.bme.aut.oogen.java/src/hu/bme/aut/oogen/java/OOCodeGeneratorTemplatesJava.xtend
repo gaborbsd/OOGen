@@ -49,21 +49,16 @@ import hu.bme.aut.oogen.OONew
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 	
-	private static OOCodeGeneratorTemplatesJava instance;
+	static OOCodeGeneratorTemplatesJava instance;
 
 	def static OOCodeGeneratorTemplatesJava getInstance() {
-		if (instance == null)
+		if (instance === null)
 			instance = new OOCodeGeneratorTemplatesJava();
 		return instance;
 	}
 	
 	override String generate(OOClass cl) '''
 package «cl.package.name»;
-
-import java.nio.ByteBuffer;
-import java.util.*;
-
-import hu.bme.aut.protokit.runtime.ProtoUtil;
 	
 public class «cl.name» {
 	«FOR m : cl.members.filter[m|m.languages.empty || m.languages.contains(OOLanguage.JAVA)]»
@@ -98,7 +93,7 @@ public class «cl.name» {
 	
 	def String generateInit(OOMember m) '''
 	«val exp = m.initializerExpression»
-	«IF exp != null»
+	«IF exp !== null»
 	«IF	!(exp instanceof OOLanguageSpecificExpression) ||
 		(exp instanceof OOLanguageSpecificExpression &&
 			!((exp as OOLanguageSpecificExpression).snippets.filter[s|s.lang == OOLanguage.JAVA].empty))» = «m.initializerExpression.generateExpression»«ENDIF»«ENDIF»'''
@@ -144,7 +139,7 @@ public class «cl.name» {
 			case OOBaseType.STRING:
 				"String"
 			case OOBaseType.OBJECT:
-				if (t.classType != null) t.classType.name else "Object"
+				if (t.classType !== null) t.classType.name else "Object"
 		}
 	}
 	
@@ -161,7 +156,7 @@ public class «cl.name» {
 			case OOBaseType.STRING:
 				"String"
 			case OOBaseType.OBJECT:
-				if (t.classType != null) t.classType.name else "Object"
+				if (t.classType !== null) t.classType.name else "Object"
 			case BOOLEAN:
 				"Boolean"
 		}
@@ -179,14 +174,14 @@ public class «cl.name» {
 	} 
 
 	def String generateReturnType(OOType t) {
-		return if (t == null) "void" else t.generate		
+		return if (t === null) "void" else t.generate		
 	}
 	
 	def generateMethodParams(List<OOVariable> vars) '''«FOR v : vars SEPARATOR ', '»«v.type.generate» «v.name»«ENDFOR»'''
 	
 	def dispatch String generateStatement(OOStatement s) ''''''
 	
-	def dispatch String generateStatement(OOVariable s) '''«s.type.generate» «s.name»«IF (s.initializerExpression != null)» = «s.initializerExpression.generateExpression»«ENDIF»;'''
+	def dispatch String generateStatement(OOVariable s) '''«s.type.generate» «s.name»«IF (s.initializerExpression !== null) » = «s.initializerExpression.generateExpression»«ENDIF»;'''
 	
 	def dispatch String generateStatement(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
 	
@@ -277,7 +272,7 @@ public class «cl.name» {
 	
 	def dispatch String generateExpression(OOBitWiseComplement s) '''~(«s.operand.generateExpression»)'''
 	
-	def dispatch String generateExpression(OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.JAVA]»«if (sn != null) sn.code»'''
+	def dispatch String generateExpression(OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.JAVA]»«if ( sn !== null ) sn.code»'''
 	
 	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate»)(«s.expression.generateExpression»)'''
 	
