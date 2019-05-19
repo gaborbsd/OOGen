@@ -11,3 +11,4 @@ Export-Package: hu.bme.aut.oogen
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: hu.bme.aut.oogen.meta

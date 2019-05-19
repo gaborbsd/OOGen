@@ -49,10 +49,10 @@ import hu.bme.aut.oogen.OONew
 
 class OOCodeGeneratorTemplatesCpp implements OOCodeGeneratorTemplates {
 	
-	private static OOCodeGeneratorTemplatesCpp instance;
+	static OOCodeGeneratorTemplatesCpp instance;
 	
 	def static OOCodeGeneratorTemplatesCpp getInstance() {
-		if (instance == null)
+		if (instance === null)
 			instance = new OOCodeGeneratorTemplatesCpp();
 		return instance;
 	}
@@ -155,7 +155,7 @@ class «cl.name» {
 			case OOBaseType.STRING:
 				"string"
 			case OOBaseType.OBJECT:
-				if (t.classType != null) t.classType.name else "void *"
+				if (t.classType !== null) t.classType.name else "void *"
 		}
 	}
 	
@@ -174,7 +174,7 @@ class «cl.name» {
 			case OOBaseType.STRING:
 				"String"
 			case OOBaseType.OBJECT:
-				if (t.classType != null) t.classType.name else "void *"
+				if (t.classType !== null) t.classType.name else "void *"
 		}
 	}
 	
@@ -190,14 +190,14 @@ class «cl.name» {
 	} 
 
 	def String generateReturnType(OOType t) {
-		return if (t == null) "void" else t.generate		
+		return if (t === null) "void" else t.generate		
 	}
 	
 	def generateMethodParams(List<OOVariable> vars) '''«FOR v : vars SEPARATOR ', '»«v.type.generate» «v.name»«ENDFOR»'''
 	
 	def dispatch String generateStatement(OOStatement s) ''''''
 	
-	def dispatch String generateStatement(OOVariable s) '''«s.type.generate» «s.name»«IF (s.initializerExpression != null)» = «s.initializerExpression.generateExpression»«ENDIF»;'''
+	def dispatch String generateStatement(OOVariable s) '''«s.type.generate» «s.name»«IF (s.initializerExpression !== null) » = «s.initializerExpression.generateExpression»«ENDIF»;'''
 	
 	def dispatch String generateStatement(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
 	
@@ -290,7 +290,7 @@ class «cl.name» {
 	
 	def dispatch String generateExpression(OOBitWiseComplement s) '''~(«s.operand.generateExpression»)'''
 	
-	def dispatch String generateExpression(OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.CPP]»«if (sn != null) sn.code»'''
+	def dispatch String generateExpression(OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.CPP]»«if ( sn !== null ) sn.code»'''
 	
 	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate»)(«s.expression.generateExpression»)'''
 	
