@@ -138,7 +138,6 @@
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOConditionalStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOConditionalStatement/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOConditionalStatement/bodyStatements"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOWhile"/>
     <genClasses ecoreClass="oogen.ecore#//OODoWhile"/>
@@ -187,5 +186,8 @@
     <genClasses ecoreClass="oogen.ecore#//OONotEqualsExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOGreaterEqualsExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOLessEqualsExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOCompoundStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCompoundStatement/bodyStatements"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

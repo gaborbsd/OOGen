@@ -171,11 +171,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="incrementExpression" lowerBound="1"
         eType="#//OOExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOConditionalStatement" eSuperTypes="#//OOStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="OOConditionalStatement" eSuperTypes="#//OOStatement #//OOCompoundStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
         eType="#//OOLogicalExpression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyStatements" upperBound="-1"
-        eType="#//OOStatement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOWhile" eSuperTypes="#//OOConditionalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="OODoWhile" eSuperTypes="#//OOConditionalStatement"/>
@@ -242,4 +240,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="OONotEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOGreaterEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOLessEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOCompoundStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyStatements" upperBound="-1"
+        eType="#//OOStatement" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
