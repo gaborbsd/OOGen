@@ -1863,13 +1863,13 @@ public interface OogenPackage extends EPackage {
 	/**
          * The feature id for the '<em><b>Init Expression</b></em>' reference.
          * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          * @ordered
          */
-	int OO_FOR__INIT_EXPRESSION = OO_CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
+        int OO_FOR__INIT_EXPRESSION = OO_CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
 
-	/**
+        /**
          * The feature id for the '<em><b>Increment Expression</b></em>' containment reference.
          * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3790,15 +3790,15 @@ public interface OogenPackage extends EPackage {
 	/**
          * Returns the meta object for the reference '{@link hu.bme.aut.oogen.OOFor#getInitExpression <em>Init Expression</em>}'.
          * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+         * <!-- end-user-doc -->
          * @return the meta object for the reference '<em>Init Expression</em>'.
          * @see hu.bme.aut.oogen.OOFor#getInitExpression()
          * @see #getOOFor()
          * @generated
          */
-	EReference getOOFor_InitExpression();
+        EReference getOOFor_InitExpression();
 
-	/**
+        /**
          * Returns the meta object for the containment reference '{@link hu.bme.aut.oogen.OOFor#getIncrementExpression <em>Increment Expression</em>}'.
          * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5028,12 +5028,12 @@ public interface OogenPackage extends EPackage {
 		/**
                  * The meta object literal for the '<em><b>Init Expression</b></em>' reference feature.
                  * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+                 * <!-- end-user-doc -->
                  * @generated
                  */
-		EReference OO_FOR__INIT_EXPRESSION = eINSTANCE.getOOFor_InitExpression();
+                EReference OO_FOR__INIT_EXPRESSION = eINSTANCE.getOOFor_InitExpression();
 
-		/**
+                /**
                  * The meta object literal for the '<em><b>Increment Expression</b></em>' containment reference feature.
                  * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->

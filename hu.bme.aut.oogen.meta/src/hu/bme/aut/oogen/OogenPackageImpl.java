@@ -1421,15 +1421,15 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 
 	/**
          * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
-	@Override
+        @Override
         public EReference getOOFor_InitExpression() {
                 return (EReference)ooForEClass.getEStructuralFeatures().get(0);
         }
 
-	/**
+        /**
          * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
          * @generated

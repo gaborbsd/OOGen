@@ -24,30 +24,30 @@ public interface OOFor extends OOConditionalStatement {
 	/**
          * Returns the value of the '<em><b>Init Expression</b></em>' reference.
          * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Init Expression</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
+         * <p>
+         * If the meaning of the '<em>Init Expression</em>' reference isn't clear,
+         * there really should be more of a description here...
+         * </p>
+         * <!-- end-user-doc -->
          * @return the value of the '<em>Init Expression</em>' reference.
          * @see #setInitExpression(OOExpression)
          * @see hu.bme.aut.oogen.OogenPackage#getOOFor_InitExpression()
          * @model required="true"
          * @generated
          */
-	OOExpression getInitExpression();
+        OOExpression getInitExpression();
 
-	/**
+        /**
          * Sets the value of the '{@link hu.bme.aut.oogen.OOFor#getInitExpression <em>Init Expression</em>}' reference.
          * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+         * <!-- end-user-doc -->
          * @param value the new value of the '<em>Init Expression</em>' reference.
          * @see #getInitExpression()
          * @generated
          */
-	void setInitExpression(OOExpression value);
+        void setInitExpression(OOExpression value);
 
-	/**
+        /**
          * Returns the value of the '<em><b>Increment Expression</b></em>' containment reference.
          * <!-- begin-user-doc -->
 	 * <p>

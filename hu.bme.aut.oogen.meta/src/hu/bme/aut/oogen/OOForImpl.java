@@ -28,14 +28,14 @@ public class OOForImpl extends OOConditionalStatementImpl implements OOFor {
 	/**
          * The cached value of the '{@link #getInitExpression() <em>Init Expression</em>}' reference.
          * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+         * <!-- end-user-doc -->
          * @see #getInitExpression()
          * @generated
          * @ordered
          */
-	protected OOExpression initExpression;
+        protected OOExpression initExpression;
 
-	/**
+        /**
          * The cached value of the '{@link #getIncrementExpression() <em>Increment Expression</em>}' containment reference.
          * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,10 +66,10 @@ public class OOForImpl extends OOConditionalStatementImpl implements OOFor {
 
 	/**
          * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
-	@Override
+        @Override
         public OOExpression getInitExpression() {
                 if (initExpression != null && initExpression.eIsProxy()) {
                         InternalEObject oldInitExpression = (InternalEObject)initExpression;
@@ -82,21 +82,21 @@ public class OOForImpl extends OOConditionalStatementImpl implements OOFor {
                 return initExpression;
         }
 
-	/**
+        /**
          * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
-	public OOExpression basicGetInitExpression() {
+        public OOExpression basicGetInitExpression() {
                 return initExpression;
         }
 
-	/**
+        /**
          * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+         * <!-- end-user-doc -->
          * @generated
          */
-	@Override
+        @Override
         public void setInitExpression(OOExpression newInitExpression) {
                 OOExpression oldInitExpression = initExpression;
                 initExpression = newInitExpression;
@@ -104,7 +104,7 @@ public class OOForImpl extends OOConditionalStatementImpl implements OOFor {
                         eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_FOR__INIT_EXPRESSION, oldInitExpression, initExpression));
         }
 
-	/**
+        /**
          * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
          * @generated
