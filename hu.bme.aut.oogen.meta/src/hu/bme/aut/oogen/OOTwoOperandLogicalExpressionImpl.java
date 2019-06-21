@@ -25,188 +25,192 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OOTwoOperandLogicalExpressionImpl extends OOLogicalExpressionImpl implements OOTwoOperandLogicalExpression {
 	/**
-	 * The cached value of the '{@link #getLeftSide() <em>Left Side</em>}' reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getLeftSide() <em>Left Side</em>}' reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLeftSide()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getLeftSide()
+         * @generated
+         * @ordered
+         */
 	protected OOLogicalExpression leftSide;
 
 	/**
-	 * The cached value of the '{@link #getRightSide() <em>Right Side</em>}' reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getRightSide() <em>Right Side</em>}' reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRightSide()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getRightSide()
+         * @generated
+         * @ordered
+         */
 	protected OOLogicalExpression rightSide;
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOTwoOperandLogicalExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_TWO_OPERAND_LOGICAL_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_TWO_OPERAND_LOGICAL_EXPRESSION;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOLogicalExpression getLeftSide() {
-		if (leftSide != null && leftSide.eIsProxy()) {
-			InternalEObject oldLeftSide = (InternalEObject)leftSide;
-			leftSide = (OOLogicalExpression)eResolveProxy(oldLeftSide);
-			if (leftSide != oldLeftSide) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE, oldLeftSide, leftSide));
-			}
-		}
-		return leftSide;
-	}
+         * @generated
+         */
+	@Override
+        public OOLogicalExpression getLeftSide() {
+                if (leftSide != null && leftSide.eIsProxy()) {
+                        InternalEObject oldLeftSide = (InternalEObject)leftSide;
+                        leftSide = (OOLogicalExpression)eResolveProxy(oldLeftSide);
+                        if (leftSide != oldLeftSide) {
+                                if (eNotificationRequired())
+                                        eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE, oldLeftSide, leftSide));
+                        }
+                }
+                return leftSide;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOLogicalExpression basicGetLeftSide() {
-		return leftSide;
-	}
+                return leftSide;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLeftSide(OOLogicalExpression newLeftSide) {
-		OOLogicalExpression oldLeftSide = leftSide;
-		leftSide = newLeftSide;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE, oldLeftSide, leftSide));
-	}
+         * @generated
+         */
+	@Override
+        public void setLeftSide(OOLogicalExpression newLeftSide) {
+                OOLogicalExpression oldLeftSide = leftSide;
+                leftSide = newLeftSide;
+                if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE, oldLeftSide, leftSide));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOLogicalExpression getRightSide() {
-		if (rightSide != null && rightSide.eIsProxy()) {
-			InternalEObject oldRightSide = (InternalEObject)rightSide;
-			rightSide = (OOLogicalExpression)eResolveProxy(oldRightSide);
-			if (rightSide != oldRightSide) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE, oldRightSide, rightSide));
-			}
-		}
-		return rightSide;
-	}
+         * @generated
+         */
+	@Override
+        public OOLogicalExpression getRightSide() {
+                if (rightSide != null && rightSide.eIsProxy()) {
+                        InternalEObject oldRightSide = (InternalEObject)rightSide;
+                        rightSide = (OOLogicalExpression)eResolveProxy(oldRightSide);
+                        if (rightSide != oldRightSide) {
+                                if (eNotificationRequired())
+                                        eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE, oldRightSide, rightSide));
+                        }
+                }
+                return rightSide;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOLogicalExpression basicGetRightSide() {
-		return rightSide;
-	}
+                return rightSide;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRightSide(OOLogicalExpression newRightSide) {
-		OOLogicalExpression oldRightSide = rightSide;
-		rightSide = newRightSide;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE, oldRightSide, rightSide));
-	}
+         * @generated
+         */
+	@Override
+        public void setRightSide(OOLogicalExpression newRightSide) {
+                OOLogicalExpression oldRightSide = rightSide;
+                rightSide = newRightSide;
+                if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE, oldRightSide, rightSide));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE:
-				if (resolve) return getLeftSide();
-				return basicGetLeftSide();
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE:
-				if (resolve) return getRightSide();
-				return basicGetRightSide();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE:
+                                if (resolve) return getLeftSide();
+                                return basicGetLeftSide();
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE:
+                                if (resolve) return getRightSide();
+                                return basicGetRightSide();
+                }
+                return super.eGet(featureID, resolve, coreType);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE:
-				setLeftSide((OOLogicalExpression)newValue);
-				return;
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE:
-				setRightSide((OOLogicalExpression)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE:
+                                setLeftSide((OOLogicalExpression)newValue);
+                                return;
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE:
+                                setRightSide((OOLogicalExpression)newValue);
+                                return;
+                }
+                super.eSet(featureID, newValue);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE:
-				setLeftSide((OOLogicalExpression)null);
-				return;
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE:
-				setRightSide((OOLogicalExpression)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE:
+                                setLeftSide((OOLogicalExpression)null);
+                                return;
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE:
+                                setRightSide((OOLogicalExpression)null);
+                                return;
+                }
+                super.eUnset(featureID);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE:
-				return leftSide != null;
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE:
-				return rightSide != null;
-		}
-		return super.eIsSet(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__LEFT_SIDE:
+                                return leftSide != null;
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION__RIGHT_SIDE:
+                                return rightSide != null;
+                }
+                return super.eIsSet(featureID);
+        }
 
 } //OOTwoOperandLogicalExpressionImpl

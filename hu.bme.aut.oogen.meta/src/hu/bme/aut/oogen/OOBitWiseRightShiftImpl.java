@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OOBitWiseRightShiftImpl extends OOTwoOperandArithmeticExpressionImpl implements OOBitWiseRightShift {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOBitWiseRightShiftImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_BIT_WISE_RIGHT_SHIFT;
-	}
+                return OogenPackage.Literals.OO_BIT_WISE_RIGHT_SHIFT;
+        }
 
 } //OOBitWiseRightShiftImpl

@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OOExpressionImpl extends OOStatementImpl implements OOExpression {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_EXPRESSION;
+        }
 
 } //OOExpressionImpl

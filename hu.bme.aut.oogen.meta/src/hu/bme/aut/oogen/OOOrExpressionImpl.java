@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OOOrExpressionImpl extends OOTwoOperandLogicalExpressionImpl implements OOOrExpression {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOOrExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_OR_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_OR_EXPRESSION;
+        }
 
 } //OOOrExpressionImpl

@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OOIntegerDivisionExpressionImpl extends OOTwoOperandArithmeticExpressionImpl implements OOIntegerDivisionExpression {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOIntegerDivisionExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_INTEGER_DIVISION_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_INTEGER_DIVISION_EXPRESSION;
+        }
 
 } //OOIntegerDivisionExpressionImpl

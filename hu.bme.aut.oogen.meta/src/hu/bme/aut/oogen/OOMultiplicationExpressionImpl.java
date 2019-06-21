@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OOMultiplicationExpressionImpl extends OOTwoOperandArithmeticExpressionImpl implements OOMultiplicationExpression {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOMultiplicationExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_MULTIPLICATION_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_MULTIPLICATION_EXPRESSION;
+        }
 
 } //OOMultiplicationExpressionImpl

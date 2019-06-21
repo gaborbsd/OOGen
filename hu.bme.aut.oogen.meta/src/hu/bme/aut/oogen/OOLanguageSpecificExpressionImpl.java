@@ -29,118 +29,119 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class OOLanguageSpecificExpressionImpl extends OOExpressionImpl implements OOLanguageSpecificExpression {
 	/**
-	 * The cached value of the '{@link #getSnippets() <em>Snippets</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getSnippets() <em>Snippets</em>}' containment reference list.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSnippets()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getSnippets()
+         * @generated
+         * @ordered
+         */
 	protected EList<OOLanguageSpecificSnippet> snippets;
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOLanguageSpecificExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_LANGUAGE_SPECIFIC_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_LANGUAGE_SPECIFIC_EXPRESSION;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<OOLanguageSpecificSnippet> getSnippets() {
-		if (snippets == null) {
-			snippets = new EObjectContainmentEList<OOLanguageSpecificSnippet>(OOLanguageSpecificSnippet.class, this, OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS);
-		}
-		return snippets;
-	}
+         * @generated
+         */
+	@Override
+        public EList<OOLanguageSpecificSnippet> getSnippets() {
+                if (snippets == null) {
+                        snippets = new EObjectContainmentEList<OOLanguageSpecificSnippet>(OOLanguageSpecificSnippet.class, this, OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS);
+                }
+                return snippets;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
-				return ((InternalEList<?>)getSnippets()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
+                                return ((InternalEList<?>)getSnippets()).basicRemove(otherEnd, msgs);
+                }
+                return super.eInverseRemove(otherEnd, featureID, msgs);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
-				return getSnippets();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
+                                return getSnippets();
+                }
+                return super.eGet(featureID, resolve, coreType);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
-				getSnippets().clear();
-				getSnippets().addAll((Collection<? extends OOLanguageSpecificSnippet>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
+                                getSnippets().clear();
+                                getSnippets().addAll((Collection<? extends OOLanguageSpecificSnippet>)newValue);
+                                return;
+                }
+                super.eSet(featureID, newValue);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
-				getSnippets().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
+                                getSnippets().clear();
+                                return;
+                }
+                super.eUnset(featureID);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
-				return snippets != null && !snippets.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION__SNIPPETS:
+                                return snippets != null && !snippets.isEmpty();
+                }
+                return super.eIsSet(featureID);
+        }
 
 } //OOLanguageSpecificExpressionImpl

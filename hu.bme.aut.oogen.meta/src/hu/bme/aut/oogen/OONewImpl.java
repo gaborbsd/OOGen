@@ -31,163 +31,166 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class OONewImpl extends OOExpressionImpl implements OONew {
 	/**
-	 * The cached value of the '{@link #getConstructorParameters() <em>Constructor Parameters</em>}' reference list.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getConstructorParameters() <em>Constructor Parameters</em>}' reference list.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConstructorParameters()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getConstructorParameters()
+         * @generated
+         * @ordered
+         */
 	protected EList<OOVariable> constructorParameters;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getType()
+         * @generated
+         * @ordered
+         */
 	protected OOType type;
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OONewImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_NEW;
-	}
+                return OogenPackage.Literals.OO_NEW;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<OOVariable> getConstructorParameters() {
-		if (constructorParameters == null) {
-			constructorParameters = new EObjectResolvingEList<OOVariable>(OOVariable.class, this, OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS);
-		}
-		return constructorParameters;
-	}
+         * @generated
+         */
+	@Override
+        public EList<OOVariable> getConstructorParameters() {
+                if (constructorParameters == null) {
+                        constructorParameters = new EObjectResolvingEList<OOVariable>(OOVariable.class, this, OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS);
+                }
+                return constructorParameters;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOType getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (OOType)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_NEW__TYPE, oldType, type));
-			}
-		}
-		return type;
-	}
+         * @generated
+         */
+	@Override
+        public OOType getType() {
+                if (type != null && type.eIsProxy()) {
+                        InternalEObject oldType = (InternalEObject)type;
+                        type = (OOType)eResolveProxy(oldType);
+                        if (type != oldType) {
+                                if (eNotificationRequired())
+                                        eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_NEW__TYPE, oldType, type));
+                        }
+                }
+                return type;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOType basicGetType() {
-		return type;
-	}
+                return type;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(OOType newType) {
-		OOType oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_NEW__TYPE, oldType, type));
-	}
+         * @generated
+         */
+	@Override
+        public void setType(OOType newType) {
+                OOType oldType = type;
+                type = newType;
+                if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_NEW__TYPE, oldType, type));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS:
-				return getConstructorParameters();
-			case OogenPackage.OO_NEW__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS:
+                                return getConstructorParameters();
+                        case OogenPackage.OO_NEW__TYPE:
+                                if (resolve) return getType();
+                                return basicGetType();
+                }
+                return super.eGet(featureID, resolve, coreType);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS:
-				getConstructorParameters().clear();
-				getConstructorParameters().addAll((Collection<? extends OOVariable>)newValue);
-				return;
-			case OogenPackage.OO_NEW__TYPE:
-				setType((OOType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS:
+                                getConstructorParameters().clear();
+                                getConstructorParameters().addAll((Collection<? extends OOVariable>)newValue);
+                                return;
+                        case OogenPackage.OO_NEW__TYPE:
+                                setType((OOType)newValue);
+                                return;
+                }
+                super.eSet(featureID, newValue);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS:
-				getConstructorParameters().clear();
-				return;
-			case OogenPackage.OO_NEW__TYPE:
-				setType((OOType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS:
+                                getConstructorParameters().clear();
+                                return;
+                        case OogenPackage.OO_NEW__TYPE:
+                                setType((OOType)null);
+                                return;
+                }
+                super.eUnset(featureID);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS:
-				return constructorParameters != null && !constructorParameters.isEmpty();
-			case OogenPackage.OO_NEW__TYPE:
-				return type != null;
-		}
-		return super.eIsSet(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_NEW__CONSTRUCTOR_PARAMETERS:
+                                return constructorParameters != null && !constructorParameters.isEmpty();
+                        case OogenPackage.OO_NEW__TYPE:
+                                return type != null;
+                }
+                return super.eIsSet(featureID);
+        }
 
 } //OONewImpl

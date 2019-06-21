@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OONorExpressionImpl extends OOOneOperandLogicalExpressionImpl implements OONorExpression {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OONorExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_NOR_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_NOR_EXPRESSION;
+        }
 
 } //OONorExpressionImpl

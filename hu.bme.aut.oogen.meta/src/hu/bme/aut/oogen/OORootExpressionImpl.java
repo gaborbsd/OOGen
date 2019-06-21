@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OORootExpressionImpl extends OOTwoOperandArithmeticExpressionImpl implements OORootExpression {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OORootExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_ROOT_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_ROOT_EXPRESSION;
+        }
 
 } //OORootExpressionImpl

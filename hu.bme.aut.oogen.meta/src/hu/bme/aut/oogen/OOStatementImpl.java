@@ -15,22 +15,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class OOStatementImpl extends MinimalEObjectImpl.Container implements OOStatement {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOStatementImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_STATEMENT;
-	}
+                return OogenPackage.Literals.OO_STATEMENT;
+        }
 
 } //OOStatementImpl

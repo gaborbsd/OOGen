@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OODoWhileImpl extends OOConditionalStatementImpl implements OODoWhile {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OODoWhileImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_DO_WHILE;
-	}
+                return OogenPackage.Literals.OO_DO_WHILE;
+        }
 
 } //OODoWhileImpl

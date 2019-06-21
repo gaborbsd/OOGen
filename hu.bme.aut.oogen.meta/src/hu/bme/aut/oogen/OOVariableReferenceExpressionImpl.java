@@ -24,129 +24,131 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OOVariableReferenceExpressionImpl extends OOExpressionImpl implements OOVariableReferenceExpression {
 	/**
-	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVariable()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getVariable()
+         * @generated
+         * @ordered
+         */
 	protected OOVariable variable;
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOVariableReferenceExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_VARIABLE_REFERENCE_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_VARIABLE_REFERENCE_EXPRESSION;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOVariable getVariable() {
-		if (variable != null && variable.eIsProxy()) {
-			InternalEObject oldVariable = (InternalEObject)variable;
-			variable = (OOVariable)eResolveProxy(oldVariable);
-			if (variable != oldVariable) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE, oldVariable, variable));
-			}
-		}
-		return variable;
-	}
+         * @generated
+         */
+	@Override
+        public OOVariable getVariable() {
+                if (variable != null && variable.eIsProxy()) {
+                        InternalEObject oldVariable = (InternalEObject)variable;
+                        variable = (OOVariable)eResolveProxy(oldVariable);
+                        if (variable != oldVariable) {
+                                if (eNotificationRequired())
+                                        eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE, oldVariable, variable));
+                        }
+                }
+                return variable;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOVariable basicGetVariable() {
-		return variable;
-	}
+                return variable;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVariable(OOVariable newVariable) {
-		OOVariable oldVariable = variable;
-		variable = newVariable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE, oldVariable, variable));
-	}
+         * @generated
+         */
+	@Override
+        public void setVariable(OOVariable newVariable) {
+                OOVariable oldVariable = variable;
+                variable = newVariable;
+                if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE, oldVariable, variable));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE:
-				if (resolve) return getVariable();
-				return basicGetVariable();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE:
+                                if (resolve) return getVariable();
+                                return basicGetVariable();
+                }
+                return super.eGet(featureID, resolve, coreType);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE:
-				setVariable((OOVariable)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE:
+                                setVariable((OOVariable)newValue);
+                                return;
+                }
+                super.eSet(featureID, newValue);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE:
-				setVariable((OOVariable)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE:
+                                setVariable((OOVariable)null);
+                                return;
+                }
+                super.eUnset(featureID);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE:
-				return variable != null;
-		}
-		return super.eIsSet(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION__VARIABLE:
+                                return variable != null;
+                }
+                return super.eIsSet(featureID);
+        }
 
 } //OOVariableReferenceExpressionImpl

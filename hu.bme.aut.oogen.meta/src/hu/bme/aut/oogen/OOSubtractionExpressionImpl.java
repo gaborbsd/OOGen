@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OOSubtractionExpressionImpl extends OOTwoOperandArithmeticExpressionImpl implements OOSubtractionExpression {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOSubtractionExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_SUBTRACTION_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_SUBTRACTION_EXPRESSION;
+        }
 
 } //OOSubtractionExpressionImpl

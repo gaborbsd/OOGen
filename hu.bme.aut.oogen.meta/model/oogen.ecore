@@ -129,10 +129,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="OOBitwiseXorExpression" eSuperTypes="#//OOTwoOperandArithmeticExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOBitwiseAndExpression" eSuperTypes="#//OOTwoOperandArithmeticExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOLogicalExpression" eSuperTypes="#//OOExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OOLogicalLiteral" eSuperTypes="#//OOLogicalExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOAndExpression" eSuperTypes="#//OOTwoOperandLogicalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOOrExpression" eSuperTypes="#//OOTwoOperandLogicalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOXorExpression" eSuperTypes="#//OOTwoOperandLogicalExpression"/>
@@ -230,4 +226,20 @@
         upperBound="-1" eType="#//OOVariable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//OOType"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOComparatorExpression" eSuperTypes="#//OOLogicalExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftSide" lowerBound="1"
+        eType="#//OOExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightSide" lowerBound="1"
+        eType="#//OOExpression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOLogicalLiteral" eSuperTypes="#//OOLogicalExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOGreaterThanExpression" eSuperTypes="#//OOComparatorExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOLessThanExpression" eSuperTypes="#//OOComparatorExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OONotEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOGreaterEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOLessEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
 </ecore:EPackage>

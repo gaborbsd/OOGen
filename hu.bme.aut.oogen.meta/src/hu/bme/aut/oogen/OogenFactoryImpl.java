@@ -19,759 +19,896 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  */
 public class OogenFactoryImpl extends EFactoryImpl implements OogenFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+         * Creates the default factory implementation.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public static OogenFactory init() {
-		try {
-			OogenFactory theOogenFactory = (OogenFactory)EPackage.Registry.INSTANCE.getEFactory(OogenPackage.eNS_URI);
-			if (theOogenFactory != null) {
-				return theOogenFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new OogenFactoryImpl();
-	}
+                try {
+                        OogenFactory theOogenFactory = (OogenFactory)EPackage.Registry.INSTANCE.getEFactory(OogenPackage.eNS_URI);
+                        if (theOogenFactory != null) {
+                                return theOogenFactory;
+                        }
+                }
+                catch (Exception exception) {
+                        EcorePlugin.INSTANCE.log(exception);
+                }
+                return new OogenFactoryImpl();
+        }
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+         * Creates an instance of the factory.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OogenFactoryImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case OogenPackage.OO_PACKAGE: return createOOPackage();
-			case OogenPackage.OO_CLASS: return createOOClass();
-			case OogenPackage.OO_MEMBER: return createOOMember();
-			case OogenPackage.OO_VARIABLE: return createOOVariable();
-			case OogenPackage.OO_TYPE: return createOOType();
-			case OogenPackage.OO_METHOD: return createOOMethod();
-			case OogenPackage.OO_MODEL: return createOOModel();
-			case OogenPackage.OO_STATEMENT: return createOOStatement();
-			case OogenPackage.OO_EXPRESSION: return createOOExpression();
-			case OogenPackage.OO_RETURN: return createOOReturn();
-			case OogenPackage.OO_ARITHMETIC_EXPRESSION: return createOOArithmeticExpression();
-			case OogenPackage.OO_ARRAY_INDEXING: return createOOArrayIndexing();
-			case OogenPackage.OO_ASSIGNMENT_EXPRESSION: return createOOAssignmentExpression();
-			case OogenPackage.OO_TWO_OPERAND_ARITHMETIC_EXPRESSION: return createOOTwoOperandArithmeticExpression();
-			case OogenPackage.OO_ADDITION_EXPRESSION: return createOOAdditionExpression();
-			case OogenPackage.OO_SUBTRACTION_EXPRESSION: return createOOSubtractionExpression();
-			case OogenPackage.OO_DIVISION_EXPRESSION: return createOODivisionExpression();
-			case OogenPackage.OO_INTEGER_DIVISION_EXPRESSION: return createOOIntegerDivisionExpression();
-			case OogenPackage.OO_MULTIPLICATION_EXPRESSION: return createOOMultiplicationExpression();
-			case OogenPackage.OO_POWER_EXPRESSION: return createOOPowerExpression();
-			case OogenPackage.OO_ROOT_EXPRESSION: return createOORootExpression();
-			case OogenPackage.OO_BITWISE_OR_EXPRESSION: return createOOBitwiseOrExpression();
-			case OogenPackage.OO_BITWISE_XOR_EXPRESSION: return createOOBitwiseXorExpression();
-			case OogenPackage.OO_BITWISE_AND_EXPRESSION: return createOOBitwiseAndExpression();
-			case OogenPackage.OO_LOGICAL_EXPRESSION: return createOOLogicalExpression();
-			case OogenPackage.OO_LOGICAL_LITERAL: return createOOLogicalLiteral();
-			case OogenPackage.OO_AND_EXPRESSION: return createOOAndExpression();
-			case OogenPackage.OO_OR_EXPRESSION: return createOOOrExpression();
-			case OogenPackage.OO_XOR_EXPRESSION: return createOOXorExpression();
-			case OogenPackage.OO_NOR_EXPRESSION: return createOONorExpression();
-			case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION: return createOOTwoOperandLogicalExpression();
-			case OogenPackage.OO_ONE_OPERAND_LOGICAL_EXPRESSION: return createOOOneOperandLogicalExpression();
-			case OogenPackage.OO_DOUBLE_LITERAL: return createOODoubleLiteral();
-			case OogenPackage.OO_FLOAT_LITERAL: return createOOFloatLiteral();
-			case OogenPackage.OO_INTEGER_LITERAL: return createOOIntegerLiteral();
-			case OogenPackage.OO_LONG_LITERAL: return createOOLongLiteral();
-			case OogenPackage.OO_IF: return createOOIf();
-			case OogenPackage.OO_FOR: return createOOFor();
-			case OogenPackage.OO_CONDITIONAL_STATEMENT: return createOOConditionalStatement();
-			case OogenPackage.OO_WHILE: return createOOWhile();
-			case OogenPackage.OO_DO_WHILE: return createOODoWhile();
-			case OogenPackage.OO_EMPTY_STATEMENT: return createOOEmptyStatement();
-			case OogenPackage.OO_FOR_EACH: return createOOForEach();
-			case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION: return createOOVariableReferenceExpression();
-			case OogenPackage.OO_BIT_WISE_LEFT_SHIFT: return createOOBitWiseLeftShift();
-			case OogenPackage.OO_BIT_WISE_RIGHT_SHIFT: return createOOBitWiseRightShift();
-			case OogenPackage.OO_BIT_WISE_COMPLEMENT: return createOOBitWiseComplement();
-			case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION: return createOOLanguageSpecificExpression();
-			case OogenPackage.OO_LANGUAGE_SPECIFIC_SNIPPET: return createOOLanguageSpecificSnippet();
-			case OogenPackage.OO_TYPE_CAST: return createOOTypeCast();
-			case OogenPackage.OO_BOOL_LITERAL: return createOOBoolLiteral();
-			case OogenPackage.OO_NEW: return createOONew();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+                switch (eClass.getClassifierID()) {
+                        case OogenPackage.OO_PACKAGE: return createOOPackage();
+                        case OogenPackage.OO_CLASS: return createOOClass();
+                        case OogenPackage.OO_MEMBER: return createOOMember();
+                        case OogenPackage.OO_VARIABLE: return createOOVariable();
+                        case OogenPackage.OO_TYPE: return createOOType();
+                        case OogenPackage.OO_METHOD: return createOOMethod();
+                        case OogenPackage.OO_MODEL: return createOOModel();
+                        case OogenPackage.OO_STATEMENT: return createOOStatement();
+                        case OogenPackage.OO_EXPRESSION: return createOOExpression();
+                        case OogenPackage.OO_RETURN: return createOOReturn();
+                        case OogenPackage.OO_ARITHMETIC_EXPRESSION: return createOOArithmeticExpression();
+                        case OogenPackage.OO_ARRAY_INDEXING: return createOOArrayIndexing();
+                        case OogenPackage.OO_ASSIGNMENT_EXPRESSION: return createOOAssignmentExpression();
+                        case OogenPackage.OO_TWO_OPERAND_ARITHMETIC_EXPRESSION: return createOOTwoOperandArithmeticExpression();
+                        case OogenPackage.OO_ADDITION_EXPRESSION: return createOOAdditionExpression();
+                        case OogenPackage.OO_SUBTRACTION_EXPRESSION: return createOOSubtractionExpression();
+                        case OogenPackage.OO_DIVISION_EXPRESSION: return createOODivisionExpression();
+                        case OogenPackage.OO_INTEGER_DIVISION_EXPRESSION: return createOOIntegerDivisionExpression();
+                        case OogenPackage.OO_MULTIPLICATION_EXPRESSION: return createOOMultiplicationExpression();
+                        case OogenPackage.OO_POWER_EXPRESSION: return createOOPowerExpression();
+                        case OogenPackage.OO_ROOT_EXPRESSION: return createOORootExpression();
+                        case OogenPackage.OO_BITWISE_OR_EXPRESSION: return createOOBitwiseOrExpression();
+                        case OogenPackage.OO_BITWISE_XOR_EXPRESSION: return createOOBitwiseXorExpression();
+                        case OogenPackage.OO_BITWISE_AND_EXPRESSION: return createOOBitwiseAndExpression();
+                        case OogenPackage.OO_LOGICAL_EXPRESSION: return createOOLogicalExpression();
+                        case OogenPackage.OO_AND_EXPRESSION: return createOOAndExpression();
+                        case OogenPackage.OO_OR_EXPRESSION: return createOOOrExpression();
+                        case OogenPackage.OO_XOR_EXPRESSION: return createOOXorExpression();
+                        case OogenPackage.OO_NOR_EXPRESSION: return createOONorExpression();
+                        case OogenPackage.OO_TWO_OPERAND_LOGICAL_EXPRESSION: return createOOTwoOperandLogicalExpression();
+                        case OogenPackage.OO_ONE_OPERAND_LOGICAL_EXPRESSION: return createOOOneOperandLogicalExpression();
+                        case OogenPackage.OO_DOUBLE_LITERAL: return createOODoubleLiteral();
+                        case OogenPackage.OO_FLOAT_LITERAL: return createOOFloatLiteral();
+                        case OogenPackage.OO_INTEGER_LITERAL: return createOOIntegerLiteral();
+                        case OogenPackage.OO_LONG_LITERAL: return createOOLongLiteral();
+                        case OogenPackage.OO_IF: return createOOIf();
+                        case OogenPackage.OO_FOR: return createOOFor();
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT: return createOOConditionalStatement();
+                        case OogenPackage.OO_WHILE: return createOOWhile();
+                        case OogenPackage.OO_DO_WHILE: return createOODoWhile();
+                        case OogenPackage.OO_EMPTY_STATEMENT: return createOOEmptyStatement();
+                        case OogenPackage.OO_FOR_EACH: return createOOForEach();
+                        case OogenPackage.OO_VARIABLE_REFERENCE_EXPRESSION: return createOOVariableReferenceExpression();
+                        case OogenPackage.OO_BIT_WISE_LEFT_SHIFT: return createOOBitWiseLeftShift();
+                        case OogenPackage.OO_BIT_WISE_RIGHT_SHIFT: return createOOBitWiseRightShift();
+                        case OogenPackage.OO_BIT_WISE_COMPLEMENT: return createOOBitWiseComplement();
+                        case OogenPackage.OO_LANGUAGE_SPECIFIC_EXPRESSION: return createOOLanguageSpecificExpression();
+                        case OogenPackage.OO_LANGUAGE_SPECIFIC_SNIPPET: return createOOLanguageSpecificSnippet();
+                        case OogenPackage.OO_TYPE_CAST: return createOOTypeCast();
+                        case OogenPackage.OO_BOOL_LITERAL: return createOOBoolLiteral();
+                        case OogenPackage.OO_NEW: return createOONew();
+                        case OogenPackage.OO_EQUALS_EXPRESSION: return createOOEqualsExpression();
+                        case OogenPackage.OO_COMPARATOR_EXPRESSION: return createOOComparatorExpression();
+                        case OogenPackage.OO_LOGICAL_LITERAL: return createOOLogicalLiteral();
+                        case OogenPackage.OO_GREATER_THAN_EXPRESSION: return createOOGreaterThanExpression();
+                        case OogenPackage.OO_LESS_THAN_EXPRESSION: return createOOLessThanExpression();
+                        case OogenPackage.OO_NOT_EQUALS_EXPRESSION: return createOONotEqualsExpression();
+                        case OogenPackage.OO_GREATER_EQUALS_EXPRESSION: return createOOGreaterEqualsExpression();
+                        case OogenPackage.OO_LESS_EQUALS_EXPRESSION: return createOOLessEqualsExpression();
+                        default:
+                                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+                }
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case OogenPackage.OO_BASE_TYPE:
-				return createOOBaseTypeFromString(eDataType, initialValue);
-			case OogenPackage.OO_VISIBILITY:
-				return createOOVisibilityFromString(eDataType, initialValue);
-			case OogenPackage.OO_COLLECTION_TYPE:
-				return createOOCollectionTypeFromString(eDataType, initialValue);
-			case OogenPackage.OO_LANGUAGE:
-				return createOOLanguageFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+                switch (eDataType.getClassifierID()) {
+                        case OogenPackage.OO_BASE_TYPE:
+                                return createOOBaseTypeFromString(eDataType, initialValue);
+                        case OogenPackage.OO_VISIBILITY:
+                                return createOOVisibilityFromString(eDataType, initialValue);
+                        case OogenPackage.OO_COLLECTION_TYPE:
+                                return createOOCollectionTypeFromString(eDataType, initialValue);
+                        case OogenPackage.OO_LANGUAGE:
+                                return createOOLanguageFromString(eDataType, initialValue);
+                        default:
+                                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+                }
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case OogenPackage.OO_BASE_TYPE:
-				return convertOOBaseTypeToString(eDataType, instanceValue);
-			case OogenPackage.OO_VISIBILITY:
-				return convertOOVisibilityToString(eDataType, instanceValue);
-			case OogenPackage.OO_COLLECTION_TYPE:
-				return convertOOCollectionTypeToString(eDataType, instanceValue);
-			case OogenPackage.OO_LANGUAGE:
-				return convertOOLanguageToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+                switch (eDataType.getClassifierID()) {
+                        case OogenPackage.OO_BASE_TYPE:
+                                return convertOOBaseTypeToString(eDataType, instanceValue);
+                        case OogenPackage.OO_VISIBILITY:
+                                return convertOOVisibilityToString(eDataType, instanceValue);
+                        case OogenPackage.OO_COLLECTION_TYPE:
+                                return convertOOCollectionTypeToString(eDataType, instanceValue);
+                        case OogenPackage.OO_LANGUAGE:
+                                return convertOOLanguageToString(eDataType, instanceValue);
+                        default:
+                                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+                }
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOPackage createOOPackage() {
-		OOPackageImpl ooPackage = new OOPackageImpl();
-		return ooPackage;
-	}
+         * @generated
+         */
+	@Override
+        public OOPackage createOOPackage() {
+                OOPackageImpl ooPackage = new OOPackageImpl();
+                return ooPackage;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOClass createOOClass() {
-		OOClassImpl ooClass = new OOClassImpl();
-		return ooClass;
-	}
+         * @generated
+         */
+	@Override
+        public OOClass createOOClass() {
+                OOClassImpl ooClass = new OOClassImpl();
+                return ooClass;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOMember createOOMember() {
-		OOMemberImpl ooMember = new OOMemberImpl();
-		return ooMember;
-	}
+         * @generated
+         */
+	@Override
+        public OOMember createOOMember() {
+                OOMemberImpl ooMember = new OOMemberImpl();
+                return ooMember;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOVariable createOOVariable() {
-		OOVariableImpl ooVariable = new OOVariableImpl();
-		return ooVariable;
-	}
+         * @generated
+         */
+	@Override
+        public OOVariable createOOVariable() {
+                OOVariableImpl ooVariable = new OOVariableImpl();
+                return ooVariable;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOType createOOType() {
-		OOTypeImpl ooType = new OOTypeImpl();
-		return ooType;
-	}
+         * @generated
+         */
+	@Override
+        public OOType createOOType() {
+                OOTypeImpl ooType = new OOTypeImpl();
+                return ooType;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOMethod createOOMethod() {
-		OOMethodImpl ooMethod = new OOMethodImpl();
-		return ooMethod;
-	}
+         * @generated
+         */
+	@Override
+        public OOMethod createOOMethod() {
+                OOMethodImpl ooMethod = new OOMethodImpl();
+                return ooMethod;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOModel createOOModel() {
-		OOModelImpl ooModel = new OOModelImpl();
-		return ooModel;
-	}
+         * @generated
+         */
+	@Override
+        public OOModel createOOModel() {
+                OOModelImpl ooModel = new OOModelImpl();
+                return ooModel;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOStatement createOOStatement() {
-		OOStatementImpl ooStatement = new OOStatementImpl();
-		return ooStatement;
-	}
+         * @generated
+         */
+	@Override
+        public OOStatement createOOStatement() {
+                OOStatementImpl ooStatement = new OOStatementImpl();
+                return ooStatement;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOExpression createOOExpression() {
-		OOExpressionImpl ooExpression = new OOExpressionImpl();
-		return ooExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOExpression createOOExpression() {
+                OOExpressionImpl ooExpression = new OOExpressionImpl();
+                return ooExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOReturn createOOReturn() {
-		OOReturnImpl ooReturn = new OOReturnImpl();
-		return ooReturn;
-	}
+         * @generated
+         */
+	@Override
+        public OOReturn createOOReturn() {
+                OOReturnImpl ooReturn = new OOReturnImpl();
+                return ooReturn;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOArithmeticExpression createOOArithmeticExpression() {
-		OOArithmeticExpressionImpl ooArithmeticExpression = new OOArithmeticExpressionImpl();
-		return ooArithmeticExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOArithmeticExpression createOOArithmeticExpression() {
+                OOArithmeticExpressionImpl ooArithmeticExpression = new OOArithmeticExpressionImpl();
+                return ooArithmeticExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOArrayIndexing createOOArrayIndexing() {
-		OOArrayIndexingImpl ooArrayIndexing = new OOArrayIndexingImpl();
-		return ooArrayIndexing;
-	}
+         * @generated
+         */
+	@Override
+        public OOArrayIndexing createOOArrayIndexing() {
+                OOArrayIndexingImpl ooArrayIndexing = new OOArrayIndexingImpl();
+                return ooArrayIndexing;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOAssignmentExpression createOOAssignmentExpression() {
-		OOAssignmentExpressionImpl ooAssignmentExpression = new OOAssignmentExpressionImpl();
-		return ooAssignmentExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOAssignmentExpression createOOAssignmentExpression() {
+                OOAssignmentExpressionImpl ooAssignmentExpression = new OOAssignmentExpressionImpl();
+                return ooAssignmentExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOTwoOperandArithmeticExpression createOOTwoOperandArithmeticExpression() {
-		OOTwoOperandArithmeticExpressionImpl ooTwoOperandArithmeticExpression = new OOTwoOperandArithmeticExpressionImpl();
-		return ooTwoOperandArithmeticExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOTwoOperandArithmeticExpression createOOTwoOperandArithmeticExpression() {
+                OOTwoOperandArithmeticExpressionImpl ooTwoOperandArithmeticExpression = new OOTwoOperandArithmeticExpressionImpl();
+                return ooTwoOperandArithmeticExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOAdditionExpression createOOAdditionExpression() {
-		OOAdditionExpressionImpl ooAdditionExpression = new OOAdditionExpressionImpl();
-		return ooAdditionExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOAdditionExpression createOOAdditionExpression() {
+                OOAdditionExpressionImpl ooAdditionExpression = new OOAdditionExpressionImpl();
+                return ooAdditionExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOSubtractionExpression createOOSubtractionExpression() {
-		OOSubtractionExpressionImpl ooSubtractionExpression = new OOSubtractionExpressionImpl();
-		return ooSubtractionExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOSubtractionExpression createOOSubtractionExpression() {
+                OOSubtractionExpressionImpl ooSubtractionExpression = new OOSubtractionExpressionImpl();
+                return ooSubtractionExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OODivisionExpression createOODivisionExpression() {
-		OODivisionExpressionImpl ooDivisionExpression = new OODivisionExpressionImpl();
-		return ooDivisionExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OODivisionExpression createOODivisionExpression() {
+                OODivisionExpressionImpl ooDivisionExpression = new OODivisionExpressionImpl();
+                return ooDivisionExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOIntegerDivisionExpression createOOIntegerDivisionExpression() {
-		OOIntegerDivisionExpressionImpl ooIntegerDivisionExpression = new OOIntegerDivisionExpressionImpl();
-		return ooIntegerDivisionExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOIntegerDivisionExpression createOOIntegerDivisionExpression() {
+                OOIntegerDivisionExpressionImpl ooIntegerDivisionExpression = new OOIntegerDivisionExpressionImpl();
+                return ooIntegerDivisionExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOMultiplicationExpression createOOMultiplicationExpression() {
-		OOMultiplicationExpressionImpl ooMultiplicationExpression = new OOMultiplicationExpressionImpl();
-		return ooMultiplicationExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOMultiplicationExpression createOOMultiplicationExpression() {
+                OOMultiplicationExpressionImpl ooMultiplicationExpression = new OOMultiplicationExpressionImpl();
+                return ooMultiplicationExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOPowerExpression createOOPowerExpression() {
-		OOPowerExpressionImpl ooPowerExpression = new OOPowerExpressionImpl();
-		return ooPowerExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOPowerExpression createOOPowerExpression() {
+                OOPowerExpressionImpl ooPowerExpression = new OOPowerExpressionImpl();
+                return ooPowerExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OORootExpression createOORootExpression() {
-		OORootExpressionImpl ooRootExpression = new OORootExpressionImpl();
-		return ooRootExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OORootExpression createOORootExpression() {
+                OORootExpressionImpl ooRootExpression = new OORootExpressionImpl();
+                return ooRootExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOBitwiseOrExpression createOOBitwiseOrExpression() {
-		OOBitwiseOrExpressionImpl ooBitwiseOrExpression = new OOBitwiseOrExpressionImpl();
-		return ooBitwiseOrExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOBitwiseOrExpression createOOBitwiseOrExpression() {
+                OOBitwiseOrExpressionImpl ooBitwiseOrExpression = new OOBitwiseOrExpressionImpl();
+                return ooBitwiseOrExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOBitwiseXorExpression createOOBitwiseXorExpression() {
-		OOBitwiseXorExpressionImpl ooBitwiseXorExpression = new OOBitwiseXorExpressionImpl();
-		return ooBitwiseXorExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOBitwiseXorExpression createOOBitwiseXorExpression() {
+                OOBitwiseXorExpressionImpl ooBitwiseXorExpression = new OOBitwiseXorExpressionImpl();
+                return ooBitwiseXorExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOBitwiseAndExpression createOOBitwiseAndExpression() {
-		OOBitwiseAndExpressionImpl ooBitwiseAndExpression = new OOBitwiseAndExpressionImpl();
-		return ooBitwiseAndExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOBitwiseAndExpression createOOBitwiseAndExpression() {
+                OOBitwiseAndExpressionImpl ooBitwiseAndExpression = new OOBitwiseAndExpressionImpl();
+                return ooBitwiseAndExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOLogicalExpression createOOLogicalExpression() {
-		OOLogicalExpressionImpl ooLogicalExpression = new OOLogicalExpressionImpl();
-		return ooLogicalExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOLogicalExpression createOOLogicalExpression() {
+                OOLogicalExpressionImpl ooLogicalExpression = new OOLogicalExpressionImpl();
+                return ooLogicalExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOLogicalLiteral createOOLogicalLiteral() {
-		OOLogicalLiteralImpl ooLogicalLiteral = new OOLogicalLiteralImpl();
-		return ooLogicalLiteral;
-	}
+         * @generated
+         */
+	@Override
+        public OOLogicalLiteral createOOLogicalLiteral() {
+                OOLogicalLiteralImpl ooLogicalLiteral = new OOLogicalLiteralImpl();
+                return ooLogicalLiteral;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public OOGreaterThanExpression createOOGreaterThanExpression() {
+                OOGreaterThanExpressionImpl ooGreaterThanExpression = new OOGreaterThanExpressionImpl();
+                return ooGreaterThanExpression;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public OOLessThanExpression createOOLessThanExpression() {
+                OOLessThanExpressionImpl ooLessThanExpression = new OOLessThanExpressionImpl();
+                return ooLessThanExpression;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public OONotEqualsExpression createOONotEqualsExpression() {
+                OONotEqualsExpressionImpl ooNotEqualsExpression = new OONotEqualsExpressionImpl();
+                return ooNotEqualsExpression;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public OOGreaterEqualsExpression createOOGreaterEqualsExpression() {
+                OOGreaterEqualsExpressionImpl ooGreaterEqualsExpression = new OOGreaterEqualsExpressionImpl();
+                return ooGreaterEqualsExpression;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public OOLessEqualsExpression createOOLessEqualsExpression() {
+                OOLessEqualsExpressionImpl ooLessEqualsExpression = new OOLessEqualsExpressionImpl();
+                return ooLessEqualsExpression;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOAndExpression createOOAndExpression() {
-		OOAndExpressionImpl ooAndExpression = new OOAndExpressionImpl();
-		return ooAndExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOAndExpression createOOAndExpression() {
+                OOAndExpressionImpl ooAndExpression = new OOAndExpressionImpl();
+                return ooAndExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOOrExpression createOOOrExpression() {
-		OOOrExpressionImpl ooOrExpression = new OOOrExpressionImpl();
-		return ooOrExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOOrExpression createOOOrExpression() {
+                OOOrExpressionImpl ooOrExpression = new OOOrExpressionImpl();
+                return ooOrExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOXorExpression createOOXorExpression() {
-		OOXorExpressionImpl ooXorExpression = new OOXorExpressionImpl();
-		return ooXorExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOXorExpression createOOXorExpression() {
+                OOXorExpressionImpl ooXorExpression = new OOXorExpressionImpl();
+                return ooXorExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OONorExpression createOONorExpression() {
-		OONorExpressionImpl ooNorExpression = new OONorExpressionImpl();
-		return ooNorExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OONorExpression createOONorExpression() {
+                OONorExpressionImpl ooNorExpression = new OONorExpressionImpl();
+                return ooNorExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOTwoOperandLogicalExpression createOOTwoOperandLogicalExpression() {
-		OOTwoOperandLogicalExpressionImpl ooTwoOperandLogicalExpression = new OOTwoOperandLogicalExpressionImpl();
-		return ooTwoOperandLogicalExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOTwoOperandLogicalExpression createOOTwoOperandLogicalExpression() {
+                OOTwoOperandLogicalExpressionImpl ooTwoOperandLogicalExpression = new OOTwoOperandLogicalExpressionImpl();
+                return ooTwoOperandLogicalExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOOneOperandLogicalExpression createOOOneOperandLogicalExpression() {
-		OOOneOperandLogicalExpressionImpl ooOneOperandLogicalExpression = new OOOneOperandLogicalExpressionImpl();
-		return ooOneOperandLogicalExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOOneOperandLogicalExpression createOOOneOperandLogicalExpression() {
+                OOOneOperandLogicalExpressionImpl ooOneOperandLogicalExpression = new OOOneOperandLogicalExpressionImpl();
+                return ooOneOperandLogicalExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OODoubleLiteral createOODoubleLiteral() {
-		OODoubleLiteralImpl ooDoubleLiteral = new OODoubleLiteralImpl();
-		return ooDoubleLiteral;
-	}
+         * @generated
+         */
+	@Override
+        public OODoubleLiteral createOODoubleLiteral() {
+                OODoubleLiteralImpl ooDoubleLiteral = new OODoubleLiteralImpl();
+                return ooDoubleLiteral;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOFloatLiteral createOOFloatLiteral() {
-		OOFloatLiteralImpl ooFloatLiteral = new OOFloatLiteralImpl();
-		return ooFloatLiteral;
-	}
+         * @generated
+         */
+	@Override
+        public OOFloatLiteral createOOFloatLiteral() {
+                OOFloatLiteralImpl ooFloatLiteral = new OOFloatLiteralImpl();
+                return ooFloatLiteral;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOIntegerLiteral createOOIntegerLiteral() {
-		OOIntegerLiteralImpl ooIntegerLiteral = new OOIntegerLiteralImpl();
-		return ooIntegerLiteral;
-	}
+         * @generated
+         */
+	@Override
+        public OOIntegerLiteral createOOIntegerLiteral() {
+                OOIntegerLiteralImpl ooIntegerLiteral = new OOIntegerLiteralImpl();
+                return ooIntegerLiteral;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOLongLiteral createOOLongLiteral() {
-		OOLongLiteralImpl ooLongLiteral = new OOLongLiteralImpl();
-		return ooLongLiteral;
-	}
+         * @generated
+         */
+	@Override
+        public OOLongLiteral createOOLongLiteral() {
+                OOLongLiteralImpl ooLongLiteral = new OOLongLiteralImpl();
+                return ooLongLiteral;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOIf createOOIf() {
-		OOIfImpl ooIf = new OOIfImpl();
-		return ooIf;
-	}
+         * @generated
+         */
+	@Override
+        public OOIf createOOIf() {
+                OOIfImpl ooIf = new OOIfImpl();
+                return ooIf;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOFor createOOFor() {
-		OOForImpl ooFor = new OOForImpl();
-		return ooFor;
-	}
+         * @generated
+         */
+	@Override
+        public OOFor createOOFor() {
+                OOForImpl ooFor = new OOForImpl();
+                return ooFor;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOConditionalStatement createOOConditionalStatement() {
-		OOConditionalStatementImpl ooConditionalStatement = new OOConditionalStatementImpl();
-		return ooConditionalStatement;
-	}
+         * @generated
+         */
+	@Override
+        public OOConditionalStatement createOOConditionalStatement() {
+                OOConditionalStatementImpl ooConditionalStatement = new OOConditionalStatementImpl();
+                return ooConditionalStatement;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOWhile createOOWhile() {
-		OOWhileImpl ooWhile = new OOWhileImpl();
-		return ooWhile;
-	}
+         * @generated
+         */
+	@Override
+        public OOWhile createOOWhile() {
+                OOWhileImpl ooWhile = new OOWhileImpl();
+                return ooWhile;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OODoWhile createOODoWhile() {
-		OODoWhileImpl ooDoWhile = new OODoWhileImpl();
-		return ooDoWhile;
-	}
+         * @generated
+         */
+	@Override
+        public OODoWhile createOODoWhile() {
+                OODoWhileImpl ooDoWhile = new OODoWhileImpl();
+                return ooDoWhile;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOEmptyStatement createOOEmptyStatement() {
-		OOEmptyStatementImpl ooEmptyStatement = new OOEmptyStatementImpl();
-		return ooEmptyStatement;
-	}
+         * @generated
+         */
+	@Override
+        public OOEmptyStatement createOOEmptyStatement() {
+                OOEmptyStatementImpl ooEmptyStatement = new OOEmptyStatementImpl();
+                return ooEmptyStatement;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOForEach createOOForEach() {
-		OOForEachImpl ooForEach = new OOForEachImpl();
-		return ooForEach;
-	}
+         * @generated
+         */
+	@Override
+        public OOForEach createOOForEach() {
+                OOForEachImpl ooForEach = new OOForEachImpl();
+                return ooForEach;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOVariableReferenceExpression createOOVariableReferenceExpression() {
-		OOVariableReferenceExpressionImpl ooVariableReferenceExpression = new OOVariableReferenceExpressionImpl();
-		return ooVariableReferenceExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOVariableReferenceExpression createOOVariableReferenceExpression() {
+                OOVariableReferenceExpressionImpl ooVariableReferenceExpression = new OOVariableReferenceExpressionImpl();
+                return ooVariableReferenceExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOBitWiseLeftShift createOOBitWiseLeftShift() {
-		OOBitWiseLeftShiftImpl ooBitWiseLeftShift = new OOBitWiseLeftShiftImpl();
-		return ooBitWiseLeftShift;
-	}
+         * @generated
+         */
+	@Override
+        public OOBitWiseLeftShift createOOBitWiseLeftShift() {
+                OOBitWiseLeftShiftImpl ooBitWiseLeftShift = new OOBitWiseLeftShiftImpl();
+                return ooBitWiseLeftShift;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOBitWiseRightShift createOOBitWiseRightShift() {
-		OOBitWiseRightShiftImpl ooBitWiseRightShift = new OOBitWiseRightShiftImpl();
-		return ooBitWiseRightShift;
-	}
+         * @generated
+         */
+	@Override
+        public OOBitWiseRightShift createOOBitWiseRightShift() {
+                OOBitWiseRightShiftImpl ooBitWiseRightShift = new OOBitWiseRightShiftImpl();
+                return ooBitWiseRightShift;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOBitWiseComplement createOOBitWiseComplement() {
-		OOBitWiseComplementImpl ooBitWiseComplement = new OOBitWiseComplementImpl();
-		return ooBitWiseComplement;
-	}
+         * @generated
+         */
+	@Override
+        public OOBitWiseComplement createOOBitWiseComplement() {
+                OOBitWiseComplementImpl ooBitWiseComplement = new OOBitWiseComplementImpl();
+                return ooBitWiseComplement;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOLanguageSpecificExpression createOOLanguageSpecificExpression() {
-		OOLanguageSpecificExpressionImpl ooLanguageSpecificExpression = new OOLanguageSpecificExpressionImpl();
-		return ooLanguageSpecificExpression;
-	}
+         * @generated
+         */
+	@Override
+        public OOLanguageSpecificExpression createOOLanguageSpecificExpression() {
+                OOLanguageSpecificExpressionImpl ooLanguageSpecificExpression = new OOLanguageSpecificExpressionImpl();
+                return ooLanguageSpecificExpression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOLanguageSpecificSnippet createOOLanguageSpecificSnippet() {
-		OOLanguageSpecificSnippetImpl ooLanguageSpecificSnippet = new OOLanguageSpecificSnippetImpl();
-		return ooLanguageSpecificSnippet;
-	}
+         * @generated
+         */
+	@Override
+        public OOLanguageSpecificSnippet createOOLanguageSpecificSnippet() {
+                OOLanguageSpecificSnippetImpl ooLanguageSpecificSnippet = new OOLanguageSpecificSnippetImpl();
+                return ooLanguageSpecificSnippet;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOTypeCast createOOTypeCast() {
-		OOTypeCastImpl ooTypeCast = new OOTypeCastImpl();
-		return ooTypeCast;
-	}
+         * @generated
+         */
+	@Override
+        public OOTypeCast createOOTypeCast() {
+                OOTypeCastImpl ooTypeCast = new OOTypeCastImpl();
+                return ooTypeCast;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOBoolLiteral createOOBoolLiteral() {
-		OOBoolLiteralImpl ooBoolLiteral = new OOBoolLiteralImpl();
-		return ooBoolLiteral;
-	}
+         * @generated
+         */
+	@Override
+        public OOBoolLiteral createOOBoolLiteral() {
+                OOBoolLiteralImpl ooBoolLiteral = new OOBoolLiteralImpl();
+                return ooBoolLiteral;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OONew createOONew() {
-		OONewImpl ooNew = new OONewImpl();
-		return ooNew;
-	}
+         * @generated
+         */
+	@Override
+        public OONew createOONew() {
+                OONewImpl ooNew = new OONewImpl();
+                return ooNew;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public OOEqualsExpression createOOEqualsExpression() {
+                OOEqualsExpressionImpl ooEqualsExpression = new OOEqualsExpressionImpl();
+                return ooEqualsExpression;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public OOComparatorExpression createOOComparatorExpression() {
+                OOComparatorExpressionImpl ooComparatorExpression = new OOComparatorExpressionImpl();
+                return ooComparatorExpression;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOBaseType createOOBaseTypeFromString(EDataType eDataType, String initialValue) {
-		OOBaseType result = OOBaseType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+                OOBaseType result = OOBaseType.get(initialValue);
+                if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+                return result;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public String convertOOBaseTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+                return instanceValue == null ? null : instanceValue.toString();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOVisibility createOOVisibilityFromString(EDataType eDataType, String initialValue) {
-		OOVisibility result = OOVisibility.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+                OOVisibility result = OOVisibility.get(initialValue);
+                if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+                return result;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public String convertOOVisibilityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+                return instanceValue == null ? null : instanceValue.toString();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOCollectionType createOOCollectionTypeFromString(EDataType eDataType, String initialValue) {
-		OOCollectionType result = OOCollectionType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+                OOCollectionType result = OOCollectionType.get(initialValue);
+                if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+                return result;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public String convertOOCollectionTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+                return instanceValue == null ? null : instanceValue.toString();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOLanguage createOOLanguageFromString(EDataType eDataType, String initialValue) {
-		OOLanguage result = OOLanguage.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+                OOLanguage result = OOLanguage.get(initialValue);
+                if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+                return result;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public String convertOOLanguageToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+                return instanceValue == null ? null : instanceValue.toString();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OogenPackage getOogenPackage() {
-		return (OogenPackage)getEPackage();
-	}
+         * @generated
+         */
+	@Override
+        public OogenPackage getOogenPackage() {
+                return (OogenPackage)getEPackage();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+         * @deprecated
+         * @generated
+         */
 	@Deprecated
 	public static OogenPackage getPackage() {
-		return OogenPackage.eINSTANCE;
-	}
+                return OogenPackage.eINSTANCE;
+        }
 
 } //OogenFactoryImpl

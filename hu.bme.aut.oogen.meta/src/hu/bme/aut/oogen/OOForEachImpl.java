@@ -34,242 +34,247 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class OOForEachImpl extends OOStatementImpl implements OOForEach {
 	/**
-	 * The cached value of the '{@link #getTraversedVariable() <em>Traversed Variable</em>}' reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getTraversedVariable() <em>Traversed Variable</em>}' reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTraversedVariable()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getTraversedVariable()
+         * @generated
+         * @ordered
+         */
 	protected OOVariable traversedVariable;
 
 	/**
-	 * The cached value of the '{@link #getLoopVariable() <em>Loop Variable</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getLoopVariable() <em>Loop Variable</em>}' containment reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLoopVariable()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getLoopVariable()
+         * @generated
+         * @ordered
+         */
 	protected OOVariable loopVariable;
 
 	/**
-	 * The cached value of the '{@link #getBodyStatements() <em>Body Statements</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getBodyStatements() <em>Body Statements</em>}' containment reference list.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBodyStatements()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getBodyStatements()
+         * @generated
+         * @ordered
+         */
 	protected EList<OOStatement> bodyStatements;
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOForEachImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_FOR_EACH;
-	}
+                return OogenPackage.Literals.OO_FOR_EACH;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOVariable getTraversedVariable() {
-		if (traversedVariable != null && traversedVariable.eIsProxy()) {
-			InternalEObject oldTraversedVariable = (InternalEObject)traversedVariable;
-			traversedVariable = (OOVariable)eResolveProxy(oldTraversedVariable);
-			if (traversedVariable != oldTraversedVariable) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE, oldTraversedVariable, traversedVariable));
-			}
-		}
-		return traversedVariable;
-	}
+         * @generated
+         */
+	@Override
+        public OOVariable getTraversedVariable() {
+                if (traversedVariable != null && traversedVariable.eIsProxy()) {
+                        InternalEObject oldTraversedVariable = (InternalEObject)traversedVariable;
+                        traversedVariable = (OOVariable)eResolveProxy(oldTraversedVariable);
+                        if (traversedVariable != oldTraversedVariable) {
+                                if (eNotificationRequired())
+                                        eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE, oldTraversedVariable, traversedVariable));
+                        }
+                }
+                return traversedVariable;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOVariable basicGetTraversedVariable() {
-		return traversedVariable;
-	}
+                return traversedVariable;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTraversedVariable(OOVariable newTraversedVariable) {
-		OOVariable oldTraversedVariable = traversedVariable;
-		traversedVariable = newTraversedVariable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE, oldTraversedVariable, traversedVariable));
-	}
+         * @generated
+         */
+	@Override
+        public void setTraversedVariable(OOVariable newTraversedVariable) {
+                OOVariable oldTraversedVariable = traversedVariable;
+                traversedVariable = newTraversedVariable;
+                if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE, oldTraversedVariable, traversedVariable));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOVariable getLoopVariable() {
-		return loopVariable;
-	}
+         * @generated
+         */
+	@Override
+        public OOVariable getLoopVariable() {
+                return loopVariable;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public NotificationChain basicSetLoopVariable(OOVariable newLoopVariable, NotificationChain msgs) {
-		OOVariable oldLoopVariable = loopVariable;
-		loopVariable = newLoopVariable;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OogenPackage.OO_FOR_EACH__LOOP_VARIABLE, oldLoopVariable, newLoopVariable);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+                OOVariable oldLoopVariable = loopVariable;
+                loopVariable = newLoopVariable;
+                if (eNotificationRequired()) {
+                        ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OogenPackage.OO_FOR_EACH__LOOP_VARIABLE, oldLoopVariable, newLoopVariable);
+                        if (msgs == null) msgs = notification; else msgs.add(notification);
+                }
+                return msgs;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLoopVariable(OOVariable newLoopVariable) {
-		if (newLoopVariable != loopVariable) {
-			NotificationChain msgs = null;
-			if (loopVariable != null)
-				msgs = ((InternalEObject)loopVariable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_FOR_EACH__LOOP_VARIABLE, null, msgs);
-			if (newLoopVariable != null)
-				msgs = ((InternalEObject)newLoopVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_FOR_EACH__LOOP_VARIABLE, null, msgs);
-			msgs = basicSetLoopVariable(newLoopVariable, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_FOR_EACH__LOOP_VARIABLE, newLoopVariable, newLoopVariable));
-	}
+         * @generated
+         */
+	@Override
+        public void setLoopVariable(OOVariable newLoopVariable) {
+                if (newLoopVariable != loopVariable) {
+                        NotificationChain msgs = null;
+                        if (loopVariable != null)
+                                msgs = ((InternalEObject)loopVariable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_FOR_EACH__LOOP_VARIABLE, null, msgs);
+                        if (newLoopVariable != null)
+                                msgs = ((InternalEObject)newLoopVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_FOR_EACH__LOOP_VARIABLE, null, msgs);
+                        msgs = basicSetLoopVariable(newLoopVariable, msgs);
+                        if (msgs != null) msgs.dispatch();
+                }
+                else if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_FOR_EACH__LOOP_VARIABLE, newLoopVariable, newLoopVariable));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<OOStatement> getBodyStatements() {
-		if (bodyStatements == null) {
-			bodyStatements = new EObjectContainmentEList<OOStatement>(OOStatement.class, this, OogenPackage.OO_FOR_EACH__BODY_STATEMENTS);
-		}
-		return bodyStatements;
-	}
+         * @generated
+         */
+	@Override
+        public EList<OOStatement> getBodyStatements() {
+                if (bodyStatements == null) {
+                        bodyStatements = new EObjectContainmentEList<OOStatement>(OOStatement.class, this, OogenPackage.OO_FOR_EACH__BODY_STATEMENTS);
+                }
+                return bodyStatements;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
-				return basicSetLoopVariable(null, msgs);
-			case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
-				return ((InternalEList<?>)getBodyStatements()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
+                                return basicSetLoopVariable(null, msgs);
+                        case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
+                                return ((InternalEList<?>)getBodyStatements()).basicRemove(otherEnd, msgs);
+                }
+                return super.eInverseRemove(otherEnd, featureID, msgs);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE:
-				if (resolve) return getTraversedVariable();
-				return basicGetTraversedVariable();
-			case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
-				return getLoopVariable();
-			case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
-				return getBodyStatements();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE:
+                                if (resolve) return getTraversedVariable();
+                                return basicGetTraversedVariable();
+                        case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
+                                return getLoopVariable();
+                        case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
+                                return getBodyStatements();
+                }
+                return super.eGet(featureID, resolve, coreType);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE:
-				setTraversedVariable((OOVariable)newValue);
-				return;
-			case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
-				setLoopVariable((OOVariable)newValue);
-				return;
-			case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
-				getBodyStatements().clear();
-				getBodyStatements().addAll((Collection<? extends OOStatement>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE:
+                                setTraversedVariable((OOVariable)newValue);
+                                return;
+                        case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
+                                setLoopVariable((OOVariable)newValue);
+                                return;
+                        case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
+                                getBodyStatements().clear();
+                                getBodyStatements().addAll((Collection<? extends OOStatement>)newValue);
+                                return;
+                }
+                super.eSet(featureID, newValue);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE:
-				setTraversedVariable((OOVariable)null);
-				return;
-			case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
-				setLoopVariable((OOVariable)null);
-				return;
-			case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
-				getBodyStatements().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE:
+                                setTraversedVariable((OOVariable)null);
+                                return;
+                        case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
+                                setLoopVariable((OOVariable)null);
+                                return;
+                        case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
+                                getBodyStatements().clear();
+                                return;
+                }
+                super.eUnset(featureID);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE:
-				return traversedVariable != null;
-			case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
-				return loopVariable != null;
-			case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
-				return bodyStatements != null && !bodyStatements.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_FOR_EACH__TRAVERSED_VARIABLE:
+                                return traversedVariable != null;
+                        case OogenPackage.OO_FOR_EACH__LOOP_VARIABLE:
+                                return loopVariable != null;
+                        case OogenPackage.OO_FOR_EACH__BODY_STATEMENTS:
+                                return bodyStatements != null && !bodyStatements.isEmpty();
+                }
+                return super.eIsSet(featureID);
+        }
 
 } //OOForEachImpl

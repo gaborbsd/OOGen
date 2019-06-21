@@ -25,188 +25,192 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OOTypeCastImpl extends OOExpressionImpl implements OOTypeCast {
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getType()
+         * @generated
+         * @ordered
+         */
 	protected OOType type;
 
 	/**
-	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getExpression() <em>Expression</em>}' reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExpression()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getExpression()
+         * @generated
+         * @ordered
+         */
 	protected OOExpression expression;
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOTypeCastImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_TYPE_CAST;
-	}
+                return OogenPackage.Literals.OO_TYPE_CAST;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOType getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (OOType)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_TYPE_CAST__TYPE, oldType, type));
-			}
-		}
-		return type;
-	}
+         * @generated
+         */
+	@Override
+        public OOType getType() {
+                if (type != null && type.eIsProxy()) {
+                        InternalEObject oldType = (InternalEObject)type;
+                        type = (OOType)eResolveProxy(oldType);
+                        if (type != oldType) {
+                                if (eNotificationRequired())
+                                        eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_TYPE_CAST__TYPE, oldType, type));
+                        }
+                }
+                return type;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOType basicGetType() {
-		return type;
-	}
+                return type;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(OOType newType) {
-		OOType oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_TYPE_CAST__TYPE, oldType, type));
-	}
+         * @generated
+         */
+	@Override
+        public void setType(OOType newType) {
+                OOType oldType = type;
+                type = newType;
+                if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_TYPE_CAST__TYPE, oldType, type));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOExpression getExpression() {
-		if (expression != null && expression.eIsProxy()) {
-			InternalEObject oldExpression = (InternalEObject)expression;
-			expression = (OOExpression)eResolveProxy(oldExpression);
-			if (expression != oldExpression) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_TYPE_CAST__EXPRESSION, oldExpression, expression));
-			}
-		}
-		return expression;
-	}
+         * @generated
+         */
+	@Override
+        public OOExpression getExpression() {
+                if (expression != null && expression.eIsProxy()) {
+                        InternalEObject oldExpression = (InternalEObject)expression;
+                        expression = (OOExpression)eResolveProxy(oldExpression);
+                        if (expression != oldExpression) {
+                                if (eNotificationRequired())
+                                        eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_TYPE_CAST__EXPRESSION, oldExpression, expression));
+                        }
+                }
+                return expression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public OOExpression basicGetExpression() {
-		return expression;
-	}
+                return expression;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExpression(OOExpression newExpression) {
-		OOExpression oldExpression = expression;
-		expression = newExpression;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_TYPE_CAST__EXPRESSION, oldExpression, expression));
-	}
+         * @generated
+         */
+	@Override
+        public void setExpression(OOExpression newExpression) {
+                OOExpression oldExpression = expression;
+                expression = newExpression;
+                if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_TYPE_CAST__EXPRESSION, oldExpression, expression));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OogenPackage.OO_TYPE_CAST__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
-			case OogenPackage.OO_TYPE_CAST__EXPRESSION:
-				if (resolve) return getExpression();
-				return basicGetExpression();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_TYPE_CAST__TYPE:
+                                if (resolve) return getType();
+                                return basicGetType();
+                        case OogenPackage.OO_TYPE_CAST__EXPRESSION:
+                                if (resolve) return getExpression();
+                                return basicGetExpression();
+                }
+                return super.eGet(featureID, resolve, coreType);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OogenPackage.OO_TYPE_CAST__TYPE:
-				setType((OOType)newValue);
-				return;
-			case OogenPackage.OO_TYPE_CAST__EXPRESSION:
-				setExpression((OOExpression)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_TYPE_CAST__TYPE:
+                                setType((OOType)newValue);
+                                return;
+                        case OogenPackage.OO_TYPE_CAST__EXPRESSION:
+                                setExpression((OOExpression)newValue);
+                                return;
+                }
+                super.eSet(featureID, newValue);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_TYPE_CAST__TYPE:
-				setType((OOType)null);
-				return;
-			case OogenPackage.OO_TYPE_CAST__EXPRESSION:
-				setExpression((OOExpression)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_TYPE_CAST__TYPE:
+                                setType((OOType)null);
+                                return;
+                        case OogenPackage.OO_TYPE_CAST__EXPRESSION:
+                                setExpression((OOExpression)null);
+                                return;
+                }
+                super.eUnset(featureID);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_TYPE_CAST__TYPE:
-				return type != null;
-			case OogenPackage.OO_TYPE_CAST__EXPRESSION:
-				return expression != null;
-		}
-		return super.eIsSet(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_TYPE_CAST__TYPE:
+                                return type != null;
+                        case OogenPackage.OO_TYPE_CAST__EXPRESSION:
+                                return expression != null;
+                }
+                return super.eIsSet(featureID);
+        }
 
 } //OOTypeCastImpl

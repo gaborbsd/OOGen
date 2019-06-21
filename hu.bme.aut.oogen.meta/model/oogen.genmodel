@@ -105,9 +105,6 @@
     <genClasses ecoreClass="oogen.ecore#//OOBitwiseXorExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOBitwiseAndExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOLogicalExpression"/>
-    <genClasses ecoreClass="oogen.ecore#//OOLogicalLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOLogicalLiteral/value"/>
-    </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOAndExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOOrExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOXorExpression"/>
@@ -177,5 +174,18 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OONew/constructorParameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OONew/type"/>
     </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOEqualsExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOComparatorExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOComparatorExpression/leftSide"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOComparatorExpression/rightSide"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOLogicalLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOLogicalLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOGreaterThanExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOLessThanExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OONotEqualsExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOGreaterEqualsExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOLessEqualsExpression"/>
   </genPackages>
 </genmodel:GenModel>

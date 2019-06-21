@@ -33,183 +33,186 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class OOConditionalStatementImpl extends OOStatementImpl implements OOConditionalStatement {
 	/**
-	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCondition()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getCondition()
+         * @generated
+         * @ordered
+         */
 	protected OOLogicalExpression condition;
 
 	/**
-	 * The cached value of the '{@link #getBodyStatements() <em>Body Statements</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getBodyStatements() <em>Body Statements</em>}' containment reference list.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBodyStatements()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getBodyStatements()
+         * @generated
+         * @ordered
+         */
 	protected EList<OOStatement> bodyStatements;
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOConditionalStatementImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_CONDITIONAL_STATEMENT;
-	}
+                return OogenPackage.Literals.OO_CONDITIONAL_STATEMENT;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOLogicalExpression getCondition() {
-		return condition;
-	}
+         * @generated
+         */
+	@Override
+        public OOLogicalExpression getCondition() {
+                return condition;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public NotificationChain basicSetCondition(OOLogicalExpression newCondition, NotificationChain msgs) {
-		OOLogicalExpression oldCondition = condition;
-		condition = newCondition;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION, oldCondition, newCondition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+                OOLogicalExpression oldCondition = condition;
+                condition = newCondition;
+                if (eNotificationRequired()) {
+                        ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION, oldCondition, newCondition);
+                        if (msgs == null) msgs = notification; else msgs.add(notification);
+                }
+                return msgs;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCondition(OOLogicalExpression newCondition) {
-		if (newCondition != condition) {
-			NotificationChain msgs = null;
-			if (condition != null)
-				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION, null, msgs);
-			if (newCondition != null)
-				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION, null, msgs);
-			msgs = basicSetCondition(newCondition, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION, newCondition, newCondition));
-	}
+         * @generated
+         */
+	@Override
+        public void setCondition(OOLogicalExpression newCondition) {
+                if (newCondition != condition) {
+                        NotificationChain msgs = null;
+                        if (condition != null)
+                                msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION, null, msgs);
+                        if (newCondition != null)
+                                msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION, null, msgs);
+                        msgs = basicSetCondition(newCondition, msgs);
+                        if (msgs != null) msgs.dispatch();
+                }
+                else if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION, newCondition, newCondition));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<OOStatement> getBodyStatements() {
-		if (bodyStatements == null) {
-			bodyStatements = new EObjectContainmentEList<OOStatement>(OOStatement.class, this, OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS);
-		}
-		return bodyStatements;
-	}
+         * @generated
+         */
+	@Override
+        public EList<OOStatement> getBodyStatements() {
+                if (bodyStatements == null) {
+                        bodyStatements = new EObjectContainmentEList<OOStatement>(OOStatement.class, this, OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS);
+                }
+                return bodyStatements;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
-				return basicSetCondition(null, msgs);
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
-				return ((InternalEList<?>)getBodyStatements()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
+                                return basicSetCondition(null, msgs);
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
+                                return ((InternalEList<?>)getBodyStatements()).basicRemove(otherEnd, msgs);
+                }
+                return super.eInverseRemove(otherEnd, featureID, msgs);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
-				return getCondition();
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
-				return getBodyStatements();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
+                                return getCondition();
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
+                                return getBodyStatements();
+                }
+                return super.eGet(featureID, resolve, coreType);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
-				setCondition((OOLogicalExpression)newValue);
-				return;
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
-				getBodyStatements().clear();
-				getBodyStatements().addAll((Collection<? extends OOStatement>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
+                                setCondition((OOLogicalExpression)newValue);
+                                return;
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
+                                getBodyStatements().clear();
+                                getBodyStatements().addAll((Collection<? extends OOStatement>)newValue);
+                                return;
+                }
+                super.eSet(featureID, newValue);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
-				setCondition((OOLogicalExpression)null);
-				return;
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
-				getBodyStatements().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
+                                setCondition((OOLogicalExpression)null);
+                                return;
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
+                                getBodyStatements().clear();
+                                return;
+                }
+                super.eUnset(featureID);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
-				return condition != null;
-			case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
-				return bodyStatements != null && !bodyStatements.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__CONDITION:
+                                return condition != null;
+                        case OogenPackage.OO_CONDITIONAL_STATEMENT__BODY_STATEMENTS:
+                                return bodyStatements != null && !bodyStatements.isEmpty();
+                }
+                return super.eIsSet(featureID);
+        }
 
 } //OOConditionalStatementImpl

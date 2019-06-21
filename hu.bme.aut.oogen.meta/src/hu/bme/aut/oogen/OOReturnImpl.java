@@ -25,147 +25,149 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OOReturnImpl extends OOStatementImpl implements OOReturn {
 	/**
-	 * The cached value of the '{@link #getReturnedExpresssion() <em>Returned Expresssion</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+         * The cached value of the '{@link #getReturnedExpresssion() <em>Returned Expresssion</em>}' containment reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReturnedExpresssion()
-	 * @generated
-	 * @ordered
-	 */
+         * @see #getReturnedExpresssion()
+         * @generated
+         * @ordered
+         */
 	protected OOExpression returnedExpresssion;
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOReturnImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_RETURN;
-	}
+                return OogenPackage.Literals.OO_RETURN;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OOExpression getReturnedExpresssion() {
-		return returnedExpresssion;
-	}
+         * @generated
+         */
+	@Override
+        public OOExpression getReturnedExpresssion() {
+                return returnedExpresssion;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	public NotificationChain basicSetReturnedExpresssion(OOExpression newReturnedExpresssion, NotificationChain msgs) {
-		OOExpression oldReturnedExpresssion = returnedExpresssion;
-		returnedExpresssion = newReturnedExpresssion;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OogenPackage.OO_RETURN__RETURNED_EXPRESSSION, oldReturnedExpresssion, newReturnedExpresssion);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+                OOExpression oldReturnedExpresssion = returnedExpresssion;
+                returnedExpresssion = newReturnedExpresssion;
+                if (eNotificationRequired()) {
+                        ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OogenPackage.OO_RETURN__RETURNED_EXPRESSSION, oldReturnedExpresssion, newReturnedExpresssion);
+                        if (msgs == null) msgs = notification; else msgs.add(notification);
+                }
+                return msgs;
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReturnedExpresssion(OOExpression newReturnedExpresssion) {
-		if (newReturnedExpresssion != returnedExpresssion) {
-			NotificationChain msgs = null;
-			if (returnedExpresssion != null)
-				msgs = ((InternalEObject)returnedExpresssion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_RETURN__RETURNED_EXPRESSSION, null, msgs);
-			if (newReturnedExpresssion != null)
-				msgs = ((InternalEObject)newReturnedExpresssion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_RETURN__RETURNED_EXPRESSSION, null, msgs);
-			msgs = basicSetReturnedExpresssion(newReturnedExpresssion, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_RETURN__RETURNED_EXPRESSSION, newReturnedExpresssion, newReturnedExpresssion));
-	}
+         * @generated
+         */
+	@Override
+        public void setReturnedExpresssion(OOExpression newReturnedExpresssion) {
+                if (newReturnedExpresssion != returnedExpresssion) {
+                        NotificationChain msgs = null;
+                        if (returnedExpresssion != null)
+                                msgs = ((InternalEObject)returnedExpresssion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_RETURN__RETURNED_EXPRESSSION, null, msgs);
+                        if (newReturnedExpresssion != null)
+                                msgs = ((InternalEObject)newReturnedExpresssion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OogenPackage.OO_RETURN__RETURNED_EXPRESSSION, null, msgs);
+                        msgs = basicSetReturnedExpresssion(newReturnedExpresssion, msgs);
+                        if (msgs != null) msgs.dispatch();
+                }
+                else if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_RETURN__RETURNED_EXPRESSSION, newReturnedExpresssion, newReturnedExpresssion));
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
-				return basicSetReturnedExpresssion(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
+                                return basicSetReturnedExpresssion(null, msgs);
+                }
+                return super.eInverseRemove(otherEnd, featureID, msgs);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
-				return getReturnedExpresssion();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
+                                return getReturnedExpresssion();
+                }
+                return super.eGet(featureID, resolve, coreType);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
-				setReturnedExpresssion((OOExpression)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
+                                setReturnedExpresssion((OOExpression)newValue);
+                                return;
+                }
+                super.eSet(featureID, newValue);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
-				setReturnedExpresssion((OOExpression)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
+                                setReturnedExpresssion((OOExpression)null);
+                                return;
+                }
+                super.eUnset(featureID);
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
-				return returnedExpresssion != null;
-		}
-		return super.eIsSet(featureID);
-	}
+                switch (featureID) {
+                        case OogenPackage.OO_RETURN__RETURNED_EXPRESSSION:
+                                return returnedExpresssion != null;
+                }
+                return super.eIsSet(featureID);
+        }
 
 } //OOReturnImpl

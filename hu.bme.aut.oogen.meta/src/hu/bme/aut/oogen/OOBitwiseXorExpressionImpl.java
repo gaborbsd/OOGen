@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class OOBitwiseXorExpressionImpl extends OOTwoOperandArithmeticExpressionImpl implements OOBitwiseXorExpression {
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	protected OOBitwiseXorExpressionImpl() {
-		super();
-	}
+                super();
+        }
 
 	/**
-	 * <!-- begin-user-doc -->
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+         * @generated
+         */
 	@Override
 	protected EClass eStaticClass() {
-		return OogenPackage.Literals.OO_BITWISE_XOR_EXPRESSION;
-	}
+                return OogenPackage.Literals.OO_BITWISE_XOR_EXPRESSION;
+        }
 
 } //OOBitwiseXorExpressionImpl

@@ -23,45 +23,45 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface OONew extends OOExpression {
 	/**
-	 * Returns the value of the '<em><b>Constructor Parameters</b></em>' reference list.
-	 * The list contents are of type {@link hu.bme.aut.oogen.OOVariable}.
-	 * <!-- begin-user-doc -->
+         * Returns the value of the '<em><b>Constructor Parameters</b></em>' reference list.
+         * The list contents are of type {@link hu.bme.aut.oogen.OOVariable}.
+         * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Constructor Parameters</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Constructor Parameters</em>' reference list.
-	 * @see hu.bme.aut.oogen.OogenPackage#getOONew_ConstructorParameters()
-	 * @model
-	 * @generated
-	 */
+         * @return the value of the '<em>Constructor Parameters</em>' reference list.
+         * @see hu.bme.aut.oogen.OogenPackage#getOONew_ConstructorParameters()
+         * @model
+         * @generated
+         */
 	EList<OOVariable> getConstructorParameters();
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
+         * Returns the value of the '<em><b>Type</b></em>' reference.
+         * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(OOType)
-	 * @see hu.bme.aut.oogen.OogenPackage#getOONew_Type()
-	 * @model required="true"
-	 * @generated
-	 */
+         * @return the value of the '<em>Type</em>' reference.
+         * @see #setType(OOType)
+         * @see hu.bme.aut.oogen.OogenPackage#getOONew_Type()
+         * @model required="true"
+         * @generated
+         */
 	OOType getType();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.aut.oogen.OONew#getType <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
+         * Sets the value of the '{@link hu.bme.aut.oogen.OONew#getType <em>Type</em>}' reference.
+         * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' reference.
-	 * @see #getType()
-	 * @generated
-	 */
+         * @param value the new value of the '<em>Type</em>' reference.
+         * @see #getType()
+         * @generated
+         */
 	void setType(OOType value);
 
 } // OONew

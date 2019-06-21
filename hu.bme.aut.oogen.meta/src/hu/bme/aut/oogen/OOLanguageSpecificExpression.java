@@ -22,19 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface OOLanguageSpecificExpression extends OOExpression, OOLogicalExpression {
 	/**
-	 * Returns the value of the '<em><b>Snippets</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.bme.aut.oogen.OOLanguageSpecificSnippet}.
-	 * <!-- begin-user-doc -->
+         * Returns the value of the '<em><b>Snippets</b></em>' containment reference list.
+         * The list contents are of type {@link hu.bme.aut.oogen.OOLanguageSpecificSnippet}.
+         * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Snippets</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Snippets</em>' containment reference list.
-	 * @see hu.bme.aut.oogen.OogenPackage#getOOLanguageSpecificExpression_Snippets()
-	 * @model containment="true"
-	 * @generated
-	 */
+         * @return the value of the '<em>Snippets</em>' containment reference list.
+         * @see hu.bme.aut.oogen.OogenPackage#getOOLanguageSpecificExpression_Snippets()
+         * @model containment="true"
+         * @generated
+         */
 	EList<OOLanguageSpecificSnippet> getSnippets();
 
 } // OOLanguageSpecificExpression
