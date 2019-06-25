@@ -133,7 +133,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOIf/elseStatements"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOFor">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFor/initExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFor/initStatement"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFor/incrementExpression"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOConditionalStatement">

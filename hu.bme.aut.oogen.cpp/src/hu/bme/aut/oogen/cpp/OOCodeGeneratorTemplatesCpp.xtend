@@ -228,7 +228,7 @@ class «cl.name» {
 		«ENDFOR»
 	} while («s.condition.generateExpression»);'''
 
-	def dispatch String generateStatement(OOFor s) '''for («s.initExpression.generateExpression»; «s.condition.generateExpression»; «s.incrementExpression.generateExpression») {
+	def dispatch String generateStatement(OOFor s) '''for («s.initStatement.generateStatement»; «s.condition.generateExpression»; «s.incrementExpression.generateExpression») {
 		«FOR bs : s.bodyStatements»
 			«bs.generateStatement»
 		«ENDFOR»

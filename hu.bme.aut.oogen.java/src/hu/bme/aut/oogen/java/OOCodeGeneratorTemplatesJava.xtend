@@ -224,7 +224,7 @@ public class «cl.name» {
 	} while («s.condition.generateExpression»);'''
 
 	def dispatch String generateStatement(
-		OOFor s) '''for («s.initExpression.generateExpression»; «s.condition.generateExpression»; «s.incrementExpression.generateExpression») {
+		OOFor s) '''for («s.initStatement.generateStatement» «s.condition.generateExpression»; «s.incrementExpression.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
@@ -258,19 +258,19 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
 
 	def dispatch String generateExpression(
-		OOAdditionExpression s) '''(«s.leftSide.generateExpression») + («s.rightSide.generateExpression»)'''
+		OOAdditionExpression s) '''«s.leftSide.generateExpression» + «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOSubtractionExpression s) '''(«s.leftSide.generateExpression») - («s.rightSide.generateExpression»)'''
+		OOSubtractionExpression s) '''«s.leftSide.generateExpression» - «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OODivisionExpression s) '''(«s.leftSide.generateExpression») / («s.rightSide.generateExpression»)'''
+		OODivisionExpression s) '''«s.leftSide.generateExpression» / «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOIntegerDivisionExpression s) '''Math.floor((«s.leftSide.generateExpression») / («s.rightSide.generateExpression»))'''
+		OOIntegerDivisionExpression s) '''Math.floor(«s.leftSide.generateExpression» / «s.rightSide.generateExpression»)'''
 
 	def dispatch String generateExpression(
-		OOMultiplicationExpression s) '''(«s.leftSide.generateExpression») * («s.rightSide.generateExpression»)'''
+		OOMultiplicationExpression s) '''«s.leftSide.generateExpression» * «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOPowerExpression s) '''Math.pow(«s.leftSide.generateExpression», «s.rightSide.generateExpression»)'''
@@ -281,45 +281,45 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOLogicalLiteral s) '''«IF s.value»true«ELSE»false«ENDIF»'''
 
 	def dispatch String generateExpression(
-		OOAndExpression s) '''(«s.leftSide.generateExpression») && («s.rightSide.generateExpression»)'''
+		OOAndExpression s) '''«s.leftSide.generateExpression» && «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOOrExpression s) '''(«s.leftSide.generateExpression») || («s.rightSide.generateExpression»)'''
+		OOOrExpression s) '''«s.leftSide.generateExpression» || «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOEqualsExpression s) '''(«s.leftSide.generateExpression») == («s.rightSide.generateExpression»)'''
+		OOEqualsExpression s) '''«s.leftSide.generateExpression» == «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OONotEqualsExpression s) '''(«s.leftSide.generateExpression») != («s.rightSide.generateExpression»)'''
+		OONotEqualsExpression s) '''«s.leftSide.generateExpression» != «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOGreaterThanExpression s) '''(«s.leftSide.generateExpression») > («s.rightSide.generateExpression»)'''
+		OOGreaterThanExpression s) '''«s.leftSide.generateExpression» > «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOGreaterEqualsExpression s) '''(«s.leftSide.generateExpression») >= («s.rightSide.generateExpression»)'''
+		OOGreaterEqualsExpression s) '''«s.leftSide.generateExpression» >= «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOLessThanExpression s) '''(«s.leftSide.generateExpression») < («s.rightSide.generateExpression»)'''
+		OOLessThanExpression s) '''«s.leftSide.generateExpression» < «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOLessEqualsExpression s) '''(«s.leftSide.generateExpression») <= («s.rightSide.generateExpression»)'''
+		OOLessEqualsExpression s) '''«s.leftSide.generateExpression» <= «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitwiseOrExpression s) '''(«s.leftSide.generateExpression») | («s.rightSide.generateExpression»)'''
+		OOBitwiseOrExpression s) '''«s.leftSide.generateExpression» | «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitwiseXorExpression s) '''(«s.leftSide.generateExpression») ^ («s.rightSide.generateExpression»)'''
+		OOBitwiseXorExpression s) '''«s.leftSide.generateExpression» ^ «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitwiseAndExpression s) '''(«s.leftSide.generateExpression») & («s.rightSide.generateExpression»)'''
+		OOBitwiseAndExpression s) '''«s.leftSide.generateExpression» & «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitWiseLeftShift s) '''(«s.leftSide.generateExpression») << («s.rightSide.generateExpression»)'''
+		OOBitWiseLeftShift s) '''«s.leftSide.generateExpression» << «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitWiseRightShift s) '''(«s.leftSide.generateExpression») >> («s.rightSide.generateExpression»)'''
+		OOBitWiseRightShift s) '''«s.leftSide.generateExpression» >> «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(OOBitWiseComplement s) '''~(«s.operand.generateExpression»)'''
+	def dispatch String generateExpression(OOBitWiseComplement s) '''~«s.operand.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.JAVA]»«if ( sn !== null ) sn.code»'''

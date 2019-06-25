@@ -166,8 +166,8 @@
         eType="#//OOStatement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOFor" eSuperTypes="#//OOConditionalStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initExpression" lowerBound="1"
-        eType="#//OOExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initStatement" lowerBound="1"
+        eType="#//OOStatement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incrementExpression" lowerBound="1"
         eType="#//OOExpression" containment="true"/>
   </eClassifiers>
