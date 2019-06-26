@@ -54,6 +54,10 @@ import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.Collections
 import java.util.List
+import hu.bme.aut.oogen.OOSwitchStatement
+import hu.bme.aut.oogen.OOBreakStatement
+import hu.bme.aut.oogen.OOCaseStatement
+import hu.bme.aut.oogen.OODefaultStatement
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -202,13 +206,13 @@ public class «cl.name» {
 	«var List<OOIf> list = Collections.singletonList(s)»
 	«{list.addAll(s.elseIfs) ''}»
 	«FOR i : list SEPARATOR ' else '»if («i.condition.generateExpression») {
-														«FOR bs : i.bodyStatements»
-															«bs.generateStatement»
-														«ENDFOR»
+															«FOR bs : i.bodyStatements»
+																«bs.generateStatement»
+															«ENDFOR»
 	}«ENDFOR» «IF !s.elseStatements.empty» else {
-														«FOR es : s.elseStatements»
-															«es.generateStatement»
-														«ENDFOR»
+															«FOR es : s.elseStatements»
+																«es.generateStatement»
+															«ENDFOR»
 	}«ENDIF»'''
 
 	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
@@ -235,6 +239,29 @@ public class «cl.name» {
 		«bs.generateStatement»
 	«ENDFOR»
 	}'''
+
+	def dispatch String generateStatement(OOSwitchStatement s) '''switch («s.controllerExpression.generateExpression») {
+	«FOR cs : s.caseStatements»
+		«cs.generateStatement»
+	«ENDFOR»
+	«IF s.defaultStatement !== null»
+		«s.defaultStatement.generateStatement»
+	«ENDIF»
+	}'''
+
+	def dispatch String generateStatement(OOCaseStatement s) '''case «s.expression.generateExpression»:
+	«FOR bs : s.bodyStatements»
+		«bs.generateStatement»
+	«ENDFOR»
+	'''
+	
+	def dispatch String generateStatement(OODefaultStatement s) '''default:
+	«FOR bs : s.bodyStatements»
+		«bs.generateStatement»
+	«ENDFOR»
+	'''
+
+	def dispatch String generateStatement(OOBreakStatement s) '''break;'''
 
 	def dispatch String generateStatement(OOExpression s) '''«s.generateExpression»;'''
 

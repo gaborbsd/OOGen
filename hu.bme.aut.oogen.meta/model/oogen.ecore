@@ -257,5 +257,5 @@
         eType="#//OOExpression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOBreakStatement" eSuperTypes="#//OOStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OODefaultStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OODefaultStatement" eSuperTypes="#//OOCompoundStatement"/>
 </ecore:EPackage>
