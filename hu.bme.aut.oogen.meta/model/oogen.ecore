@@ -240,11 +240,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="OONotEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOGreaterEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOLessEqualsExpression" eSuperTypes="#//OOComparatorExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OOCompoundStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="OOCompoundStatement" eSuperTypes="#//OOStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyStatements" upperBound="-1"
         eType="#//OOStatement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOSwitchStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="OOSwitchStatement" eSuperTypes="#//OOStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="controllerExpression" lowerBound="1"
         eType="#//OOExpression"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="caseStatements" upperBound="-1"

@@ -206,13 +206,13 @@ public class «cl.name» {
 	«var List<OOIf> list = Collections.singletonList(s)»
 	«{list.addAll(s.elseIfs) ''}»
 	«FOR i : list SEPARATOR ' else '»if («i.condition.generateExpression») {
-															«FOR bs : i.bodyStatements»
-																«bs.generateStatement»
-															«ENDFOR»
+																«FOR bs : i.bodyStatements»
+																	«bs.generateStatement»
+																«ENDFOR»
 	}«ENDFOR» «IF !s.elseStatements.empty» else {
-															«FOR es : s.elseStatements»
-																«es.generateStatement»
-															«ENDFOR»
+																«FOR es : s.elseStatements»
+																	«es.generateStatement»
+																«ENDFOR»
 	}«ENDIF»'''
 
 	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
@@ -250,15 +250,15 @@ public class «cl.name» {
 	}'''
 
 	def dispatch String generateStatement(OOCaseStatement s) '''case «s.expression.generateExpression»:
-	«FOR bs : s.bodyStatements»
-		«bs.generateStatement»
-	«ENDFOR»
+		«FOR bs : s.bodyStatements»
+			«bs.generateStatement»
+		«ENDFOR»
 	'''
-	
+
 	def dispatch String generateStatement(OODefaultStatement s) '''default:
-	«FOR bs : s.bodyStatements»
-		«bs.generateStatement»
-	«ENDFOR»
+		«FOR bs : s.bodyStatements»
+			«bs.generateStatement»
+		«ENDFOR»
 	'''
 
 	def dispatch String generateStatement(OOBreakStatement s) '''break;'''
