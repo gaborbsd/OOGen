@@ -244,4 +244,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyStatements" upperBound="-1"
         eType="#//OOStatement" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOSwitchStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerExpression" lowerBound="1"
+        eType="#//OOExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caseStatements" upperBound="-1"
+        eType="#//OOCaseStatement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultStatement" eType="#//OODefaultStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOCaseStatement" eSuperTypes="#//OOCompoundStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//OOExpression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOBreakStatement" eSuperTypes="#//OOStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OODefaultStatement"/>
 </ecore:EPackage>

@@ -189,5 +189,15 @@
     <genClasses ecoreClass="oogen.ecore#//OOCompoundStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCompoundStatement/bodyStatements"/>
     </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOSwitchStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitchStatement/controllerExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitchStatement/caseStatements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitchStatement/defaultStatement"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOCaseStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCaseStatement/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOBreakStatement"/>
+    <genClasses ecoreClass="oogen.ecore#//OODefaultStatement"/>
   </genPackages>
 </genmodel:GenModel>
