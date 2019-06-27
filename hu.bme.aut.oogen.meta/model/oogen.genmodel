@@ -203,5 +203,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOTwoOperandAssignableExpression/assigned"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOModuloExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOContinueStatement"/>
   </genPackages>
 </genmodel:GenModel>

@@ -263,4 +263,5 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOModuloExpression" eSuperTypes="#//OOTwoOperandAssignableExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOContinueStatement" eSuperTypes="#//OOStatement"/>
 </ecore:EPackage>

@@ -59,6 +59,7 @@ import hu.bme.aut.oogen.OOBreakStatement
 import hu.bme.aut.oogen.OOCaseStatement
 import hu.bme.aut.oogen.OODefaultStatement
 import hu.bme.aut.oogen.OOModuloExpression
+import hu.bme.aut.oogen.OOContinueStatement
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -263,6 +264,8 @@ public class «cl.name» {
 	'''
 
 	def dispatch String generateStatement(OOBreakStatement s) '''break;'''
+	
+	def dispatch String generateStatement(OOContinueStatement s) '''continue;'''
 
 	def dispatch String generateStatement(OOExpression s) '''«s.generateExpression»;'''
 
