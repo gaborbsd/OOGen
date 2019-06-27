@@ -58,6 +58,7 @@ import hu.bme.aut.oogen.OOSwitchStatement
 import hu.bme.aut.oogen.OOBreakStatement
 import hu.bme.aut.oogen.OOCaseStatement
 import hu.bme.aut.oogen.OODefaultStatement
+import hu.bme.aut.oogen.OOModuloExpression
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -206,13 +207,13 @@ public class «cl.name» {
 	«var List<OOIf> list = Collections.singletonList(s)»
 	«{list.addAll(s.elseIfs) ''}»
 	«FOR i : list SEPARATOR ' else '»if («i.condition.generateExpression») {
-																«FOR bs : i.bodyStatements»
-																	«bs.generateStatement»
-																«ENDFOR»
+																	«FOR bs : i.bodyStatements»
+																		«bs.generateStatement»
+																	«ENDFOR»
 	}«ENDFOR» «IF !s.elseStatements.empty» else {
-																«FOR es : s.elseStatements»
-																	«es.generateStatement»
-																«ENDFOR»
+																	«FOR es : s.elseStatements»
+																		«es.generateStatement»
+																	«ENDFOR»
 	}«ENDIF»'''
 
 	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
@@ -285,19 +286,22 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
 
 	def dispatch String generateExpression(
-		OOAdditionExpression s) '''«s.leftSide.generateExpression» + «s.rightSide.generateExpression»'''
+		OOAdditionExpression s) '''«s.leftSide.generateExpression» +«IF s.assigned»= «ENDIF»«s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOSubtractionExpression s) '''«s.leftSide.generateExpression» - «s.rightSide.generateExpression»'''
+		OOSubtractionExpression s) '''«s.leftSide.generateExpression» -«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OODivisionExpression s) '''«s.leftSide.generateExpression» / «s.rightSide.generateExpression»'''
+		OODivisionExpression s) '''«s.leftSide.generateExpression» /«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOIntegerDivisionExpression s) '''Math.floor(«s.leftSide.generateExpression» / «s.rightSide.generateExpression»)'''
+		OOIntegerDivisionExpression s) '''Math.floor(«s.leftSide.generateExpression» /«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»)'''
 
 	def dispatch String generateExpression(
-		OOMultiplicationExpression s) '''«s.leftSide.generateExpression» * «s.rightSide.generateExpression»'''
+		OOMultiplicationExpression s) '''«s.leftSide.generateExpression» *«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
+
+	def dispatch String generateExpression(
+		OOModuloExpression s) '''«s.leftSide.generateExpression» %«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOPowerExpression s) '''Math.pow(«s.leftSide.generateExpression», «s.rightSide.generateExpression»)'''
@@ -332,19 +336,19 @@ public class «cl.name» {
 		OOLessEqualsExpression s) '''«s.leftSide.generateExpression» <= «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitwiseOrExpression s) '''«s.leftSide.generateExpression» | «s.rightSide.generateExpression»'''
+		OOBitwiseOrExpression s) '''«s.leftSide.generateExpression» |«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitwiseXorExpression s) '''«s.leftSide.generateExpression» ^ «s.rightSide.generateExpression»'''
+		OOBitwiseXorExpression s) '''«s.leftSide.generateExpression» ^«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitwiseAndExpression s) '''«s.leftSide.generateExpression» & «s.rightSide.generateExpression»'''
+		OOBitwiseAndExpression s) '''«s.leftSide.generateExpression» &«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitWiseLeftShift s) '''«s.leftSide.generateExpression» << «s.rightSide.generateExpression»'''
+		OOBitWiseLeftShift s) '''«s.leftSide.generateExpression» <<«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOBitWiseRightShift s) '''«s.leftSide.generateExpression» >> «s.rightSide.generateExpression»'''
+		OOBitWiseRightShift s) '''«s.leftSide.generateExpression» >>«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(OOBitWiseComplement s) '''~«s.operand.generateExpression»'''
 

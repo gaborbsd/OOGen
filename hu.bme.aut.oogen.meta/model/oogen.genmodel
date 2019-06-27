@@ -199,5 +199,9 @@
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOBreakStatement"/>
     <genClasses ecoreClass="oogen.ecore#//OODefaultStatement"/>
+    <genClasses ecoreClass="oogen.ecore#//OOTwoOperandAssignableExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOTwoOperandAssignableExpression/assigned"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOModuloExpression"/>
   </genPackages>
 </genmodel:GenModel>
