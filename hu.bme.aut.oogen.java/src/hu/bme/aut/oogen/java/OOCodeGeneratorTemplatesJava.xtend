@@ -12,8 +12,12 @@ import hu.bme.aut.oogen.OOBitwiseAndExpression
 import hu.bme.aut.oogen.OOBitwiseOrExpression
 import hu.bme.aut.oogen.OOBitwiseXorExpression
 import hu.bme.aut.oogen.OOBoolLiteral
+import hu.bme.aut.oogen.OOBreak
+import hu.bme.aut.oogen.OOCase
 import hu.bme.aut.oogen.OOClass
 import hu.bme.aut.oogen.OOCollectionType
+import hu.bme.aut.oogen.OOContinue
+import hu.bme.aut.oogen.OODefault
 import hu.bme.aut.oogen.OODivisionExpression
 import hu.bme.aut.oogen.OODoWhile
 import hu.bme.aut.oogen.OODoubleLiteral
@@ -36,6 +40,7 @@ import hu.bme.aut.oogen.OOLogicalLiteral
 import hu.bme.aut.oogen.OOLongLiteral
 import hu.bme.aut.oogen.OOMember
 import hu.bme.aut.oogen.OOMethod
+import hu.bme.aut.oogen.OOModuloExpression
 import hu.bme.aut.oogen.OOMultiplicationExpression
 import hu.bme.aut.oogen.OONew
 import hu.bme.aut.oogen.OONotEqualsExpression
@@ -45,6 +50,7 @@ import hu.bme.aut.oogen.OOReturn
 import hu.bme.aut.oogen.OORootExpression
 import hu.bme.aut.oogen.OOStatement
 import hu.bme.aut.oogen.OOSubtractionExpression
+import hu.bme.aut.oogen.OOSwitch
 import hu.bme.aut.oogen.OOType
 import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOVariable
@@ -54,12 +60,6 @@ import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.Collections
 import java.util.List
-import hu.bme.aut.oogen.OOSwitchStatement
-import hu.bme.aut.oogen.OOBreakStatement
-import hu.bme.aut.oogen.OOCaseStatement
-import hu.bme.aut.oogen.OODefaultStatement
-import hu.bme.aut.oogen.OOModuloExpression
-import hu.bme.aut.oogen.OOContinueStatement
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -242,7 +242,7 @@ public class «cl.name» {
 	«ENDFOR»
 	}'''
 
-	def dispatch String generateStatement(OOSwitchStatement s) '''switch («s.controllerExpression.generateExpression») {
+	def dispatch String generateStatement(OOSwitch s) '''switch («s.controllerExpression.generateExpression») {
 	«FOR cs : s.caseStatements»
 		«cs.generateStatement»
 	«ENDFOR»
@@ -251,21 +251,21 @@ public class «cl.name» {
 	«ENDIF»
 	}'''
 
-	def dispatch String generateStatement(OOCaseStatement s) '''case «s.expression.generateExpression»:
+	def dispatch String generateStatement(OOCase s) '''case «s.expression.generateExpression»:
 		«FOR bs : s.bodyStatements»
 			«bs.generateStatement»
 		«ENDFOR»
 	'''
 
-	def dispatch String generateStatement(OODefaultStatement s) '''default:
+	def dispatch String generateStatement(OODefault s) '''default:
 		«FOR bs : s.bodyStatements»
 			«bs.generateStatement»
 		«ENDFOR»
 	'''
 
-	def dispatch String generateStatement(OOBreakStatement s) '''break;'''
+	def dispatch String generateStatement(OOBreak s) '''break;'''
 	
-	def dispatch String generateStatement(OOContinueStatement s) '''continue;'''
+	def dispatch String generateStatement(OOContinue s) '''continue;'''
 
 	def dispatch String generateStatement(OOExpression s) '''«s.generateExpression»;'''
 

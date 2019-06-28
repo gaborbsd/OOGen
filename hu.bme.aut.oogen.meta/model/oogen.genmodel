@@ -189,20 +189,20 @@
     <genClasses ecoreClass="oogen.ecore#//OOCompoundStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCompoundStatement/bodyStatements"/>
     </genClasses>
-    <genClasses ecoreClass="oogen.ecore#//OOSwitchStatement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitchStatement/controllerExpression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitchStatement/caseStatements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitchStatement/defaultStatement"/>
+    <genClasses ecoreClass="oogen.ecore#//OOSwitch">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitch/controllerExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitch/caseStatements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOSwitch/defaultStatement"/>
     </genClasses>
-    <genClasses ecoreClass="oogen.ecore#//OOCaseStatement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCaseStatement/expression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOCase">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCase/expression"/>
     </genClasses>
-    <genClasses ecoreClass="oogen.ecore#//OOBreakStatement"/>
-    <genClasses ecoreClass="oogen.ecore#//OODefaultStatement"/>
+    <genClasses ecoreClass="oogen.ecore#//OOBreak"/>
+    <genClasses ecoreClass="oogen.ecore#//OODefault"/>
     <genClasses ecoreClass="oogen.ecore#//OOTwoOperandAssignableExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOTwoOperandAssignableExpression/assigned"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOModuloExpression"/>
-    <genClasses ecoreClass="oogen.ecore#//OOContinueStatement"/>
+    <genClasses ecoreClass="oogen.ecore#//OOContinue"/>
   </genPackages>
 </genmodel:GenModel>
