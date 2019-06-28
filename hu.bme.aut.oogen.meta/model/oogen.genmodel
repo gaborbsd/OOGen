@@ -207,5 +207,9 @@
     <genClasses ecoreClass="oogen.ecore#//OOVariableDeclarationList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOVariableDeclarationList/variableDeclarations"/>
     </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOOneOperandArithmeticExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOOneOperandArithmeticExpression/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOBracketedExpression"/>
   </genPackages>
 </genmodel:GenModel>

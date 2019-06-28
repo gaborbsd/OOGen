@@ -61,6 +61,7 @@ import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.Collections
 import java.util.List
 import hu.bme.aut.oogen.OOVariableDeclarationList
+import hu.bme.aut.oogen.OOBracketedExpression
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -287,6 +288,8 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOLongLiteral s) '''«s.value»'''
 
 	def dispatch String generateExpression(OOBoolLiteral s) '''«s.value»'''
+	
+	def dispatch String generateExpression(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
 
 	def dispatch String generateExpression(
 		OOAssignmentExpression s) '''«s.leftSide.generateExpression» = «s.rightSide.generateExpression»'''
@@ -296,22 +299,22 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
 
 	def dispatch String generateExpression(
-		OOAdditionExpression s) '''«s.leftSide.generateExpression» +«IF s.assigned»= «ENDIF»«s.rightSide.generateExpression»'''
+		OOAdditionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» += «ELSE» + «ENDIF»«s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOSubtractionExpression s) '''«s.leftSide.generateExpression» -«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
+		OOSubtractionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» -= «ELSE» - «ENDIF»«s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OODivisionExpression s) '''«s.leftSide.generateExpression» /«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
+		OODivisionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» /= «ELSE» / «ENDIF»«s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOIntegerDivisionExpression s) '''Math.floor(«s.leftSide.generateExpression» /«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»)'''
+		OOIntegerDivisionExpression s) '''Math.floor(«s.leftSide.generateExpression»«IF s.assigned» /= «ELSE» / «ENDIF»«s.rightSide.generateExpression»)'''
 
 	def dispatch String generateExpression(
-		OOMultiplicationExpression s) '''«s.leftSide.generateExpression» *«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
+		OOMultiplicationExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» *= «ELSE» * «ENDIF»«s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
-		OOModuloExpression s) '''«s.leftSide.generateExpression» %«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
+		OOModuloExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» %= «ELSE» % «ENDIF»«s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOPowerExpression s) '''Math.pow(«s.leftSide.generateExpression», «s.rightSide.generateExpression»)'''
