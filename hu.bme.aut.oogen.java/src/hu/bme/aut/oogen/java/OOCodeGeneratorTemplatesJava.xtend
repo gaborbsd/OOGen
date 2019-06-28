@@ -60,6 +60,7 @@ import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.Collections
 import java.util.List
+import hu.bme.aut.oogen.OOVariableDeclarationList
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -266,6 +267,12 @@ public class «cl.name» {
 	def dispatch String generateStatement(OOBreak s) '''break;'''
 	
 	def dispatch String generateStatement(OOContinue s) '''continue;'''
+	
+	def dispatch String generateStatement(OOVariableDeclarationList s) '''
+		«FOR vd : s.variableDeclarations»
+			«vd.generateStatement»
+		«ENDFOR»
+	'''
 
 	def dispatch String generateStatement(OOExpression s) '''«s.generateExpression»;'''
 

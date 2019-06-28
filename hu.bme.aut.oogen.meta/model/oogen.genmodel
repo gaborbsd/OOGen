@@ -204,5 +204,8 @@
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOModuloExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOContinue"/>
+    <genClasses ecoreClass="oogen.ecore#//OOVariableDeclarationList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOVariableDeclarationList/variableDeclarations"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
