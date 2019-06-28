@@ -273,4 +273,8 @@
         eType="#//OOExpression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOBracketedExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOPostfixIncrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOPrefixIncrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOPostfixDecrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOPrefixDecrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
 </ecore:EPackage>

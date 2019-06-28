@@ -12,6 +12,7 @@ import hu.bme.aut.oogen.OOBitwiseAndExpression
 import hu.bme.aut.oogen.OOBitwiseOrExpression
 import hu.bme.aut.oogen.OOBitwiseXorExpression
 import hu.bme.aut.oogen.OOBoolLiteral
+import hu.bme.aut.oogen.OOBracketedExpression
 import hu.bme.aut.oogen.OOBreak
 import hu.bme.aut.oogen.OOCase
 import hu.bme.aut.oogen.OOClass
@@ -45,7 +46,11 @@ import hu.bme.aut.oogen.OOMultiplicationExpression
 import hu.bme.aut.oogen.OONew
 import hu.bme.aut.oogen.OONotEqualsExpression
 import hu.bme.aut.oogen.OOOrExpression
+import hu.bme.aut.oogen.OOPostfixDecrementExpression
+import hu.bme.aut.oogen.OOPostfixIncrementExpression
 import hu.bme.aut.oogen.OOPowerExpression
+import hu.bme.aut.oogen.OOPrefixDecrementExpression
+import hu.bme.aut.oogen.OOPrefixIncrementExpression
 import hu.bme.aut.oogen.OOReturn
 import hu.bme.aut.oogen.OORootExpression
 import hu.bme.aut.oogen.OOStatement
@@ -54,14 +59,13 @@ import hu.bme.aut.oogen.OOSwitch
 import hu.bme.aut.oogen.OOType
 import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOVariable
+import hu.bme.aut.oogen.OOVariableDeclarationList
 import hu.bme.aut.oogen.OOVariableReferenceExpression
 import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.Collections
 import java.util.List
-import hu.bme.aut.oogen.OOVariableDeclarationList
-import hu.bme.aut.oogen.OOBracketedExpression
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -290,6 +294,14 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOBoolLiteral s) '''«s.value»'''
 	
 	def dispatch String generateExpression(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
+	
+	def dispatch String generateExpression(OOPostfixDecrementExpression s) '''«s.operand.generateExpression»--'''
+	
+	def dispatch String generateExpression(OOPostfixIncrementExpression s) '''«s.operand.generateExpression»++'''
+	
+	def dispatch String generateExpression(OOPrefixDecrementExpression s) '''--«s.operand.generateExpression»'''
+	
+	def dispatch String generateExpression(OOPrefixIncrementExpression s) '''++«s.operand.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOAssignmentExpression s) '''«s.leftSide.generateExpression» = «s.rightSide.generateExpression»'''
