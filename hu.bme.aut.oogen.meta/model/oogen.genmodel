@@ -114,7 +114,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOTwoOperandLogicalExpression/rightSide"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOOneOperandLogicalExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOOneOperandLogicalExpression/logicalOperand"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOOneOperandLogicalExpression/operand"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OODoubleLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OODoubleLiteral/value"/>

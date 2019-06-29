@@ -312,7 +312,7 @@ public class «cl.name» {
 	
 	def dispatch String generateExpression(OOBitWiseComplement s) '''~«s.operand.generateExpression»'''
 	
-	def dispatch String generateExpression(OONotExpression s) '''!«s.logicalOperand.generateExpression»'''
+	def dispatch String generateExpression(OONotExpression s) '''!«s.operand.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOAssignmentExpression s) '''«s.leftSide.generateExpression» = «s.rightSide.generateExpression»'''
