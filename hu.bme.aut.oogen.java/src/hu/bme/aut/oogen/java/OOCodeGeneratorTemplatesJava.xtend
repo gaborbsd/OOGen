@@ -66,6 +66,9 @@ import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.Collections
 import java.util.List
+import hu.bme.aut.oogen.OOPlusExpression
+import hu.bme.aut.oogen.OOMinusExpression
+import hu.bme.aut.oogen.OONotExpression
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -302,6 +305,14 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOPrefixDecrementExpression s) '''--«s.operand.generateExpression»'''
 	
 	def dispatch String generateExpression(OOPrefixIncrementExpression s) '''++«s.operand.generateExpression»'''
+	
+	def dispatch String generateExpression(OOPlusExpression s) '''+«s.operand.generateExpression»'''
+	
+	def dispatch String generateExpression(OOMinusExpression s) '''-«s.operand.generateExpression»'''
+	
+	def dispatch String generateExpression(OOBitWiseComplement s) '''~«s.operand.generateExpression»'''
+	
+	def dispatch String generateExpression(OONotExpression s) '''!«s.logicalOperand.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOAssignmentExpression s) '''«s.leftSide.generateExpression» = «s.rightSide.generateExpression»'''
@@ -374,8 +385,6 @@ public class «cl.name» {
 
 	def dispatch String generateExpression(
 		OOBitWiseRightShift s) '''«s.leftSide.generateExpression» >>«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
-
-	def dispatch String generateExpression(OOBitWiseComplement s) '''~«s.operand.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.JAVA]»«if ( sn !== null ) sn.code»'''

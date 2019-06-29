@@ -132,7 +132,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="OOAndExpression" eSuperTypes="#//OOTwoOperandLogicalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOOrExpression" eSuperTypes="#//OOTwoOperandLogicalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOXorExpression" eSuperTypes="#//OOTwoOperandLogicalExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OONorExpression" eSuperTypes="#//OOOneOperandLogicalExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OONotExpression" eSuperTypes="#//OOOneOperandLogicalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOTwoOperandLogicalExpression" eSuperTypes="#//OOLogicalExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftSide" lowerBound="1"
         eType="#//OOLogicalExpression"/>
@@ -140,7 +140,7 @@
         eType="#//OOLogicalExpression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOOneOperandLogicalExpression" eSuperTypes="#//OOLogicalExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperand" lowerBound="1"
         eType="#//OOLogicalExpression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OODoubleLiteral" eSuperTypes="#//OOArithmeticExpression">
@@ -192,10 +192,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOBitWiseLeftShift" eSuperTypes="#//OOTwoOperandAssignableExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOBitWiseRightShift" eSuperTypes="#//OOTwoOperandAssignableExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OOBitWiseComplement" eSuperTypes="#//OOArithmeticExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
-        eType="#//OOExpression"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOBitWiseComplement" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOLanguageSpecificExpression" eSuperTypes="#//OOExpression #//OOLogicalExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="snippets" upperBound="-1"
         eType="#//OOLanguageSpecificSnippet" containment="true"/>
@@ -272,9 +269,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
         eType="#//OOExpression"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOBracketedExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOBracketedExpression" eSuperTypes="#//OOOneOperandArithmeticExpression #//OOOneOperandLogicalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOPostfixIncrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOPrefixIncrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOPostfixDecrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOPrefixDecrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOPlusExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOMinusExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
 </ecore:EPackage>

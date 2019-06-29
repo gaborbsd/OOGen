@@ -108,13 +108,13 @@
     <genClasses ecoreClass="oogen.ecore#//OOAndExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOOrExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOXorExpression"/>
-    <genClasses ecoreClass="oogen.ecore#//OONorExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OONotExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOTwoOperandLogicalExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOTwoOperandLogicalExpression/leftSide"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOTwoOperandLogicalExpression/rightSide"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOOneOperandLogicalExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOOneOperandLogicalExpression/operand"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOOneOperandLogicalExpression/logicalOperand"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OODoubleLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OODoubleLiteral/value"/>
@@ -152,9 +152,7 @@
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOBitWiseLeftShift"/>
     <genClasses ecoreClass="oogen.ecore#//OOBitWiseRightShift"/>
-    <genClasses ecoreClass="oogen.ecore#//OOBitWiseComplement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOBitWiseComplement/operand"/>
-    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOBitWiseComplement"/>
     <genClasses ecoreClass="oogen.ecore#//OOLanguageSpecificExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOLanguageSpecificExpression/snippets"/>
     </genClasses>
@@ -215,5 +213,7 @@
     <genClasses ecoreClass="oogen.ecore#//OOPrefixIncrementExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOPostfixDecrementExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOPrefixDecrementExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOPlusExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOMinusExpression"/>
   </genPackages>
 </genmodel:GenModel>
