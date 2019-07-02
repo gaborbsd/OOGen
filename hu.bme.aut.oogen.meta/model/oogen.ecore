@@ -14,12 +14,12 @@
         eType="#//OOMember" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//OOPackage"
         eOpposite="#//OOPackage/classes"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
-        eType="#//OOMethod" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keep" unique="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="languages" unique="false"
         upperBound="-1" eType="#//OOLanguage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+        eType="#//OOMethod" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOMember" eSuperTypes="#//OOVariable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
@@ -173,7 +173,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOConditionalStatement" eSuperTypes="#//OOStatement #//OOCompoundStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
-        eType="#//OOLogicalExpression" containment="true"/>
+        eType="#//OOExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOWhile" eSuperTypes="#//OOConditionalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="OODoWhile" eSuperTypes="#//OOConditionalStatement"/>
@@ -185,10 +185,6 @@
         eType="#//OOVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyStatements" upperBound="-1"
         eType="#//OOStatement" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOVariableReferenceExpression" eSuperTypes="#//OOExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
-        eType="#//OOVariable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOBitWiseLeftShift" eSuperTypes="#//OOTwoOperandAssignableExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOBitWiseRightShift" eSuperTypes="#//OOTwoOperandAssignableExpression"/>
@@ -276,4 +272,22 @@
   <eClassifiers xsi:type="ecore:EClass" name="OOPrefixDecrementExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOPlusExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOMinusExpression" eSuperTypes="#//OOOneOperandArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOTernaryOperator" eSuperTypes="#//OOLogicalExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+        eType="#//OOExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positiveBranch" lowerBound="1"
+        eType="#//OOExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="negativeBranch" lowerBound="1"
+        eType="#//OOExpression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOFieldReferenceExpression" eSuperTypes="#//OOExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldOwner" lowerBound="1"
+        eType="#//OOExpression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOVariableReferenceExpression" eSuperTypes="#//OOExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+        eType="#//OOVariable"/>
+  </eClassifiers>
 </ecore:EPackage>

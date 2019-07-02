@@ -40,9 +40,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/members"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/package"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/methods"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/keep"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/languages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/methods"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOMember">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOMember/visibility"/>
@@ -147,9 +147,6 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOForEach/loopVariable"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOForEach/bodyStatements"/>
     </genClasses>
-    <genClasses ecoreClass="oogen.ecore#//OOVariableReferenceExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOVariableReferenceExpression/variable"/>
-    </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOBitWiseLeftShift"/>
     <genClasses ecoreClass="oogen.ecore#//OOBitWiseRightShift"/>
     <genClasses ecoreClass="oogen.ecore#//OOBitWiseComplement"/>
@@ -215,5 +212,17 @@
     <genClasses ecoreClass="oogen.ecore#//OOPrefixDecrementExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOPlusExpression"/>
     <genClasses ecoreClass="oogen.ecore#//OOMinusExpression"/>
+    <genClasses ecoreClass="oogen.ecore#//OOTernaryOperator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOTernaryOperator/condition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOTernaryOperator/positiveBranch"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOTernaryOperator/negativeBranch"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOFieldReferenceExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOFieldReferenceExpression/fieldName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFieldReferenceExpression/fieldOwner"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOVariableReferenceExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOVariableReferenceExpression/variable"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -69,6 +69,8 @@ import java.util.List
 import hu.bme.aut.oogen.OOPlusExpression
 import hu.bme.aut.oogen.OOMinusExpression
 import hu.bme.aut.oogen.OONotExpression
+import hu.bme.aut.oogen.OOTernaryOperator
+import hu.bme.aut.oogen.OOFieldReferenceExpression
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -230,7 +232,7 @@ public class «cl.name» {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	}'''
+}'''
 
 	def dispatch String generateStatement(OODoWhile s) '''do {
 	«FOR bs : s.bodyStatements»
@@ -243,7 +245,7 @@ public class «cl.name» {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	}'''
+}'''
 
 	def dispatch String generateStatement(OOForEach s) '''for () {
 	«FOR bs : s.bodyStatements»
@@ -318,6 +320,8 @@ public class «cl.name» {
 		OOAssignmentExpression s) '''«s.leftSide.generateExpression» = «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(OOVariableReferenceExpression s) '''«s.variable.generateReference»'''
+	
+	def dispatch String generateExpression(OOFieldReferenceExpression s) '''«s.fieldOwner.generateExpression».«s.fieldName»'''
 
 	def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
 
@@ -370,6 +374,8 @@ public class «cl.name» {
 
 	def dispatch String generateExpression(
 		OOLessEqualsExpression s) '''«s.leftSide.generateExpression» <= «s.rightSide.generateExpression»'''
+		
+	def dispatch String generateExpression(OOTernaryOperator s) '''«s.condition.generateExpression» ? «s.positiveBranch.generateExpression» : «s.negativeBranch.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOBitwiseOrExpression s) '''«s.leftSide.generateExpression» |«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
