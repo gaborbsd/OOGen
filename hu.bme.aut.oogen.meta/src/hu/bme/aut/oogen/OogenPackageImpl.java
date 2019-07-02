@@ -1458,8 +1458,8 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
          * @generated
          */
         @Override
-        public EReference getOOIf_ElseIfs() {
-                return (EReference)ooIfEClass.getEStructuralFeatures().get(0);
+        public EReference getOOIf_ElseIf() {
+                return (EReference)ooIfEClass.getEStructuralFeatures().get(1);
         }
 
         /**
@@ -1469,7 +1469,7 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
          */
         @Override
         public EReference getOOIf_ElseStatements() {
-                return (EReference)ooIfEClass.getEStructuralFeatures().get(1);
+                return (EReference)ooIfEClass.getEStructuralFeatures().get(0);
         }
 
         /**
@@ -2386,8 +2386,8 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
                 createEAttribute(ooLongLiteralEClass, OO_LONG_LITERAL__VALUE);
 
                 ooIfEClass = createEClass(OO_IF);
-                createEReference(ooIfEClass, OO_IF__ELSE_IFS);
                 createEReference(ooIfEClass, OO_IF__ELSE_STATEMENTS);
+                createEReference(ooIfEClass, OO_IF__ELSE_IF);
 
                 ooForEClass = createEClass(OO_FOR);
                 createEReference(ooForEClass, OO_FOR__INIT_STATEMENT);
@@ -2729,8 +2729,8 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
                 initEAttribute(getOOLongLiteral_Value(), ecorePackage.getELong(), "value", null, 1, 1, OOLongLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
                 initEClass(ooIfEClass, OOIf.class, "OOIf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-                initEReference(getOOIf_ElseIfs(), this.getOOIf(), null, "elseIfs", null, 0, -1, OOIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
                 initEReference(getOOIf_ElseStatements(), this.getOOStatement(), null, "elseStatements", null, 0, -1, OOIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                initEReference(getOOIf_ElseIf(), this.getOOIf(), null, "elseIf", null, 0, 1, OOIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
                 initEClass(ooForEClass, OOFor.class, "OOFor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
                 initEReference(getOOFor_InitStatement(), this.getOOStatement(), null, "initStatement", null, 1, 1, OOFor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

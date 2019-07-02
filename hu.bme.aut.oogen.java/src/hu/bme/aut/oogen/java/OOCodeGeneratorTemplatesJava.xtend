@@ -17,6 +17,7 @@ import hu.bme.aut.oogen.OOBreak
 import hu.bme.aut.oogen.OOCase
 import hu.bme.aut.oogen.OOClass
 import hu.bme.aut.oogen.OOCollectionType
+import hu.bme.aut.oogen.OOCompoundStatement
 import hu.bme.aut.oogen.OOContinue
 import hu.bme.aut.oogen.OODefault
 import hu.bme.aut.oogen.OODivisionExpression
@@ -25,6 +26,7 @@ import hu.bme.aut.oogen.OODoubleLiteral
 import hu.bme.aut.oogen.OOEmptyStatement
 import hu.bme.aut.oogen.OOEqualsExpression
 import hu.bme.aut.oogen.OOExpression
+import hu.bme.aut.oogen.OOFieldReferenceExpression
 import hu.bme.aut.oogen.OOFloatLiteral
 import hu.bme.aut.oogen.OOFor
 import hu.bme.aut.oogen.OOForEach
@@ -41,11 +43,14 @@ import hu.bme.aut.oogen.OOLogicalLiteral
 import hu.bme.aut.oogen.OOLongLiteral
 import hu.bme.aut.oogen.OOMember
 import hu.bme.aut.oogen.OOMethod
+import hu.bme.aut.oogen.OOMinusExpression
 import hu.bme.aut.oogen.OOModuloExpression
 import hu.bme.aut.oogen.OOMultiplicationExpression
 import hu.bme.aut.oogen.OONew
 import hu.bme.aut.oogen.OONotEqualsExpression
+import hu.bme.aut.oogen.OONotExpression
 import hu.bme.aut.oogen.OOOrExpression
+import hu.bme.aut.oogen.OOPlusExpression
 import hu.bme.aut.oogen.OOPostfixDecrementExpression
 import hu.bme.aut.oogen.OOPostfixIncrementExpression
 import hu.bme.aut.oogen.OOPowerExpression
@@ -56,6 +61,7 @@ import hu.bme.aut.oogen.OORootExpression
 import hu.bme.aut.oogen.OOStatement
 import hu.bme.aut.oogen.OOSubtractionExpression
 import hu.bme.aut.oogen.OOSwitch
+import hu.bme.aut.oogen.OOTernaryOperator
 import hu.bme.aut.oogen.OOType
 import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOVariable
@@ -64,13 +70,7 @@ import hu.bme.aut.oogen.OOVariableReferenceExpression
 import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
-import java.util.Collections
 import java.util.List
-import hu.bme.aut.oogen.OOPlusExpression
-import hu.bme.aut.oogen.OOMinusExpression
-import hu.bme.aut.oogen.OONotExpression
-import hu.bme.aut.oogen.OOTernaryOperator
-import hu.bme.aut.oogen.OOFieldReferenceExpression
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -207,6 +207,13 @@ public class «cl.name» {
 		List<OOVariable> vars) '''«FOR v : vars SEPARATOR ', '»«v.type.generate» «v.name»«ENDFOR»'''
 
 	def dispatch String generateStatement(OOStatement s) ''''''
+	
+	def dispatch String generateStatement(OOCompoundStatement s) '''
+	{ 
+		«FOR bs : s.bodyStatements»
+		«bs.generateStatement»
+		«ENDFOR» 
+	}'''
 
 	def dispatch String generateStatement(
 		OOVariable s) '''«s.type.generate» «s.name»«IF (s.initializerExpression !== null) » = «s.initializerExpression.generateExpression»«ENDIF»;'''
@@ -215,7 +222,7 @@ public class «cl.name» {
 
 	def dispatch String generateStatement(OOEmptyStatement s) ''';'''
 
-	def dispatch String generateStatement(OOIf s) '''
+	/*def dispatch String generateStatement(OOIf s) '''
 	«var List<OOIf> list = Collections.singletonList(s)»
 	«{list.addAll(s.elseIfs) ''}»
 	«FOR i : list SEPARATOR ' else '»if («i.condition.generateExpression») {
@@ -226,8 +233,19 @@ public class «cl.name» {
 		«FOR es : s.elseStatements»
 			«es.generateStatement»
 		«ENDFOR»
-	}«ENDIF»'''
-
+	}«ENDIF»'''*/
+	
+	def dispatch String generateStatement(OOIf s) '''if («s.condition.generateExpression») {
+	«FOR bs : s.bodyStatements»
+		«bs.generateStatement»
+	«ENDFOR»
+}«IF !s.elseStatements.empty» else {
+		«FOR es : s.elseStatements»
+			«es.generateStatement»
+		«ENDFOR»
+	}«ENDIF» «IF s.elseIf !== null» else «s.elseIf.generateStatement»«ENDIF»
+	'''
+	
 	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»

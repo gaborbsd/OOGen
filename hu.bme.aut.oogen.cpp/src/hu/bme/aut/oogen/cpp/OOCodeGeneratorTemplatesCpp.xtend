@@ -1,51 +1,50 @@
 package hu.bme.aut.oogen.cpp
 
-import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
-import hu.bme.aut.oogen.OOClass
-import hu.bme.aut.oogen.OOMember
-import hu.bme.aut.oogen.OOVisibility
-import hu.bme.aut.oogen.OOType
-import hu.bme.aut.oogen.OOMethod
-import hu.bme.aut.oogen.OOStatement
-import hu.bme.aut.oogen.OOExpression
-import hu.bme.aut.oogen.OOReturn
-import hu.bme.aut.oogen.OOArrayIndexing
-import java.util.List
-import hu.bme.aut.oogen.OOVariable
 import hu.bme.aut.oogen.OOAdditionExpression
-import hu.bme.aut.oogen.OOSubtractionExpression
-import hu.bme.aut.oogen.OODivisionExpression
-import hu.bme.aut.oogen.OOMultiplicationExpression
-import hu.bme.aut.oogen.OOIntegerDivisionExpression
-import hu.bme.aut.oogen.OOPowerExpression
-import hu.bme.aut.oogen.OORootExpression
-import hu.bme.aut.oogen.OOBitwiseOrExpression
-import hu.bme.aut.oogen.OOBitwiseXorExpression
-import hu.bme.aut.oogen.OOBitwiseAndExpression
+import hu.bme.aut.oogen.OOArrayIndexing
 import hu.bme.aut.oogen.OOAssignmentExpression
-import hu.bme.aut.oogen.OODoubleLiteral
-import hu.bme.aut.oogen.OOFloatLiteral
-import hu.bme.aut.oogen.OOIntegerLiteral
-import hu.bme.aut.oogen.OOLongLiteral
-import hu.bme.aut.oogen.OOLogicalLiteral
-import hu.bme.aut.oogen.OOEmptyStatement
-import hu.bme.aut.oogen.OOIf
-import java.util.Collections
-import hu.bme.aut.oogen.OOWhile
-import hu.bme.aut.oogen.OODoWhile
-import hu.bme.aut.oogen.OOFor
-import hu.bme.aut.oogen.OOForEach
 import hu.bme.aut.oogen.OOBaseType
-import hu.bme.aut.oogen.OOVariableReferenceExpression
+import hu.bme.aut.oogen.OOBitWiseComplement
 import hu.bme.aut.oogen.OOBitWiseLeftShift
 import hu.bme.aut.oogen.OOBitWiseRightShift
-import hu.bme.aut.oogen.OOBitWiseComplement
+import hu.bme.aut.oogen.OOBitwiseAndExpression
+import hu.bme.aut.oogen.OOBitwiseOrExpression
+import hu.bme.aut.oogen.OOBitwiseXorExpression
+import hu.bme.aut.oogen.OOBoolLiteral
+import hu.bme.aut.oogen.OOClass
 import hu.bme.aut.oogen.OOCollectionType
+import hu.bme.aut.oogen.OODivisionExpression
+import hu.bme.aut.oogen.OODoWhile
+import hu.bme.aut.oogen.OODoubleLiteral
+import hu.bme.aut.oogen.OOEmptyStatement
+import hu.bme.aut.oogen.OOExpression
+import hu.bme.aut.oogen.OOFloatLiteral
+import hu.bme.aut.oogen.OOFor
+import hu.bme.aut.oogen.OOForEach
+import hu.bme.aut.oogen.OOIf
+import hu.bme.aut.oogen.OOIntegerDivisionExpression
+import hu.bme.aut.oogen.OOIntegerLiteral
 import hu.bme.aut.oogen.OOLanguage
 import hu.bme.aut.oogen.OOLanguageSpecificExpression
-import hu.bme.aut.oogen.OOTypeCast
-import hu.bme.aut.oogen.OOBoolLiteral
+import hu.bme.aut.oogen.OOLogicalLiteral
+import hu.bme.aut.oogen.OOLongLiteral
+import hu.bme.aut.oogen.OOMember
+import hu.bme.aut.oogen.OOMethod
+import hu.bme.aut.oogen.OOMultiplicationExpression
 import hu.bme.aut.oogen.OONew
+import hu.bme.aut.oogen.OOPowerExpression
+import hu.bme.aut.oogen.OOReturn
+import hu.bme.aut.oogen.OORootExpression
+import hu.bme.aut.oogen.OOStatement
+import hu.bme.aut.oogen.OOSubtractionExpression
+import hu.bme.aut.oogen.OOType
+import hu.bme.aut.oogen.OOTypeCast
+import hu.bme.aut.oogen.OOVariable
+import hu.bme.aut.oogen.OOVariableReferenceExpression
+import hu.bme.aut.oogen.OOVisibility
+import hu.bme.aut.oogen.OOWhile
+import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
+import java.util.List
 
 class OOCodeGeneratorTemplatesCpp implements OOCodeGeneratorTemplates {
 	
@@ -203,18 +202,18 @@ class «cl.name» {
 	
 	def dispatch String generateStatement(OOEmptyStatement s) ''';'''
 	
-	def dispatch String generateStatement(OOIf s) '''
-	«var List<OOIf> list = Collections.singletonList(s)»
-	«list.addAll(s.elseIfs)»
-	«FOR i : list SEPARATOR ' else '»if («i.condition.generateExpression») {
-		«FOR bs : i.bodyStatements»
-			«bs.generateStatement»
-		«ENDFOR»
-	}«ENDFOR» «IF !s.elseStatements.empty» else {
+	def dispatch String generateStatement(OOIf s) ''' if («s.condition.generateExpression») {
+	«FOR bs : s.bodyStatements»
+		«bs.generateStatement»
+	«ENDFOR»
+	} «IF !s.elseStatements.empty» else {
 		«FOR es : s.elseStatements»
 			«es.generateStatement»
 		«ENDFOR»
-	}«ENDIF»'''
+	}«ENDIF»
+	«IF s.elseIf !== null» else «s.elseIf.generateStatement»
+	«ENDIF»
+	'''
 	
 	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
 		«FOR bs : s.bodyStatements»

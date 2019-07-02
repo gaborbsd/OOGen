@@ -129,8 +129,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOLongLiteral/value"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOIf">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOIf/elseIfs"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOIf/elseStatements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOIf/elseIf"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOFor">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFor/initStatement"/>

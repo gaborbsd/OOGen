@@ -4,6 +4,7 @@ package hu.bme.aut.oogen;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -22,23 +24,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.aut.oogen.OOIfImpl#getElseIfs <em>Else Ifs</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOIfImpl#getElseStatements <em>Else Statements</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOIfImpl#getElseIf <em>Else If</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class OOIfImpl extends OOConditionalStatementImpl implements OOIf {
-        /**
-         * The cached value of the '{@link #getElseIfs() <em>Else Ifs</em>}' containment reference list.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see #getElseIfs()
-         * @generated
-         * @ordered
-         */
-        protected EList<OOIf> elseIfs;
-
         /**
          * The cached value of the '{@link #getElseStatements() <em>Else Statements</em>}' containment reference list.
          * <!-- begin-user-doc -->
@@ -48,6 +40,16 @@ public class OOIfImpl extends OOConditionalStatementImpl implements OOIf {
          * @ordered
          */
         protected EList<OOStatement> elseStatements;
+
+        /**
+         * The cached value of the '{@link #getElseIf() <em>Else If</em>}' reference.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see #getElseIf()
+         * @generated
+         * @ordered
+         */
+        protected OOIf elseIf;
 
         /**
          * <!-- begin-user-doc -->
@@ -74,11 +76,38 @@ public class OOIfImpl extends OOConditionalStatementImpl implements OOIf {
          * @generated
          */
         @Override
-        public EList<OOIf> getElseIfs() {
-                if (elseIfs == null) {
-                        elseIfs = new EObjectContainmentEList<OOIf>(OOIf.class, this, OogenPackage.OO_IF__ELSE_IFS);
+        public OOIf getElseIf() {
+                if (elseIf != null && elseIf.eIsProxy()) {
+                        InternalEObject oldElseIf = (InternalEObject)elseIf;
+                        elseIf = (OOIf)eResolveProxy(oldElseIf);
+                        if (elseIf != oldElseIf) {
+                                if (eNotificationRequired())
+                                        eNotify(new ENotificationImpl(this, Notification.RESOLVE, OogenPackage.OO_IF__ELSE_IF, oldElseIf, elseIf));
+                        }
                 }
-                return elseIfs;
+                return elseIf;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        public OOIf basicGetElseIf() {
+                return elseIf;
+        }
+
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public void setElseIf(OOIf newElseIf) {
+                OOIf oldElseIf = elseIf;
+                elseIf = newElseIf;
+                if (eNotificationRequired())
+                        eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_IF__ELSE_IF, oldElseIf, elseIf));
         }
 
         /**
@@ -102,8 +131,6 @@ public class OOIfImpl extends OOConditionalStatementImpl implements OOIf {
         @Override
         public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
                 switch (featureID) {
-                        case OogenPackage.OO_IF__ELSE_IFS:
-                                return ((InternalEList<?>)getElseIfs()).basicRemove(otherEnd, msgs);
                         case OogenPackage.OO_IF__ELSE_STATEMENTS:
                                 return ((InternalEList<?>)getElseStatements()).basicRemove(otherEnd, msgs);
                 }
@@ -118,10 +145,11 @@ public class OOIfImpl extends OOConditionalStatementImpl implements OOIf {
         @Override
         public Object eGet(int featureID, boolean resolve, boolean coreType) {
                 switch (featureID) {
-                        case OogenPackage.OO_IF__ELSE_IFS:
-                                return getElseIfs();
                         case OogenPackage.OO_IF__ELSE_STATEMENTS:
                                 return getElseStatements();
+                        case OogenPackage.OO_IF__ELSE_IF:
+                                if (resolve) return getElseIf();
+                                return basicGetElseIf();
                 }
                 return super.eGet(featureID, resolve, coreType);
         }
@@ -135,13 +163,12 @@ public class OOIfImpl extends OOConditionalStatementImpl implements OOIf {
         @Override
         public void eSet(int featureID, Object newValue) {
                 switch (featureID) {
-                        case OogenPackage.OO_IF__ELSE_IFS:
-                                getElseIfs().clear();
-                                getElseIfs().addAll((Collection<? extends OOIf>)newValue);
-                                return;
                         case OogenPackage.OO_IF__ELSE_STATEMENTS:
                                 getElseStatements().clear();
                                 getElseStatements().addAll((Collection<? extends OOStatement>)newValue);
+                                return;
+                        case OogenPackage.OO_IF__ELSE_IF:
+                                setElseIf((OOIf)newValue);
                                 return;
                 }
                 super.eSet(featureID, newValue);
@@ -155,11 +182,11 @@ public class OOIfImpl extends OOConditionalStatementImpl implements OOIf {
         @Override
         public void eUnset(int featureID) {
                 switch (featureID) {
-                        case OogenPackage.OO_IF__ELSE_IFS:
-                                getElseIfs().clear();
-                                return;
                         case OogenPackage.OO_IF__ELSE_STATEMENTS:
                                 getElseStatements().clear();
+                                return;
+                        case OogenPackage.OO_IF__ELSE_IF:
+                                setElseIf((OOIf)null);
                                 return;
                 }
                 super.eUnset(featureID);
@@ -173,10 +200,10 @@ public class OOIfImpl extends OOConditionalStatementImpl implements OOIf {
         @Override
         public boolean eIsSet(int featureID) {
                 switch (featureID) {
-                        case OogenPackage.OO_IF__ELSE_IFS:
-                                return elseIfs != null && !elseIfs.isEmpty();
                         case OogenPackage.OO_IF__ELSE_STATEMENTS:
                                 return elseStatements != null && !elseStatements.isEmpty();
+                        case OogenPackage.OO_IF__ELSE_IF:
+                                return elseIf != null;
                 }
                 return super.eIsSet(featureID);
         }

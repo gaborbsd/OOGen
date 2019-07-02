@@ -160,10 +160,9 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOIf" eSuperTypes="#//OOConditionalStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elseIfs" upperBound="-1"
-        eType="#//OOIf" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseStatements" upperBound="-1"
         eType="#//OOStatement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseIf" eType="#//OOIf"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOFor" eSuperTypes="#//OOConditionalStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="initStatement" lowerBound="1"

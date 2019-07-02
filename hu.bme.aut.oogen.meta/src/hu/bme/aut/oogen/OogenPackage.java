@@ -1914,22 +1914,22 @@ public interface OogenPackage extends EPackage {
         int OO_IF__CONDITION = OO_CONDITIONAL_STATEMENT__CONDITION;
 
         /**
-         * The feature id for the '<em><b>Else Ifs</b></em>' containment reference list.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         * @ordered
-         */
-        int OO_IF__ELSE_IFS = OO_CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
-
-        /**
          * The feature id for the '<em><b>Else Statements</b></em>' containment reference list.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          * @ordered
          */
-        int OO_IF__ELSE_STATEMENTS = OO_CONDITIONAL_STATEMENT_FEATURE_COUNT + 1;
+        int OO_IF__ELSE_STATEMENTS = OO_CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
+
+        /**
+         * The feature id for the '<em><b>Else If</b></em>' reference.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         * @ordered
+         */
+        int OO_IF__ELSE_IF = OO_CONDITIONAL_STATEMENT_FEATURE_COUNT + 1;
 
         /**
          * The number of structural features of the '<em>OO If</em>' class.
@@ -4549,15 +4549,15 @@ public interface OogenPackage extends EPackage {
         EClass getOOIf();
 
         /**
-         * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOIf#getElseIfs <em>Else Ifs</em>}'.
+         * Returns the meta object for the reference '{@link hu.bme.aut.oogen.OOIf#getElseIf <em>Else If</em>}'.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @return the meta object for the containment reference list '<em>Else Ifs</em>'.
-         * @see hu.bme.aut.oogen.OOIf#getElseIfs()
+         * @return the meta object for the reference '<em>Else If</em>'.
+         * @see hu.bme.aut.oogen.OOIf#getElseIf()
          * @see #getOOIf()
          * @generated
          */
-        EReference getOOIf_ElseIfs();
+        EReference getOOIf_ElseIf();
 
         /**
          * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOIf#getElseStatements <em>Else Statements</em>}'.
@@ -6107,12 +6107,12 @@ public interface OogenPackage extends EPackage {
                 EClass OO_IF = eINSTANCE.getOOIf();
 
                 /**
-                 * The meta object literal for the '<em><b>Else Ifs</b></em>' containment reference list feature.
+                 * The meta object literal for the '<em><b>Else If</b></em>' reference feature.
                  * <!-- begin-user-doc -->
                  * <!-- end-user-doc -->
                  * @generated
                  */
-                EReference OO_IF__ELSE_IFS = eINSTANCE.getOOIf_ElseIfs();
+                EReference OO_IF__ELSE_IF = eINSTANCE.getOOIf_ElseIf();
 
                 /**
                  * The meta object literal for the '<em><b>Else Statements</b></em>' containment reference list feature.
