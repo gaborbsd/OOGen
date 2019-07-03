@@ -101,10 +101,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOArithmeticExpression" eSuperTypes="#//OOExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OOArrayIndexing" eSuperTypes="#//OOExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" unique="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="array" lowerBound="1" eType="#//OOVariable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOCollectionIndex" eSuperTypes="#//OOExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="indexExpression" lowerBound="1"
+        eType="#//OOExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collectionExpression" lowerBound="1"
+        eType="#//OOExpression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOAssignmentExpression" eSuperTypes="#//OOExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftSide" lowerBound="1"

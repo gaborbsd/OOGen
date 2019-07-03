@@ -82,9 +82,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOReturn/returnedExpresssion"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOArithmeticExpression"/>
-    <genClasses ecoreClass="oogen.ecore#//OOArrayIndexing">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOArrayIndexing/index"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOArrayIndexing/array"/>
+    <genClasses ecoreClass="oogen.ecore#//OOCollectionIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCollectionIndex/indexExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCollectionIndex/collectionExpression"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOAssignmentExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOAssignmentExpression/leftSide"/>

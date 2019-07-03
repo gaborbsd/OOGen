@@ -2,7 +2,6 @@ package hu.bme.aut.oogen.java
 
 import hu.bme.aut.oogen.OOAdditionExpression
 import hu.bme.aut.oogen.OOAndExpression
-import hu.bme.aut.oogen.OOArrayIndexing
 import hu.bme.aut.oogen.OOAssignmentExpression
 import hu.bme.aut.oogen.OOBaseType
 import hu.bme.aut.oogen.OOBitWiseComplement
@@ -221,20 +220,7 @@ public class «cl.name» {
 	def dispatch String generateStatement(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
 
 	def dispatch String generateStatement(OOEmptyStatement s) ''';'''
-
-	/*def dispatch String generateStatement(OOIf s) '''
-	«var List<OOIf> list = Collections.singletonList(s)»
-	«{list.addAll(s.elseIfs) ''}»
-	«FOR i : list SEPARATOR ' else '»if («i.condition.generateExpression») {
-		«FOR bs : i.bodyStatements»
-			«bs.generateStatement»
-		«ENDFOR»
-	}«ENDFOR» «IF !s.elseStatements.empty» else {
-		«FOR es : s.elseStatements»
-			«es.generateStatement»
-		«ENDFOR»
-	}«ENDIF»'''*/
-	
+		
 	def dispatch String generateStatement(OOIf s) '''if («s.condition.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
@@ -341,7 +327,7 @@ public class «cl.name» {
 	
 	def dispatch String generateExpression(OOFieldReferenceExpression s) '''«s.fieldOwner.generateExpression».«s.fieldName»'''
 
-	def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
+	//def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
 
 	def dispatch String generateExpression(
 		OOAdditionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» += «ELSE» + «ENDIF»«s.rightSide.generateExpression»'''

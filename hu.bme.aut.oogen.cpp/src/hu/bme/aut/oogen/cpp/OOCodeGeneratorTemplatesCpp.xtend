@@ -1,7 +1,6 @@
 package hu.bme.aut.oogen.cpp
 
 import hu.bme.aut.oogen.OOAdditionExpression
-import hu.bme.aut.oogen.OOArrayIndexing
 import hu.bme.aut.oogen.OOAssignmentExpression
 import hu.bme.aut.oogen.OOBaseType
 import hu.bme.aut.oogen.OOBitWiseComplement
@@ -259,7 +258,7 @@ class «cl.name» {
 	
 	def dispatch String generateExpression(OOVariableReferenceExpression s) '''«s.variable.generateReference»'''
 	
-	def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
+	//def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
 	
 	def dispatch String generateExpression(OOAdditionExpression s) '''(«s.leftSide.generateExpression») + («s.rightSide.generateExpression»)'''
 	
