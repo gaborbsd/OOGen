@@ -11,6 +11,7 @@ import hu.bme.aut.oogen.OOBitwiseOrExpression
 import hu.bme.aut.oogen.OOBitwiseXorExpression
 import hu.bme.aut.oogen.OOBoolLiteral
 import hu.bme.aut.oogen.OOClass
+import hu.bme.aut.oogen.OOCollectionIndex
 import hu.bme.aut.oogen.OOCollectionType
 import hu.bme.aut.oogen.OODivisionExpression
 import hu.bme.aut.oogen.OODoWhile
@@ -258,7 +259,7 @@ class «cl.name» {
 	
 	def dispatch String generateExpression(OOVariableReferenceExpression s) '''«s.variable.generateReference»'''
 	
-	//def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
+	def dispatch String generateExpression(OOCollectionIndex s) '''«s.collectionExpression.generateExpression»[«s.indexExpression.generateExpression»]'''
 	
 	def dispatch String generateExpression(OOAdditionExpression s) '''(«s.leftSide.generateExpression») + («s.rightSide.generateExpression»)'''
 	

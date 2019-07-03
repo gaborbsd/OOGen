@@ -70,6 +70,7 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
+import hu.bme.aut.oogen.OOCollectionIndex
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -96,11 +97,11 @@ public class «cl.name» {
 	'''
 
 	def String generate(OOMember m) '''
-«m.visibility.generate» «m.generateTransient» «m.type.generate» «m.name»«m.generateInit»;
+«m.visibility.generate»«m.generateTransient» «m.type.generate» «m.name»«m.generateInit»;
 '''
 
 	def String generateTransient(OOMember m) {
-		if(m.transient) "transient" else ""
+		if(m.transient) " transient" else ""
 	}
 
 	def String generate(OOVisibility v) {
@@ -188,14 +189,14 @@ public class «cl.name» {
 	}
 
 	def String generate(OOMethod m) '''
-«m.visibility.generate» «m.generateStatic» «m.returnType.generateReturnType» «m.name»(«m.parameters.generateMethodParams») {
+«m.visibility.generate»«m.generateStatic» «m.returnType.generateReturnType» «m.name»(«m.parameters.generateMethodParams») {
 	«FOR s : m.statements»
 		«s.generateStatement»
 	«ENDFOR»
 }'''
 
 	def String generateStatic(OOMethod m) {
-		if(m.static) "static" else ""
+		if(m.static) " static" else ""
 	}
 
 	def String generateReturnType(OOType t) {
@@ -226,10 +227,10 @@ public class «cl.name» {
 		«bs.generateStatement»
 	«ENDFOR»
 }«IF !s.elseStatements.empty» else {
-		«FOR es : s.elseStatements»
-			«es.generateStatement»
-		«ENDFOR»
-	}«ENDIF» «IF s.elseIf !== null» else «s.elseIf.generateStatement»«ENDIF»
+	«FOR es : s.elseStatements»
+		«es.generateStatement»
+	«ENDFOR»
+}«ENDIF» «IF s.elseIf !== null» else «s.elseIf.generateStatement»«ENDIF»
 	'''
 	
 	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
@@ -327,7 +328,7 @@ public class «cl.name» {
 	
 	def dispatch String generateExpression(OOFieldReferenceExpression s) '''«s.fieldOwner.generateExpression».«s.fieldName»'''
 
-	//def dispatch String generateExpression(OOArrayIndexing s) '''«s.array.name»[«s.index»]'''
+	def dispatch String generateExpression(OOCollectionIndex s) '''«s.collectionExpression.generateExpression»[«s.indexExpression.generateExpression»]'''
 
 	def dispatch String generateExpression(
 		OOAdditionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» += «ELSE» + «ENDIF»«s.rightSide.generateExpression»'''
