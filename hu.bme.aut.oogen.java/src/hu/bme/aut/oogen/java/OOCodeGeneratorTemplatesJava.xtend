@@ -125,7 +125,10 @@ public class «cl.name» {
 			!((exp as OOLanguageSpecificExpression).snippets.filter[s|s.lang == OOLanguage.JAVA].empty))» = «m.initializerExpression.generateExpression»«ENDIF»«ENDIF»'''
 
 	def String generate(OOType t) {
-		val arrayNotation = if(t.array) "[]" else ""
+		var arrayNotation = "";
+		for (var i = 0; i < t.arrayDimensions; i++) {
+			arrayNotation += "[]";
+		}
 		val baseType = if(t.collectionType == OOCollectionType.NONE) t.baseTypeNormal else t.baseTypeObject
 		val sb = new StringBuffer
 

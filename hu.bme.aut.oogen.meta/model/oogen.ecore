@@ -51,8 +51,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="OOType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseType" ordered="false"
         unique="false" lowerBound="1" eType="#//OOBaseType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="array" ordered="false"
-        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arrayDimensions" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionType" unique="false"
         lowerBound="1" eType="#//OOCollectionType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classType" eType="#//OOClass"/>

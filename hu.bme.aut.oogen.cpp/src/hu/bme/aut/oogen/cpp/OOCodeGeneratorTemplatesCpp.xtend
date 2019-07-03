@@ -115,7 +115,7 @@ class «cl.name» {
 		val baseType = if(t.collectionType == OOCollectionType.NONE) t.baseTypeNormal else t.baseTypeObject
 		val sb = new StringBuffer
 		
-		if (t.array) {
+		if (t.arrayDimensions == 1) {
 					sb.append("std::vector<")
 					sb.append(baseType)
 					sb.append(">")
