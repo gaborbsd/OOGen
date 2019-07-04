@@ -126,10 +126,11 @@ public class «cl.name» {
 			!((exp as OOLanguageSpecificExpression).snippets.filter[s|s.lang == OOLanguage.JAVA].empty))» = «m.initializerExpression.generateExpression»«ENDIF»«ENDIF»'''
 
 	def String generate(OOType t) {
-		var arrayNotation = "";
+		var arrayNotation = ""
 		for (var i = 0; i < t.arrayDimensions; i++) {
-			arrayNotation += "[]";
+			arrayNotation += "[]"
 		}
+
 		val baseType = if(t.collectionType == OOCollectionType.NONE) t.baseTypeNormal else t.baseTypeObject
 		val sb = new StringBuffer
 
@@ -211,11 +212,11 @@ public class «cl.name» {
 		List<OOVariable> vars) '''«FOR v : vars SEPARATOR ', '»«v.type.generate» «v.name»«ENDFOR»'''
 
 	def dispatch String generateStatement(OOStatement s) ''''''
-	
+
 	def dispatch String generateStatement(OOCompoundStatement s) '''
 	{ 
 		«FOR bs : s.bodyStatements»
-		«bs.generateStatement»
+			«bs.generateStatement»
 		«ENDFOR» 
 	}'''
 
@@ -225,23 +226,23 @@ public class «cl.name» {
 	def dispatch String generateStatement(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
 
 	def dispatch String generateStatement(OOEmptyStatement s) ''';'''
-		
+
 	def dispatch String generateStatement(OOIf s) '''if («s.condition.generateExpression») {
-	«FOR bs : s.bodyStatements»
-		«bs.generateStatement»
-	«ENDFOR»
-}«IF !s.elseStatements.empty» else {
-	«FOR es : s.elseStatements»
-		«es.generateStatement»
-	«ENDFOR»
-}«ENDIF» «IF s.elseIf !== null» else «s.elseIf.generateStatement»«ENDIF»
+		«FOR bs : s.bodyStatements»
+			«bs.generateStatement»
+		«ENDFOR»
+		}«IF !s.elseStatements.empty» else {
+			«FOR es : s.elseStatements»
+				«es.generateStatement»
+			«ENDFOR»
+		}«ENDIF» «IF s.elseIf !== null» else «s.elseIf.generateStatement»«ENDIF»
 	'''
-	
+
 	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-}'''
+	}'''
 
 	def dispatch String generateStatement(OODoWhile s) '''do {
 	«FOR bs : s.bodyStatements»
@@ -254,7 +255,7 @@ public class «cl.name» {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-}'''
+	}'''
 
 	def dispatch String generateStatement(OOForEach s) '''for () {
 	«FOR bs : s.bodyStatements»
@@ -284,9 +285,9 @@ public class «cl.name» {
 	'''
 
 	def dispatch String generateStatement(OOBreak s) '''break;'''
-	
+
 	def dispatch String generateStatement(OOContinue s) '''continue;'''
-	
+
 	def dispatch String generateStatement(OOVariableDeclarationList s) '''
 		«FOR vd : s.variableDeclarations»
 			«vd.generateStatement»
@@ -296,8 +297,9 @@ public class «cl.name» {
 	def dispatch String generateStatement(OOExpression s) '''«s.generateExpression»;'''
 
 	def dispatch String generateExpression(OOExpression s) ''''''
-	
-	def dispatch String generateExpression(OOInitializerList s) '''{«FOR ie : s.initializerExpressions»«ie.generateExpression»«IF s.initializerExpressions.indexOf(ie) !== s.initializerExpressions.size - 1», «ENDIF»«ENDFOR»}'''
+
+	def dispatch String generateExpression(
+		OOInitializerList s) '''{«FOR ie : s.initializerExpressions»«ie.generateExpression»«IF s.initializerExpressions.indexOf(ie) !== s.initializerExpressions.size - 1», «ENDIF»«ENDFOR»}'''
 
 	def dispatch String generateExpression(OOFloatLiteral s) '''«s.value»'''
 
@@ -308,33 +310,35 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOLongLiteral s) '''«s.value»'''
 
 	def dispatch String generateExpression(OOBoolLiteral s) '''«s.value»'''
-	
+
 	def dispatch String generateExpression(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
-	
+
 	def dispatch String generateExpression(OOPostfixDecrementExpression s) '''«s.operand.generateExpression»--'''
-	
+
 	def dispatch String generateExpression(OOPostfixIncrementExpression s) '''«s.operand.generateExpression»++'''
-	
+
 	def dispatch String generateExpression(OOPrefixDecrementExpression s) '''--«s.operand.generateExpression»'''
-	
+
 	def dispatch String generateExpression(OOPrefixIncrementExpression s) '''++«s.operand.generateExpression»'''
-	
+
 	def dispatch String generateExpression(OOPlusExpression s) '''+«s.operand.generateExpression»'''
-	
+
 	def dispatch String generateExpression(OOMinusExpression s) '''-«s.operand.generateExpression»'''
-	
+
 	def dispatch String generateExpression(OOBitWiseComplement s) '''~«s.operand.generateExpression»'''
-	
+
 	def dispatch String generateExpression(OONotExpression s) '''!«s.operand.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOAssignmentExpression s) '''«s.leftSide.generateExpression» = «s.rightSide.generateExpression»'''
 
 	def dispatch String generateExpression(OOVariableReferenceExpression s) '''«s.variable.generateReference»'''
-	
-	def dispatch String generateExpression(OOFieldReferenceExpression s) '''«s.fieldOwner.generateExpression».«s.fieldName»'''
 
-	def dispatch String generateExpression(OOCollectionIndex s) '''«s.collectionExpression.generateExpression»[«s.indexExpression.generateExpression»]'''
+	def dispatch String generateExpression(
+		OOFieldReferenceExpression s) '''«s.fieldOwner.generateExpression».«s.fieldName»'''
+
+	def dispatch String generateExpression(
+		OOCollectionIndex s) '''«s.collectionExpression.generateExpression»[«s.indexExpression.generateExpression»]'''
 
 	def dispatch String generateExpression(
 		OOAdditionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» += «ELSE» + «ENDIF»«s.rightSide.generateExpression»'''
@@ -385,8 +389,9 @@ public class «cl.name» {
 
 	def dispatch String generateExpression(
 		OOLessEqualsExpression s) '''«s.leftSide.generateExpression» <= «s.rightSide.generateExpression»'''
-		
-	def dispatch String generateExpression(OOTernaryOperator s) '''«s.condition.generateExpression» ? «s.positiveBranch.generateExpression» : «s.negativeBranch.generateExpression»'''
+
+	def dispatch String generateExpression(
+		OOTernaryOperator s) '''«s.condition.generateExpression» ? «s.positiveBranch.generateExpression» : «s.negativeBranch.generateExpression»'''
 
 	def dispatch String generateExpression(
 		OOBitwiseOrExpression s) '''«s.leftSide.generateExpression» |«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
