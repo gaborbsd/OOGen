@@ -291,4 +291,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="#//OOVariable"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOInitializerList" eSuperTypes="#//OOExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initializerExpressions"
+        lowerBound="1" upperBound="-1" eType="#//OOExpression" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
