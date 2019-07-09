@@ -228,5 +228,6 @@
     <genClasses ecoreClass="oogen.ecore#//OOInitializerList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOInitializerList/initializerExpressions"/>
     </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOThisLiteral"/>
   </genPackages>
 </genmodel:GenModel>

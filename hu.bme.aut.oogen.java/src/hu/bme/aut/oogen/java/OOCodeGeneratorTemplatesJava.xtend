@@ -72,6 +72,7 @@ import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
 import hu.bme.aut.oogen.OOCollectionIndex
 import hu.bme.aut.oogen.OOInitializerList
+import hu.bme.aut.oogen.OOThisLiteral
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -228,60 +229,60 @@ public class «cl.name» {
 	def dispatch String generateStatement(OOEmptyStatement s) ''';'''
 
 	def dispatch String generateStatement(OOIf s) '''if («s.condition.generateExpression») {
-		«FOR bs : s.bodyStatements»
-			«bs.generateStatement»
-		«ENDFOR»
-		}«IF !s.elseStatements.empty» else {
-			«FOR es : s.elseStatements»
-				«es.generateStatement»
-			«ENDFOR»
-		}«ENDIF» «IF s.elseIf !== null» else «s.elseIf.generateStatement»«ENDIF»
+	«FOR bs : s.bodyStatements»
+		«bs.generateStatement»
+	«ENDFOR»
+}«IF !s.elseStatements.empty» else {
+	«FOR es : s.elseStatements»
+		«es.generateStatement»
+	«ENDFOR»
+}«ENDIF» «IF s.elseIf !== null» else «s.elseIf.generateStatement»«ENDIF»
 	'''
 
 	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	}'''
+}'''
 
 	def dispatch String generateStatement(OODoWhile s) '''do {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	} while («s.condition.generateExpression»);'''
+} while («s.condition.generateExpression»);'''
 
 	def dispatch String generateStatement(
 		OOFor s) '''for («s.initStatement.generateStatement» «s.condition.generateExpression»; «s.incrementExpression.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	}'''
+}'''
 
 	def dispatch String generateStatement(OOForEach s) '''for () {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	}'''
+}'''
 
 	def dispatch String generateStatement(OOSwitch s) '''switch («s.controllerExpression.generateExpression») {
-	«FOR cs : s.caseStatements»
+«FOR cs : s.caseStatements»
 		«cs.generateStatement»
-	«ENDFOR»
-	«IF s.defaultStatement !== null»
-		«s.defaultStatement.generateStatement»
-	«ENDIF»
-	}'''
+«ENDFOR»
+«IF s.defaultStatement !== null»
+	«s.defaultStatement.generateStatement»
+«ENDIF»
+}'''
 
 	def dispatch String generateStatement(OOCase s) '''case «s.expression.generateExpression»:
-		«FOR bs : s.bodyStatements»
-			«bs.generateStatement»
-		«ENDFOR»
+	«FOR bs : s.bodyStatements»
+		«bs.generateStatement»
+	«ENDFOR»
 	'''
 
 	def dispatch String generateStatement(OODefault s) '''default:
-		«FOR bs : s.bodyStatements»
-			«bs.generateStatement»
-		«ENDFOR»
+	«FOR bs : s.bodyStatements»
+		«bs.generateStatement»
+	«ENDFOR»
 	'''
 
 	def dispatch String generateStatement(OOBreak s) '''break;'''
@@ -310,6 +311,8 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOLongLiteral s) '''«s.value»'''
 
 	def dispatch String generateExpression(OOBoolLiteral s) '''«s.value»'''
+	
+	def dispatch String generateExpression(OOThisLiteral s) '''this'''
 
 	def dispatch String generateExpression(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
 
