@@ -32,6 +32,8 @@ import hu.bme.aut.oogen.OOForEach
 import hu.bme.aut.oogen.OOGreaterEqualsExpression
 import hu.bme.aut.oogen.OOGreaterThanExpression
 import hu.bme.aut.oogen.OOIf
+import hu.bme.aut.oogen.OOIndexing
+import hu.bme.aut.oogen.OOInitializerList
 import hu.bme.aut.oogen.OOIntegerDivisionExpression
 import hu.bme.aut.oogen.OOIntegerLiteral
 import hu.bme.aut.oogen.OOLanguage
@@ -61,6 +63,7 @@ import hu.bme.aut.oogen.OOStatement
 import hu.bme.aut.oogen.OOSubtractionExpression
 import hu.bme.aut.oogen.OOSwitch
 import hu.bme.aut.oogen.OOTernaryOperator
+import hu.bme.aut.oogen.OOThisLiteral
 import hu.bme.aut.oogen.OOType
 import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOVariable
@@ -70,9 +73,6 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
-import hu.bme.aut.oogen.OOCollectionIndex
-import hu.bme.aut.oogen.OOInitializerList
-import hu.bme.aut.oogen.OOThisLiteral
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -341,7 +341,7 @@ public class «cl.name» {
 		OOFieldReferenceExpression s) '''«s.fieldOwner.generateExpression».«s.fieldName»'''
 
 	def dispatch String generateExpression(
-		OOCollectionIndex s) '''«s.collectionExpression.generateExpression»[«s.indexExpression.generateExpression»]'''
+		OOIndexing s) '''«s.collectionExpression.generateExpression»[«s.indexExpression.generateExpression»]'''
 
 	def dispatch String generateExpression(
 		OOAdditionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» += «ELSE» + «ENDIF»«s.rightSide.generateExpression»'''

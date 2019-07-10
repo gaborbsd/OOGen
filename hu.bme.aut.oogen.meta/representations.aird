@@ -1554,8 +1554,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_9vm7YA1dEeaiiolDUvxWpA" name="OOCollectionIndex" tooltipText="" outgoingEdges="_DqOfsA1eEeaiiolDUvxWpA _uPNk2J1kEemwEJftPKUw-Q _uPOL1J1kEemwEJftPKUw-Q" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="model/oogen.ecore#//OOCollectionIndex"/>
-      <semanticElements xmi:type="ecore:EClass" href="model/oogen.ecore#//OOCollectionIndex"/>
+      <target xmi:type="ecore:EClass" href="model/oogen.ecore#//OOIndexing"/>
+      <semanticElements xmi:type="ecore:EClass" href="model/oogen.ecore#//OOIndexing"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1565,8 +1565,8 @@
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_DqOfsA1eEeaiiolDUvxWpA" sourceNode="_9vm7YA1dEeaiiolDUvxWpA" targetNode="_iM1_YA1cEeaiiolDUvxWpA">
-      <target xmi:type="ecore:EClass" href="model/oogen.ecore#//OOCollectionIndex"/>
-      <semanticElements xmi:type="ecore:EClass" href="model/oogen.ecore#//OOCollectionIndex"/>
+      <target xmi:type="ecore:EClass" href="model/oogen.ecore#//OOIndexing"/>
+      <semanticElements xmi:type="ecore:EClass" href="model/oogen.ecore#//OOIndexing"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_DqPGwA1eEeaiiolDUvxWpA" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_DqPGwQ1eEeaiiolDUvxWpA" showIcon="false">
@@ -1932,8 +1932,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_uPNk2J1kEemwEJftPKUw-Q" name="[1..1] indexExpression" sourceNode="_9vm7YA1dEeaiiolDUvxWpA" targetNode="_iM1_YA1cEeaiiolDUvxWpA">
-      <target xmi:type="ecore:EReference" href="model/oogen.ecore#//OOCollectionIndex/indexExpression"/>
-      <semanticElements xmi:type="ecore:EReference" href="model/oogen.ecore#//OOCollectionIndex/indexExpression"/>
+      <target xmi:type="ecore:EReference" href="model/oogen.ecore#//OOIndexing/indexExpression"/>
+      <semanticElements xmi:type="ecore:EReference" href="model/oogen.ecore#//OOIndexing/indexExpression"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_uPNk2Z1kEemwEJftPKUw-Q" description="_Yn03cA0QEeaiiolDUvxWpA" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_uPOL0J1kEemwEJftPKUw-Q" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -1946,8 +1946,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_uPOL1J1kEemwEJftPKUw-Q" name="[1..1] collectionExpression" sourceNode="_9vm7YA1dEeaiiolDUvxWpA" targetNode="_iM1_YA1cEeaiiolDUvxWpA">
-      <target xmi:type="ecore:EReference" href="model/oogen.ecore#//OOCollectionIndex/collectionExpression"/>
-      <semanticElements xmi:type="ecore:EReference" href="model/oogen.ecore#//OOCollectionIndex/collectionExpression"/>
+      <target xmi:type="ecore:EReference" href="model/oogen.ecore#//OOIndexing/collectionExpression"/>
+      <semanticElements xmi:type="ecore:EReference" href="model/oogen.ecore#//OOIndexing/collectionExpression"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_uPOL1Z1kEemwEJftPKUw-Q" description="_Yn03cA0QEeaiiolDUvxWpA" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_uPOL151kEemwEJftPKUw-Q" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -3855,9 +3855,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_dLb0gIGbEeaJC4tz-nsOCQ" name="OOCollectionIndex" tooltipText="" outgoingEdges="_dMIYE4GbEeaJC4tz-nsOCQ _Gp59op1bEemwEJftPKUw-Q _eaAVzp1bEemwEJftPKUw-Q" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="model/oogen.ecore#//OOCollectionIndex"/>
-      <semanticElements xmi:type="ecore:EClass" href="model/oogen.ecore#//OOCollectionIndex"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_dLb0gIGbEeaJC4tz-nsOCQ" name="OOIndexing" tooltipText="" outgoingEdges="_dMIYE4GbEeaJC4tz-nsOCQ _Gp59op1bEemwEJftPKUw-Q _eaAVzp1bEemwEJftPKUw-Q" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="model/oogen.ecore#//OOIndexing"/>
+      <semanticElements xmi:type="ecore:EClass" href="model/oogen.ecore#//OOIndexing"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -4015,8 +4015,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_dMIYE4GbEeaJC4tz-nsOCQ" sourceNode="_dLb0gIGbEeaJC4tz-nsOCQ" targetNode="_dLeQwIGbEeaJC4tz-nsOCQ">
-      <target xmi:type="ecore:EClass" href="model/oogen.ecore#//OOCollectionIndex"/>
-      <semanticElements xmi:type="ecore:EClass" href="model/oogen.ecore#//OOCollectionIndex"/>
+      <target xmi:type="ecore:EClass" href="model/oogen.ecore#//OOIndexing"/>
+      <semanticElements xmi:type="ecore:EClass" href="model/oogen.ecore#//OOIndexing"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_EJAHEJ1bEemwEJftPKUw-Q" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_EJAHEZ1bEemwEJftPKUw-Q" showIcon="false">
@@ -5440,8 +5440,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Gp59op1bEemwEJftPKUw-Q" name="[1..1] indexExpression" sourceNode="_dLb0gIGbEeaJC4tz-nsOCQ" targetNode="_dLeQwIGbEeaJC4tz-nsOCQ">
-      <target xmi:type="ecore:EReference" href="model/oogen.ecore#//OOCollectionIndex/indexExpression"/>
-      <semanticElements xmi:type="ecore:EReference" href="model/oogen.ecore#//OOCollectionIndex/indexExpression"/>
+      <target xmi:type="ecore:EReference" href="model/oogen.ecore#//OOIndexing/indexExpression"/>
+      <semanticElements xmi:type="ecore:EReference" href="model/oogen.ecore#//OOIndexing/indexExpression"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_h3tysJ1bEemwEJftPKUw-Q" description="_dL9Y8IGbEeaJC4tz-nsOCQ" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_h3tysp1bEemwEJftPKUw-Q" showIcon="false">
           <labelFormat>bold</labelFormat>
@@ -5451,8 +5451,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_eaAVzp1bEemwEJftPKUw-Q" name="[1..1] collectionExpression" sourceNode="_dLb0gIGbEeaJC4tz-nsOCQ" targetNode="_dLeQwIGbEeaJC4tz-nsOCQ">
-      <target xmi:type="ecore:EReference" href="model/oogen.ecore#//OOCollectionIndex/collectionExpression"/>
-      <semanticElements xmi:type="ecore:EReference" href="model/oogen.ecore#//OOCollectionIndex/collectionExpression"/>
+      <target xmi:type="ecore:EReference" href="model/oogen.ecore#//OOIndexing/collectionExpression"/>
+      <semanticElements xmi:type="ecore:EReference" href="model/oogen.ecore#//OOIndexing/collectionExpression"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_id3Mwp1bEemwEJftPKUw-Q" description="_dL9Y8IGbEeaJC4tz-nsOCQ" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_id3MxJ1bEemwEJftPKUw-Q" showIcon="false">
           <labelFormat>bold</labelFormat>
