@@ -298,4 +298,5 @@
         lowerBound="1" upperBound="-1" eType="#//OOExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOThisLiteral" eSuperTypes="#//OOExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OONullLiteral" eSuperTypes="#//OOExpression"/>
 </ecore:EPackage>

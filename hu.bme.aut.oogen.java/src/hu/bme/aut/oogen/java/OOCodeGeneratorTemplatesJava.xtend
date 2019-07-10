@@ -73,6 +73,7 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
+import hu.bme.aut.oogen.OONullLiteral
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -368,6 +369,8 @@ public class «cl.name» {
 		OORootExpression s) '''Math.pow(«s.leftSide.generateExpression», 1.0 / «s.rightSide.generateExpression»)'''
 
 	def dispatch String generateExpression(OOLogicalLiteral s) '''«IF s.value»true«ELSE»false«ENDIF»'''
+	
+	def dispatch String generateExpression(OONullLiteral s) '''null'''
 
 	def dispatch String generateExpression(
 		OOAndExpression s) '''«s.leftSide.generateExpression» && «s.rightSide.generateExpression»'''
