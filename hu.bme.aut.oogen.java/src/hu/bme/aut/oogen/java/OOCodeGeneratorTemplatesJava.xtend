@@ -101,11 +101,15 @@ public class «cl.name» {
 	'''
 
 	def String generate(OOMember m) '''
-«m.visibility.generate»«m.generateTransient» «m.type.generate» «m.name»«m.generateInit»;
+«m.visibility.generate»«m.generateStatic»«m.generateTransient» «m.type.generate» «m.name»«m.generateInit»;
 '''
 
 	def String generateTransient(OOMember m) {
 		if(m.transient) " transient" else ""
+	}
+	
+	def String generateStatic(OOMember m) {
+		if (m.static) " static" else ""
 	}
 
 	def String generate(OOVisibility v) {
@@ -301,7 +305,7 @@ public class «cl.name» {
 
 	def dispatch String generateExpression(OOExpression s) ''''''
 	
-	def dispatch String generateExpression(OOFunctionCallExpression s) '''«s.ownerExpression.generateExpression».«s.functionName»(«FOR pe : s.argumentExpressions»«pe.generateExpression»«IF s.argumentExpressions.indexOf(pe) !== s.argumentExpressions.size - 1», «ENDIF»«ENDFOR») '''
+	def dispatch String generateExpression(OOFunctionCallExpression s) '''«s.ownerExpression.generateExpression».«s.functionName»(«FOR pe : s.argumentExpressions»«pe.generateExpression»«IF s.argumentExpressions.indexOf(pe) !== s.argumentExpressions.size - 1», «ENDIF»«ENDFOR»)'''
 
 	def dispatch String generateExpression(
 		OOInitializerList s) '''{«FOR ie : s.initializerExpressions»«ie.generateExpression»«IF s.initializerExpressions.indexOf(ie) !== s.initializerExpressions.size - 1», «ENDIF»«ENDFOR»}'''
@@ -339,7 +343,7 @@ public class «cl.name» {
 	def dispatch String generateExpression(
 		OOAssignmentExpression s) '''«s.leftSide.generateExpression» = «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(OOVariableReferenceExpression s) '''«s.variable.generateReference»'''
+	def dispatch String generateExpression(OOVariableReferenceExpression s) '''«s.variable.name»'''
 
 	def dispatch String generateExpression(
 		OOFieldReferenceExpression s) '''«s.fieldOwner.generateExpression».«s.fieldName»'''
@@ -424,8 +428,4 @@ public class «cl.name» {
 
 	def dispatch String generateExpression(
 		OONew s) '''new «s.type.generate»(«FOR v : s.constructorParameters SEPARATOR ', '»«v.name»«ENDFOR»)'''
-
-	def dispatch String generateReference(OOVariable v) '''«v.name»'''
-
-	def dispatch String generateReference(OOMember v) '''this.«v.name»'''
 }
