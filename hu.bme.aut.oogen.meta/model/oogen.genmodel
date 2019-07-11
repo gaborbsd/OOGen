@@ -231,7 +231,7 @@
     <genClasses ecoreClass="oogen.ecore#//OOThisLiteral"/>
     <genClasses ecoreClass="oogen.ecore#//OONullLiteral"/>
     <genClasses ecoreClass="oogen.ecore#//OOFunctionCallExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFunctionCallExpression/parameterExpressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFunctionCallExpression/argumentExpressions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOFunctionCallExpression/functionName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFunctionCallExpression/ownerExpression"/>
     </genClasses>
