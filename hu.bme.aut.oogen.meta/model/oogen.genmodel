@@ -235,5 +235,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOFunctionCallExpression/functionName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOFunctionCallExpression/ownerExpression"/>
     </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOStringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOStringLiteral/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -75,6 +75,7 @@ import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
 import hu.bme.aut.oogen.OONullLiteral
 import hu.bme.aut.oogen.OOFunctionCallExpression
+import hu.bme.aut.oogen.OOStringLiteral
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -321,6 +322,8 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOBoolLiteral s) '''«s.value»'''
 	
 	def dispatch String generateExpression(OOThisLiteral s) '''this'''
+	
+	def dispatch String generateExpression(OOStringLiteral s) '''«s.value»'''
 
 	def dispatch String generateExpression(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
 
