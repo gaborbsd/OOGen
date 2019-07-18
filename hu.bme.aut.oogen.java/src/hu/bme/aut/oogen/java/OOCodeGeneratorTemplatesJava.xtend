@@ -96,6 +96,10 @@ public class «cl.name» {
 	«m.generate»
 	«ENDFOR»
 	
+	«FOR c : cl.constructors»
+	«c.generate»
+	«ENDFOR»
+	
 	«FOR m : cl.methods.filter[m|m.languages.empty || m.languages.contains(OOLanguage.JAVA)]»
 	«m.generate»
 	«ENDFOR»
@@ -202,7 +206,7 @@ public class «cl.name» {
 		}
 	}
 	
-	def String generate(OOConstructor c) '''«c.visibility» «c.className»(«c.parameters.generateMethodParams») {
+	def String generate(OOConstructor c) '''«c.visibility.generate» «c.className»(«c.parameters.generateMethodParams») {
 	«FOR s : c.statements»
 		«s.generateStatement»
 	«ENDFOR»		
