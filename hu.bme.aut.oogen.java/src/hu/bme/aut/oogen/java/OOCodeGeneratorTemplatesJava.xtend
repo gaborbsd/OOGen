@@ -17,6 +17,7 @@ import hu.bme.aut.oogen.OOCase
 import hu.bme.aut.oogen.OOClass
 import hu.bme.aut.oogen.OOCollectionType
 import hu.bme.aut.oogen.OOCompoundStatement
+import hu.bme.aut.oogen.OOConstructor
 import hu.bme.aut.oogen.OOContinue
 import hu.bme.aut.oogen.OODefault
 import hu.bme.aut.oogen.OODivisionExpression
@@ -29,6 +30,7 @@ import hu.bme.aut.oogen.OOFieldReferenceExpression
 import hu.bme.aut.oogen.OOFloatLiteral
 import hu.bme.aut.oogen.OOFor
 import hu.bme.aut.oogen.OOForEach
+import hu.bme.aut.oogen.OOFunctionCallExpression
 import hu.bme.aut.oogen.OOGreaterEqualsExpression
 import hu.bme.aut.oogen.OOGreaterThanExpression
 import hu.bme.aut.oogen.OOIf
@@ -50,6 +52,7 @@ import hu.bme.aut.oogen.OOMultiplicationExpression
 import hu.bme.aut.oogen.OONew
 import hu.bme.aut.oogen.OONotEqualsExpression
 import hu.bme.aut.oogen.OONotExpression
+import hu.bme.aut.oogen.OONullLiteral
 import hu.bme.aut.oogen.OOOrExpression
 import hu.bme.aut.oogen.OOPlusExpression
 import hu.bme.aut.oogen.OOPostfixDecrementExpression
@@ -60,6 +63,7 @@ import hu.bme.aut.oogen.OOPrefixIncrementExpression
 import hu.bme.aut.oogen.OOReturn
 import hu.bme.aut.oogen.OORootExpression
 import hu.bme.aut.oogen.OOStatement
+import hu.bme.aut.oogen.OOStringLiteral
 import hu.bme.aut.oogen.OOSubtractionExpression
 import hu.bme.aut.oogen.OOSwitch
 import hu.bme.aut.oogen.OOTernaryOperator
@@ -73,9 +77,6 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
-import hu.bme.aut.oogen.OONullLiteral
-import hu.bme.aut.oogen.OOFunctionCallExpression
-import hu.bme.aut.oogen.OOStringLiteral
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -200,6 +201,12 @@ public class «cl.name» {
 				"Boolean"
 		}
 	}
+	
+	def String generate(OOConstructor c) '''«c.visibility» «c.className»(«c.parameters.generateMethodParams») {
+	«FOR s : c.statements»
+		«s.generateStatement»
+	«ENDFOR»		
+}'''
 
 	def String generate(OOMethod m) '''
 «m.visibility.generate»«m.generateStatic» «m.returnType.generateReturnType» «m.name»(«m.parameters.generateMethodParams») {

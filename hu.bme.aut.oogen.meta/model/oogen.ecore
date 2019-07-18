@@ -20,6 +20,8 @@
         upperBound="-1" eType="#//OOLanguage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
         eType="#//OOMethod" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constructors" lowerBound="1"
+        upperBound="-1" eType="#//OOConstructor" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOMember" eSuperTypes="#//OOVariable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
@@ -309,5 +311,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOStringLiteral" eSuperTypes="#//OOExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOConstructor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" lowerBound="1"
+        eType="#//OOVisibility"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//OOVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//OOStatement" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

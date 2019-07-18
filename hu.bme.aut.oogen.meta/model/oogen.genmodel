@@ -43,6 +43,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/keep"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/languages"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/methods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/constructors"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOMember">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOMember/visibility"/>
@@ -237,6 +238,12 @@
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOStringLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOStringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOConstructor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOConstructor/visibility"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOConstructor/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOConstructor/className"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOConstructor/statements"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
