@@ -31,7 +31,6 @@ import hu.bme.aut.oogen.OOLongLiteral
 import hu.bme.aut.oogen.OOMember
 import hu.bme.aut.oogen.OOMethod
 import hu.bme.aut.oogen.OOMultiplicationExpression
-import hu.bme.aut.oogen.OONew
 import hu.bme.aut.oogen.OOPowerExpression
 import hu.bme.aut.oogen.OOReturn
 import hu.bme.aut.oogen.OORootExpression
@@ -239,7 +238,7 @@ class «cl.name» {
 		«ENDFOR»
 	}'''
 	
-	def dispatch String generateStatement(OONew s) '''new «s.type.generate»(«FOR v : s.constructorParameters SEPARATOR ', '»«v.name»«ENDFOR»)'''
+	// def dispatch String generateStatement(OONew s) '''new «s.type.generate»(«FOR v : s.constructorParameters SEPARATOR ', '»«v.name»«ENDFOR»)'''
 	
 	def dispatch String generateStatement(OOExpression s) '''«s.generateExpression»;'''
 	
@@ -293,7 +292,7 @@ class «cl.name» {
 	
 	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate»)(«s.expression.generateExpression»)'''
 	
-	def dispatch String generateExpression(OONew s) '''new «s.type.generate»(«FOR v : s.constructorParameters SEPARATOR ', '»«v.name»«ENDFOR»)'''
+	//def dispatch String generateExpression(OONew s) '''new «s.type.generate»(«FOR v : s.constructorParameters SEPARATOR ', '»«v.name»«ENDFOR»)'''
 	
 	def dispatch String generateReference(OOVariable v) '''«v.name»'''
 	

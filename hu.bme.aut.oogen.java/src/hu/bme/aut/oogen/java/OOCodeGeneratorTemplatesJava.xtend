@@ -49,7 +49,6 @@ import hu.bme.aut.oogen.OOMethod
 import hu.bme.aut.oogen.OOMinusExpression
 import hu.bme.aut.oogen.OOModuloExpression
 import hu.bme.aut.oogen.OOMultiplicationExpression
-import hu.bme.aut.oogen.OONew
 import hu.bme.aut.oogen.OONotEqualsExpression
 import hu.bme.aut.oogen.OONotExpression
 import hu.bme.aut.oogen.OONullLiteral
@@ -77,6 +76,8 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
+import hu.bme.aut.oogen.OONewClass
+import hu.bme.aut.oogen.OONewArray
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -141,7 +142,12 @@ public class «cl.name» {
 	def String generate(OOType t) {
 		var arrayNotation = ""
 		for (var i = 0; i < t.arrayDimensions; i++) {
-			arrayNotation += "[]"
+			arrayNotation += "["
+			/*val sizeExpression = t.arraySizeExpressions.get(i);
+			if (!(sizeExpression instanceof OONullLiteral)) {
+				arrayNotation += '''«sizeExpression.generateExpression»'''
+			}*/
+			arrayNotation += "]";
 		}
 
 		val baseType = if(t.collectionType == OOCollectionType.NONE) t.baseTypeNormal else t.baseTypeObject
@@ -229,6 +235,8 @@ public class «cl.name» {
 
 	def generateMethodParams(
 		List<OOVariable> vars) '''«FOR v : vars SEPARATOR ', '»«v.type.generate» «v.name»«ENDFOR»'''
+		
+	def generateExpressionListParams(List<OOExpression> expressions) '''«FOR e : expressions SEPARATOR ', '»«e.generateExpression»«ENDFOR»'''
 
 	def dispatch String generateStatement(OOStatement s) ''''''
 
@@ -320,7 +328,7 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOFunctionCallExpression s) '''«IF s.ownerExpression !== null»«s.ownerExpression.generateExpression».«ENDIF»«s.functionName»(«FOR pe : s.argumentExpressions»«pe.generateExpression»«IF s.argumentExpressions.indexOf(pe) !== s.argumentExpressions.size - 1», «ENDIF»«ENDFOR»)'''
 
 	def dispatch String generateExpression(
-		OOInitializerList s) '''{«FOR ie : s.initializerExpressions»«ie.generateExpression»«IF s.initializerExpressions.indexOf(ie) !== s.initializerExpressions.size - 1», «ENDIF»«ENDFOR»}'''
+		OOInitializerList s) '''{«s.initializerExpressions.generateExpressionListParams»}'''
 
 	def dispatch String generateExpression(OOFloatLiteral s) '''«s.value»'''
 
@@ -440,6 +448,7 @@ public class «cl.name» {
 
 	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate»)(«s.expression.generateExpression»)'''
 
-	def dispatch String generateExpression(
-		OONew s) '''new «s.type.generate»(«FOR v : s.constructorParameters SEPARATOR ', '»«v.name»«ENDFOR»)'''
+	def dispatch String generateExpression(OONewClass s) '''new «s.className»(«s.constructorParameterExpressions.generateExpressionListParams»)'''
+	
+	def dispatch String generateExpression(OONewArray s) '''new «s.arrayType.generate»«s.initializerList.generateExpression»'''
 }
