@@ -49,6 +49,8 @@ import hu.bme.aut.oogen.OOMethod
 import hu.bme.aut.oogen.OOMinusExpression
 import hu.bme.aut.oogen.OOModuloExpression
 import hu.bme.aut.oogen.OOMultiplicationExpression
+import hu.bme.aut.oogen.OONewArray
+import hu.bme.aut.oogen.OONewClass
 import hu.bme.aut.oogen.OONotEqualsExpression
 import hu.bme.aut.oogen.OONotExpression
 import hu.bme.aut.oogen.OONullLiteral
@@ -76,8 +78,6 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
-import hu.bme.aut.oogen.OONewClass
-import hu.bme.aut.oogen.OONewArray
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -343,7 +343,7 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOThisLiteral s) '''this'''
 	
 	def dispatch String generateExpression(OOStringLiteral s) '''«s.value»'''
-
+	
 	def dispatch String generateExpression(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
 
 	def dispatch String generateExpression(OOPostfixDecrementExpression s) '''«s.operand.generateExpression»--'''
@@ -446,7 +446,7 @@ public class «cl.name» {
 	def dispatch String generateExpression(
 		OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.JAVA]»«if ( sn !== null ) sn.code»'''
 
-	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate»)(«s.expression.generateExpression»)'''
+	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate»)«s.expression.generateExpression»'''
 
 	def dispatch String generateExpression(OONewClass s) '''new «s.className»(«s.constructorParameterExpressions.generateExpressionListParams»)'''
 	
