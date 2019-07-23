@@ -322,7 +322,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//OOStatement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OONewArray">
+  <eClassifiers xsi:type="ecore:EClass" name="OONewArray" eSuperTypes="#//OOExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="arrayType" lowerBound="1"
         eType="#//OOType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initializerList" lowerBound="1"
