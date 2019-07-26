@@ -325,7 +325,7 @@ public class «cl.name» {
 
 	def dispatch String generateExpression(OOExpression s) ''''''
 	
-	def dispatch String generateExpression(OOFunctionCallExpression s) '''«IF s.ownerExpression !== null»«s.ownerExpression.generateExpression».«ENDIF»«s.functionName»(«FOR pe : s.argumentExpressions»«pe.generateExpression»«IF s.argumentExpressions.indexOf(pe) !== s.argumentExpressions.size - 1», «ENDIF»«ENDFOR»)'''
+	def dispatch String generateExpression(OOFunctionCallExpression s) '''«IF s.ownerExpression !== null»«s.ownerExpression.generateExpression».«ENDIF»«s.functionName»(«s.argumentExpressions.generateExpressionListParams»)'''
 
 	def dispatch String generateExpression(
 		OOInitializerList s) '''{«s.initializerExpressions.generateExpressionListParams»}'''
