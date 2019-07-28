@@ -325,7 +325,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="OONewArray" eSuperTypes="#//OOExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="arrayType" lowerBound="1"
         eType="#//OOType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initializerList" lowerBound="1"
-        eType="#//OOInitializerList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initializerList" eType="#//OOInitializerList"/>
   </eClassifiers>
 </ecore:EPackage>

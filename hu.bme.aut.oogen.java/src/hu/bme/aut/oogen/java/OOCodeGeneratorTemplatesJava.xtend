@@ -108,7 +108,7 @@ public class «cl.name» {
 	'''
 
 	def String generate(OOMember m) '''
-«m.visibility.generate»«m.generateStatic»«m.generateTransient» «m.type.generate» «m.name»«m.generateInit»;
+«m.visibility.generate»«m.generateStatic»«m.generateTransient» «m.type.generate(false)» «m.name»«m.generateInit»;
 '''
 
 	def String generateTransient(OOMember m) {
@@ -139,14 +139,18 @@ public class «cl.name» {
 		(exp instanceof OOLanguageSpecificExpression &&
 			!((exp as OOLanguageSpecificExpression).snippets.filter[s|s.lang == OOLanguage.JAVA].empty))» = «m.initializerExpression.generateExpression»«ENDIF»«ENDIF»'''
 
-	def String generate(OOType t) {
+	def String generate(OOType t, boolean shouldGenerateSizeExpressions) {
 		var arrayNotation = ""
 		for (var i = 0; i < t.arrayDimensions; i++) {
 			arrayNotation += "["
-			/*val sizeExpression = t.arraySizeExpressions.get(i);
-			if (!(sizeExpression instanceof OONullLiteral)) {
-				arrayNotation += '''«sizeExpression.generateExpression»'''
-			}*/
+			
+			if (shouldGenerateSizeExpressions) {
+				val sizeExpression = t.arraySizeExpressions.get(i);
+				if (!(sizeExpression instanceof OONullLiteral)) {
+					arrayNotation += '''«sizeExpression.generateExpression»'''
+				}
+			}
+			
 			arrayNotation += "]";
 		}
 
@@ -230,11 +234,11 @@ public class «cl.name» {
 	}
 
 	def String generateReturnType(OOType t) {
-		return if(t === null) "void" else t.generate
+		return if(t === null) "void" else t.generate(false)
 	}
 
 	def generateMethodParams(
-		List<OOVariable> vars) '''«FOR v : vars SEPARATOR ', '»«v.type.generate» «v.name»«ENDFOR»'''
+		List<OOVariable> vars) '''«FOR v : vars SEPARATOR ', '»«v.type.generate(false)» «v.name»«ENDFOR»'''
 		
 	def generateExpressionListParams(List<OOExpression> expressions) '''«FOR e : expressions SEPARATOR ', '»«e.generateExpression»«ENDFOR»'''
 
@@ -248,7 +252,7 @@ public class «cl.name» {
 	}'''
 
 	def dispatch String generateStatement(
-		OOVariable s) '''«s.type.generate» «s.name»«IF (s.initializerExpression !== null) » = «s.initializerExpression.generateExpression»«ENDIF»;'''
+		OOVariable s) '''«s.type.generate(false)» «s.name»«IF (s.initializerExpression !== null) » = «s.initializerExpression.generateExpression»«ENDIF»;'''
 
 	def dispatch String generateStatement(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
 
@@ -446,9 +450,9 @@ public class «cl.name» {
 	def dispatch String generateExpression(
 		OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.JAVA]»«if ( sn !== null ) sn.code»'''
 
-	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate»)«s.expression.generateExpression»'''
+	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate(false)»)«s.expression.generateExpression»'''
 
 	def dispatch String generateExpression(OONewClass s) '''new «s.className»(«s.constructorParameterExpressions.generateExpressionListParams»)'''
 	
-	def dispatch String generateExpression(OONewArray s) '''new «s.arrayType.generate»«s.initializerList.generateExpression»'''
+	def dispatch String generateExpression(OONewArray s) '''new «s.arrayType.generate(true)»«s.initializerList?.generateExpression»'''
 }
