@@ -78,6 +78,8 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
+import hu.bme.aut.oogen.OOComment
+import hu.bme.aut.oogen.OOCommentHolder
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -455,4 +457,8 @@ public class «cl.name» {
 	def dispatch String generateExpression(OONewClass s) '''new «s.className»(«s.constructorParameterExpressions.generateExpressionListParams»)'''
 	
 	def dispatch String generateExpression(OONewArray s) '''new «s.arrayType.generate(true)»«s.initializerList?.generateExpression»'''
+
+	def String generateComment(OOComment s) '''«IF !s.isIsBlockComment»//«s.text»«ELSE»/* «s.text» */«ENDIF»'''
+	
+	//TODO: generateCommentHolder
 }
