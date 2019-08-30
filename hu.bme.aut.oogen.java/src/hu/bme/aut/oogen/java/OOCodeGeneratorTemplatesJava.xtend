@@ -16,6 +16,7 @@ import hu.bme.aut.oogen.OOBreak
 import hu.bme.aut.oogen.OOCase
 import hu.bme.aut.oogen.OOClass
 import hu.bme.aut.oogen.OOCollectionType
+import hu.bme.aut.oogen.OOComment
 import hu.bme.aut.oogen.OOCompoundStatement
 import hu.bme.aut.oogen.OOConstructor
 import hu.bme.aut.oogen.OOContinue
@@ -78,8 +79,6 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
-import hu.bme.aut.oogen.OOComment
-import hu.bme.aut.oogen.OOCommentHolder
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 

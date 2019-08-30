@@ -32,10 +32,6 @@
       <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOLanguage/JAVA"/>
       <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOLanguage/CPP"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="oogen.ecore#//OOCommentPosition">
-      <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOCommentPosition/BEFORE"/>
-      <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOCommentPosition/AFTER"/>
-    </genEnums>
     <genClasses ecoreClass="oogen.ecore#//OOPackage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOPackage/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOPackage/classes"/>
@@ -258,8 +254,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOComment/isBlockComment"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOCommentHolder">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCommentHolder/comment"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOCommentHolder/commentPosition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCommentHolder/beforeComment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCommentHolder/afterComment"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

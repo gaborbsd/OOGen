@@ -334,12 +334,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOCommentHolder">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comment" eType="#//OOComment"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentPosition" eType="#//OOCommentPosition"
-        defaultValueLiteral=""/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="OOCommentPosition">
-    <eLiterals name="BEFORE"/>
-    <eLiterals name="AFTER" value="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="beforeComment" eType="#//OOComment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="afterComment" eType="#//OOComment"/>
   </eClassifiers>
 </ecore:EPackage>
