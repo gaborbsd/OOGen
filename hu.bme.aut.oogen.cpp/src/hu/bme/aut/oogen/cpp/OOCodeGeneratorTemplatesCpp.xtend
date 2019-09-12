@@ -44,6 +44,7 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
+import hu.bme.aut.oogen.OOEnumeration
 
 class OOCodeGeneratorTemplatesCpp implements OOCodeGeneratorTemplates {
 	
@@ -54,6 +55,9 @@ class OOCodeGeneratorTemplatesCpp implements OOCodeGeneratorTemplates {
 			instance = new OOCodeGeneratorTemplatesCpp();
 		return instance;
 	}
+	
+	override String generate(OOEnumeration e) '''
+	'''
 	
 	override String generate(OOClass cl) '''	
 namespace «cl.package.name»;

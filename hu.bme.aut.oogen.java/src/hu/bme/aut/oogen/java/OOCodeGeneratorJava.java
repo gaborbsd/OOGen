@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import hu.bme.aut.oogen.OOClass;
+import hu.bme.aut.oogen.OOEnumeration;
 import hu.bme.aut.oogen.OOLanguage;
 import hu.bme.aut.oogen.OOModel;
 import hu.bme.aut.oogen.OOPackage;
@@ -40,6 +41,14 @@ public class OOCodeGeneratorJava implements OOCodeGenerator {
 
 		String classDef = generator.generate(cl);
 		files.add(new GeneratedFile(classPath, classDef, cl.isKeep()));
+	    }
+	    
+	    for (OOEnumeration e : pkg.getEnums().stream().collect(Collectors.toList())) {
+		Path classRelPath = Paths.get(e.getName() + EXT);
+		Path classPath = pkgPath.resolve(classRelPath);
+		
+		String classDef = generator.generate(e);
+		files.add(new GeneratedFile(classPath, classDef));
 	    }
 	}
 	return files;

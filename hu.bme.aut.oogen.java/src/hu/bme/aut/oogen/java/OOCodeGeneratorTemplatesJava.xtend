@@ -79,6 +79,7 @@ import hu.bme.aut.oogen.OOVisibility
 import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
+import hu.bme.aut.oogen.OOEnumeration
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -89,6 +90,16 @@ class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 			instance = new OOCodeGeneratorTemplatesJava();
 		return instance;
 	}
+	
+	override String generate(OOEnumeration e) '''
+package «e.package.name»;
+
+public enum «e.name» {
+	«FOR option : e.options SEPARATOR ', '»
+		«option»
+	«ENDFOR»
+}
+	'''
 
 	override String generate(OOClass cl) '''
 package «cl.package.name»;

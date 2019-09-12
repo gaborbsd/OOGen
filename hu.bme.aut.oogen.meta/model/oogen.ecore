@@ -6,6 +6,8 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
         eType="#//OOClass" containment="true" eOpposite="#//OOClass/package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enums" upperBound="-1"
+        eType="#//OOEnumeration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOClass" eSuperTypes="#//OOCommentHolder">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
@@ -336,5 +338,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="OOCommentHolder">
     <eStructuralFeatures xsi:type="ecore:EReference" name="beforeComment" eType="#//OOComment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="afterComment" eType="#//OOComment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOEnumeration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="options" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//OOPackage"/>
   </eClassifiers>
 </ecore:EPackage>
