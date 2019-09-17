@@ -254,9 +254,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOComment/text"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOComment/isBlockComment"/>
     </genClasses>
-    <genClasses ecoreClass="oogen.ecore#//OOCommentHolder">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCommentHolder/beforeComment"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCommentHolder/afterComment"/>
+    <genClasses ecoreClass="oogen.ecore#//OOCommentOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCommentOwner/beforeComments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCommentOwner/afterComments"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOEnumeration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOEnumeration/name"/>

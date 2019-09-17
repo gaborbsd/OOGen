@@ -9,7 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="enums" upperBound="-1"
         eType="#//OOEnumeration" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOClass" eSuperTypes="#//OOCommentHolder">
+  <eClassifiers xsi:type="ecore:EClass" name="OOClass" eSuperTypes="#//OOCommentOwner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
@@ -70,7 +70,7 @@
     <eLiterals name="PROTECTED" value="2"/>
     <eLiterals name="PUBLIC" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOMethod" eSuperTypes="#//OOCommentHolder">
+  <eClassifiers xsi:type="ecore:EClass" name="OOMethod" eSuperTypes="#//OOCommentOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//OOVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//OOType"
@@ -101,7 +101,7 @@
     <eLiterals name="SET" value="1"/>
     <eLiterals name="LIST" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOStatement" eSuperTypes="#//OOCommentHolder"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOStatement" eSuperTypes="#//OOCommentOwner"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOExpression" eSuperTypes="#//OOStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="OOReturn" eSuperTypes="#//OOStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnedExpresssion" eType="#//OOExpression"
@@ -335,11 +335,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBlockComment" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOCommentHolder">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="beforeComment" eType="#//OOComment"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="afterComment" eType="#//OOComment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OOCommentOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="beforeComments" upperBound="-1"
+        eType="#//OOComment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="afterComments" upperBound="-1"
+        eType="#//OOComment" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OOEnumeration">
+  <eClassifiers xsi:type="ecore:EClass" name="OOEnumeration" eSuperTypes="#//OOCommentOwner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="options" lowerBound="1"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
