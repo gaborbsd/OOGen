@@ -94,16 +94,25 @@ class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 	override String generate(OOEnumeration e) '''
 package «e.package.name»;
 
+«FOR c : e.beforeComments»
+«c.generateComment»
+«ENDFOR»	
 public enum «e.name» {
 	«FOR option : e.options SEPARATOR ', '»
 		«option»
 	«ENDFOR»
 }
+«FOR c : e.beforeComments»
+«c.generateComment»
+«ENDFOR»	
 	'''
 
 	override String generate(OOClass cl) '''
 package «cl.package.name»;
-	
+
+«FOR c : cl.beforeComments»
+«c.generateComment»
+«ENDFOR»	
 public class «cl.name» {
 	«FOR m : cl.members.filter[m|m.languages.empty || m.languages.contains(OOLanguage.JAVA)]»
 	«m.generate»
@@ -117,6 +126,9 @@ public class «cl.name» {
 	«m.generate»
 	«ENDFOR»
 }
+«FOR c : cl.afterComments»
+«c.generateComment»
+«ENDFOR»	
 	'''
 
 	def String generate(OOMember m) '''
@@ -235,11 +247,18 @@ public class «cl.name» {
 }'''
 
 	def String generate(OOMethod m) '''
+	«FOR c : m.beforeComments»
+	«c.generateComment»
+	«ENDFOR»	
 «m.visibility.generate»«m.generateStatic» «m.returnType.generateReturnType» «m.name»(«m.parameters.generateMethodParams») {
 	«FOR s : m.statements»
 		«s.generateStatement»
 	«ENDFOR»
-}'''
+}
+«FOR c : m.afterComments»
+«c.generateComment»
+«ENDFOR»	
+'''
 
 	def String generateStatic(OOMethod m) {
 		if(m.static) " static" else ""
@@ -468,7 +487,5 @@ public class «cl.name» {
 	
 	def dispatch String generateExpression(OONewArray s) '''new «s.arrayType.generate(true)»«s.initializerList?.generateExpression»'''
 
-	def String generateComment(OOComment s) '''«IF !s.isIsBlockComment»//«s.text»«ELSE»/* «s.text» */«ENDIF»'''
-	
-	//TODO: generateCommentHolder
+	def String generateComment(OOComment s) '''«s.text»'''
 }
