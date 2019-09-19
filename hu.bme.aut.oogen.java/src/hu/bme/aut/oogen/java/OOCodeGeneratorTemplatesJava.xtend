@@ -90,7 +90,7 @@ class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 			instance = new OOCodeGeneratorTemplatesJava();
 		return instance;
 	}
-	
+
 	override String generate(OOEnumeration e) '''
 package «e.package.name»;
 
@@ -102,7 +102,7 @@ public enum «e.name» {
 		«option»
 	«ENDFOR»
 }
-«FOR c : e.beforeComments»
+«FOR c : e.afterComments»
 «c.generateComment»
 «ENDFOR»	
 	'''
@@ -138,9 +138,9 @@ public class «cl.name» {
 	def String generateTransient(OOMember m) {
 		if(m.transient) " transient" else ""
 	}
-	
+
 	def String generateStatic(OOMember m) {
-		if (m.static) " static" else ""
+		if(m.static) " static" else ""
 	}
 
 	def String generate(OOVisibility v) {
@@ -167,14 +167,14 @@ public class «cl.name» {
 		var arrayNotation = ""
 		for (var i = 0; i < t.arrayDimensions; i++) {
 			arrayNotation += "["
-			
+
 			if (shouldGenerateSizeExpressions) {
 				val sizeExpression = t.arraySizeExpressions.get(i);
 				if (!(sizeExpression instanceof OONullLiteral)) {
 					arrayNotation += '''«sizeExpression.generateExpression»'''
 				}
 			}
-			
+
 			arrayNotation += "]";
 		}
 
@@ -239,17 +239,17 @@ public class «cl.name» {
 				"Boolean"
 		}
 	}
-	
+
 	def String generate(OOConstructor c) '''«c.visibility.generate» «c.className»(«c.parameters.generateMethodParams») {
 	«FOR s : c.statements»
 		«s.generateStatement»
 	«ENDFOR»		
-}'''
+	}'''
 
 	def String generate(OOMethod m) '''
-	«FOR c : m.beforeComments»
-	«c.generateComment»
-	«ENDFOR»	
+«FOR c : m.beforeComments»
+«c.generateComment»
+«ENDFOR»	
 «m.visibility.generate»«m.generateStatic» «m.returnType.generateReturnType» «m.name»(«m.parameters.generateMethodParams») {
 	«FOR s : m.statements»
 		«s.generateStatement»
@@ -270,62 +270,71 @@ public class «cl.name» {
 
 	def generateMethodParams(
 		List<OOVariable> vars) '''«FOR v : vars SEPARATOR ', '»«v.type.generate(false)» «v.name»«ENDFOR»'''
-		
-	def generateExpressionListParams(List<OOExpression> expressions) '''«FOR e : expressions SEPARATOR ', '»«e.generateExpression»«ENDFOR»'''
 
-	def dispatch String generateStatement(OOStatement s) ''''''
+	def generateExpressionListParams(
+		List<OOExpression> expressions) '''«FOR e : expressions SEPARATOR ', '»«e.generateExpression»«ENDFOR»'''
 
-	def dispatch String generateStatement(OOCompoundStatement s) '''
+	def String generateStatement(OOStatement s) '''
+		«FOR c : s.beforeComments»
+			«c.generateComment»
+		«ENDFOR»	
+		«s.generateStatementContent»
+		«FOR c : s.afterComments»
+		«c.generateComment»
+		«ENDFOR»	
+	'''
+
+	def dispatch String generateStatementContent(OOCompoundStatement s) '''
 	{ 
 		«FOR bs : s.bodyStatements»
 			«bs.generateStatement»
 		«ENDFOR» 
 	}'''
 
-	def dispatch String generateStatement(
+	def dispatch String generateStatementContent(
 		OOVariable s) '''«s.type.generate(false)» «s.name»«IF (s.initializerExpression !== null) » = «s.initializerExpression.generateExpression»«ENDIF»;'''
 
-	def dispatch String generateStatement(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
+	def dispatch String generateStatementContent(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
 
-	def dispatch String generateStatement(OOEmptyStatement s) ''';'''
+	def dispatch String generateStatementContent(OOEmptyStatement s) ''';'''
 
-	def dispatch String generateStatement(OOIf s) '''if («s.condition.generateExpression») {
+	def dispatch String generateStatementContent(OOIf s) '''if («s.condition.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
 }«IF !s.elseStatements.empty» else {
-	«FOR es : s.elseStatements»
-		«es.generateStatement»
-	«ENDFOR»
+		«FOR es : s.elseStatements»
+			«es.generateStatement»
+		«ENDFOR»
 }«ENDIF» «IF s.elseIf !== null» else «s.elseIf.generateStatement»«ENDIF»
 	'''
 
-	def dispatch String generateStatement(OOWhile s) '''while («s.condition.generateExpression») {
+	def dispatch String generateStatementContent(OOWhile s) '''while («s.condition.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-}'''
+	}'''
 
-	def dispatch String generateStatement(OODoWhile s) '''do {
+	def dispatch String generateStatementContent(OODoWhile s) '''do {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-} while («s.condition.generateExpression»);'''
+	} while («s.condition.generateExpression»);'''
 
-	def dispatch String generateStatement(
+	def dispatch String generateStatementContent(
 		OOFor s) '''for («s.initStatement.generateStatement» «s.condition.generateExpression»; «s.incrementExpression.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-}'''
+	}'''
 
-	def dispatch String generateStatement(OOForEach s) '''for () {
+	def dispatch String generateStatementContent(OOForEach s) '''for () {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-}'''
+	}'''
 
-	def dispatch String generateStatement(OOSwitch s) '''switch («s.controllerExpression.generateExpression») {
+	def dispatch String generateStatementContent(OOSwitch s) '''switch («s.controllerExpression.generateExpression») {
 «FOR cs : s.caseStatements»
 		«cs.generateStatement»
 «ENDFOR»
@@ -334,33 +343,34 @@ public class «cl.name» {
 «ENDIF»
 }'''
 
-	def dispatch String generateStatement(OOCase s) '''case «s.expression.generateExpression»:
-	«FOR bs : s.bodyStatements»
-		«bs.generateStatement»
-	«ENDFOR»
+	def dispatch String generateStatementContent(OOCase s) '''case «s.expression.generateExpression»:
+		«FOR bs : s.bodyStatements»
+			«bs.generateStatement»
+		«ENDFOR»
 	'''
 
-	def dispatch String generateStatement(OODefault s) '''default:
-	«FOR bs : s.bodyStatements»
-		«bs.generateStatement»
-	«ENDFOR»
+	def dispatch String generateStatementContent(OODefault s) '''default:
+		«FOR bs : s.bodyStatements»
+			«bs.generateStatement»
+		«ENDFOR»
 	'''
 
-	def dispatch String generateStatement(OOBreak s) '''break;'''
+	def dispatch String generateStatementContent(OOBreak s) '''break;'''
 
-	def dispatch String generateStatement(OOContinue s) '''continue;'''
+	def dispatch String generateStatementContent(OOContinue s) '''continue;'''
 
-	def dispatch String generateStatement(OOVariableDeclarationList s) '''
+	def dispatch String generateStatementContent(OOVariableDeclarationList s) '''
 		«FOR vd : s.variableDeclarations»
 			«vd.generateStatement»
 		«ENDFOR»
 	'''
 
-	def dispatch String generateStatement(OOExpression s) '''«s.generateExpression»;'''
+	def dispatch String generateStatementContent(OOExpression s) '''«s.generateExpression»;'''
 
 	def dispatch String generateExpression(OOExpression s) ''''''
-	
-	def dispatch String generateExpression(OOFunctionCallExpression s) '''«IF s.ownerExpression !== null»«s.ownerExpression.generateExpression».«ENDIF»«s.functionName»(«s.argumentExpressions.generateExpressionListParams»)'''
+
+	def dispatch String generateExpression(
+		OOFunctionCallExpression s) '''«IF s.ownerExpression !== null»«s.ownerExpression.generateExpression».«ENDIF»«s.functionName»(«s.argumentExpressions.generateExpressionListParams»)'''
 
 	def dispatch String generateExpression(
 		OOInitializerList s) '''{«s.initializerExpressions.generateExpressionListParams»}'''
@@ -374,11 +384,11 @@ public class «cl.name» {
 	def dispatch String generateExpression(OOLongLiteral s) '''«s.value»'''
 
 	def dispatch String generateExpression(OOBoolLiteral s) '''«s.value»'''
-	
+
 	def dispatch String generateExpression(OOThisLiteral s) '''this'''
-	
+
 	def dispatch String generateExpression(OOStringLiteral s) '''«s.value»'''
-	
+
 	def dispatch String generateExpression(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
 
 	def dispatch String generateExpression(OOPostfixDecrementExpression s) '''«s.operand.generateExpression»--'''
@@ -433,7 +443,7 @@ public class «cl.name» {
 		OORootExpression s) '''Math.pow(«s.leftSide.generateExpression», 1.0 / «s.rightSide.generateExpression»)'''
 
 	def dispatch String generateExpression(OOLogicalLiteral s) '''«IF s.value»true«ELSE»false«ENDIF»'''
-	
+
 	def dispatch String generateExpression(OONullLiteral s) '''null'''
 
 	def dispatch String generateExpression(
@@ -481,11 +491,14 @@ public class «cl.name» {
 	def dispatch String generateExpression(
 		OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.JAVA]»«if ( sn !== null ) sn.code»'''
 
-	def dispatch String generateExpression(OOTypeCast s) '''(«s.type.generate(false)»)«s.expression.generateExpression»'''
+	def dispatch String generateExpression(
+		OOTypeCast s) '''(«s.type.generate(false)»)«s.expression.generateExpression»'''
 
-	def dispatch String generateExpression(OONewClass s) '''new «s.className»(«s.constructorParameterExpressions.generateExpressionListParams»)'''
-	
-	def dispatch String generateExpression(OONewArray s) '''new «s.arrayType.generate(true)»«s.initializerList?.generateExpression»'''
+	def dispatch String generateExpression(
+		OONewClass s) '''new «s.className»(«s.constructorParameterExpressions.generateExpressionListParams»)'''
+
+	def dispatch String generateExpression(
+		OONewArray s) '''new «s.arrayType.generate(true)»«s.initializerList?.generateExpression»'''
 
 	def String generateComment(OOComment s) '''«s.text»'''
 }
