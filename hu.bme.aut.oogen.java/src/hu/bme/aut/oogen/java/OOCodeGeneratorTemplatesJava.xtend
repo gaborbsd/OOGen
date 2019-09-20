@@ -217,7 +217,7 @@ public class «cl.name» {
 			case OOBaseType.STRING:
 				"String"
 			case OOBaseType.OBJECT:
-				if(t.classType !== null) t.classType.name else "Object"
+				if(t.classType !== null) t.classType.name else if (t.enumType !== null) t.enumType.name else "Object"
 		}
 	}
 
@@ -244,7 +244,7 @@ public class «cl.name» {
 	«FOR s : c.statements»
 		«s.generateStatement»
 	«ENDFOR»		
-	}'''
+}'''
 
 	def String generate(OOMethod m) '''
 «FOR c : m.beforeComments»
@@ -274,15 +274,7 @@ public class «cl.name» {
 	def generateExpressionListParams(
 		List<OOExpression> expressions) '''«FOR e : expressions SEPARATOR ', '»«e.generateExpression»«ENDFOR»'''
 
-	def String generateStatement(OOStatement s) '''
-		«FOR c : s.beforeComments»
-			«c.generateComment»
-		«ENDFOR»	
-		«s.generateStatementContent»
-		«FOR c : s.afterComments»
-		«c.generateComment»
-		«ENDFOR»	
-	'''
+	def String generateStatement(OOStatement s) '''«FOR c : s.beforeComments»«c.generateComment»«ENDFOR»«s.generateStatementContent»«FOR c : s.afterComments»«c.generateComment»«ENDFOR»'''
 
 	def dispatch String generateStatementContent(OOCompoundStatement s) '''
 	{ 
@@ -313,20 +305,20 @@ public class «cl.name» {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	}'''
+}'''
 
 	def dispatch String generateStatementContent(OODoWhile s) '''do {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	} while («s.condition.generateExpression»);'''
+} while («s.condition.generateExpression»);'''
 
 	def dispatch String generateStatementContent(
 		OOFor s) '''for («s.initStatement.generateStatement» «s.condition.generateExpression»; «s.incrementExpression.generateExpression») {
 	«FOR bs : s.bodyStatements»
 		«bs.generateStatement»
 	«ENDFOR»
-	}'''
+}'''
 
 	def dispatch String generateStatementContent(OOForEach s) '''for () {
 	«FOR bs : s.bodyStatements»
