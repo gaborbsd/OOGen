@@ -359,137 +359,137 @@ public class «cl.name» {
 
 	def dispatch String generateStatementContent(OOExpression s) '''«s.generateExpression»;'''
 
-	def dispatch String generateExpression(OOExpression s) ''''''
+	def String generateExpression(OOExpression s) '''«FOR c : s.beforeComments»«c.generateComment»«ENDFOR»«s.generateExpressionContent»«FOR c : s.afterComments»«c.generateComment»«ENDFOR»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOFunctionCallExpression s) '''«IF s.ownerExpression !== null»«s.ownerExpression.generateExpression».«ENDIF»«s.functionName»(«s.argumentExpressions.generateExpressionListParams»)'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOInitializerList s) '''{«s.initializerExpressions.generateExpressionListParams»}'''
 
-	def dispatch String generateExpression(OOFloatLiteral s) '''«s.value»'''
+	def dispatch String generateExpressionContent(OOFloatLiteral s) '''«s.value»'''
 
-	def dispatch String generateExpression(OODoubleLiteral s) '''«s.value»'''
+	def dispatch String generateExpressionContent(OODoubleLiteral s) '''«s.value»'''
 
-	def dispatch String generateExpression(OOIntegerLiteral s) '''«s.value»'''
+	def dispatch String generateExpressionContent(OOIntegerLiteral s) '''«s.value»'''
 
-	def dispatch String generateExpression(OOLongLiteral s) '''«s.value»'''
+	def dispatch String generateExpressionContent(OOLongLiteral s) '''«s.value»'''
 
-	def dispatch String generateExpression(OOBoolLiteral s) '''«s.value»'''
+	def dispatch String generateExpressionContent(OOBoolLiteral s) '''«s.value»'''
 
-	def dispatch String generateExpression(OOThisLiteral s) '''this'''
+	def dispatch String generateExpressionContent(OOThisLiteral s) '''this'''
 
-	def dispatch String generateExpression(OOStringLiteral s) '''«s.value»'''
+	def dispatch String generateExpressionContent(OOStringLiteral s) '''«s.value»'''
 
-	def dispatch String generateExpression(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
+	def dispatch String generateExpressionContent(OOBracketedExpression s) '''(«s.operand.generateExpression»)'''
 
-	def dispatch String generateExpression(OOPostfixDecrementExpression s) '''«s.operand.generateExpression»--'''
+	def dispatch String generateExpressionContent(OOPostfixDecrementExpression s) '''«s.operand.generateExpression»--'''
 
-	def dispatch String generateExpression(OOPostfixIncrementExpression s) '''«s.operand.generateExpression»++'''
+	def dispatch String generateExpressionContent(OOPostfixIncrementExpression s) '''«s.operand.generateExpression»++'''
 
-	def dispatch String generateExpression(OOPrefixDecrementExpression s) '''--«s.operand.generateExpression»'''
+	def dispatch String generateExpressionContent(OOPrefixDecrementExpression s) '''--«s.operand.generateExpression»'''
 
-	def dispatch String generateExpression(OOPrefixIncrementExpression s) '''++«s.operand.generateExpression»'''
+	def dispatch String generateExpressionContent(OOPrefixIncrementExpression s) '''++«s.operand.generateExpression»'''
 
-	def dispatch String generateExpression(OOPlusExpression s) '''+«s.operand.generateExpression»'''
+	def dispatch String generateExpressionContent(OOPlusExpression s) '''+«s.operand.generateExpression»'''
 
-	def dispatch String generateExpression(OOMinusExpression s) '''-«s.operand.generateExpression»'''
+	def dispatch String generateExpressionContent(OOMinusExpression s) '''-«s.operand.generateExpression»'''
 
-	def dispatch String generateExpression(OOBitWiseComplement s) '''~«s.operand.generateExpression»'''
+	def dispatch String generateExpressionContent(OOBitWiseComplement s) '''~«s.operand.generateExpression»'''
 
-	def dispatch String generateExpression(OONotExpression s) '''!«s.operand.generateExpression»'''
+	def dispatch String generateExpressionContent(OONotExpression s) '''!«s.operand.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOAssignmentExpression s) '''«s.leftSide.generateExpression» = «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(OOVariableReferenceExpression s) '''«s.variable.name»'''
+	def dispatch String generateExpressionContent(OOVariableReferenceExpression s) '''«s.variable.name»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOFieldReferenceExpression s) '''«s.fieldOwner.generateExpression».«s.fieldName»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOIndexing s) '''«s.collectionExpression.generateExpression»[«s.indexExpression.generateExpression»]'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOAdditionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» += «ELSE» + «ENDIF»«s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOSubtractionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» -= «ELSE» - «ENDIF»«s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OODivisionExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» /= «ELSE» / «ENDIF»«s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOIntegerDivisionExpression s) '''Math.floor(«s.leftSide.generateExpression»«IF s.assigned» /= «ELSE» / «ENDIF»«s.rightSide.generateExpression»)'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOMultiplicationExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» *= «ELSE» * «ENDIF»«s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOModuloExpression s) '''«s.leftSide.generateExpression»«IF s.assigned» %= «ELSE» % «ENDIF»«s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOPowerExpression s) '''Math.pow(«s.leftSide.generateExpression», «s.rightSide.generateExpression»)'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OORootExpression s) '''Math.pow(«s.leftSide.generateExpression», 1.0 / «s.rightSide.generateExpression»)'''
 
-	def dispatch String generateExpression(OOLogicalLiteral s) '''«IF s.value»true«ELSE»false«ENDIF»'''
+	def dispatch String generateExpressionContent(OOLogicalLiteral s) '''«IF s.value»true«ELSE»false«ENDIF»'''
 
-	def dispatch String generateExpression(OONullLiteral s) '''null'''
+	def dispatch String generateExpressionContent(OONullLiteral s) '''null'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOAndExpression s) '''«s.leftSide.generateExpression» && «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOOrExpression s) '''«s.leftSide.generateExpression» || «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOEqualsExpression s) '''«s.leftSide.generateExpression» == «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OONotEqualsExpression s) '''«s.leftSide.generateExpression» != «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOGreaterThanExpression s) '''«s.leftSide.generateExpression» > «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOGreaterEqualsExpression s) '''«s.leftSide.generateExpression» >= «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOLessThanExpression s) '''«s.leftSide.generateExpression» < «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOLessEqualsExpression s) '''«s.leftSide.generateExpression» <= «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOTernaryOperator s) '''«s.condition.generateExpression» ? «s.positiveBranch.generateExpression» : «s.negativeBranch.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOBitwiseOrExpression s) '''«s.leftSide.generateExpression» |«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOBitwiseXorExpression s) '''«s.leftSide.generateExpression» ^«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOBitwiseAndExpression s) '''«s.leftSide.generateExpression» &«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOBitWiseLeftShift s) '''«s.leftSide.generateExpression» <<«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOBitWiseRightShift s) '''«s.leftSide.generateExpression» >>«IF s.assigned»= «ENDIF» «s.rightSide.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOLanguageSpecificExpression s) '''«var sn = s.snippets.findFirst[e|e.lang == OOLanguage.JAVA]»«if ( sn !== null ) sn.code»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OOTypeCast s) '''(«s.type.generate(false)»)«s.expression.generateExpression»'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OONewClass s) '''new «s.className»(«s.constructorParameterExpressions.generateExpressionListParams»)'''
 
-	def dispatch String generateExpression(
+	def dispatch String generateExpressionContent(
 		OONewArray s) '''new «s.arrayType.generate(true)»«s.initializerList?.generateExpression»'''
 
 	def String generateComment(OOComment s) '''«s.text»'''
