@@ -491,6 +491,6 @@ public class «cl.name» {
 
 	def dispatch String generateExpressionContent(
 		OONewArray s) '''new «s.arrayType.generate(true)»«s.initializerList?.generateExpression»'''
-
+		
 	def String generateComment(OOComment s) '''«s.text»'''
 }

@@ -64,6 +64,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOType/classType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOType/arraySizeExpressions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOType/enumType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOType/numberOfIndirections"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOMethod">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOMethod/parameters"/>

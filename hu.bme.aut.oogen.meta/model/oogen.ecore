@@ -64,6 +64,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="arraySizeExpressions" upperBound="-1"
         eType="#//OOExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumType" eType="#//OOEnumeration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfIndirections" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="OOVisibility">
     <eLiterals name="PRIVATE"/>
