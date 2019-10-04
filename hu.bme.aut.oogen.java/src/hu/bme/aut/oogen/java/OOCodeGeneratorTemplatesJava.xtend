@@ -490,7 +490,7 @@ public class «cl.name» {
 		OONewClass s) '''new «s.className»(«s.constructorParameterExpressions.generateExpressionListParams»)'''
 
 	def dispatch String generateExpressionContent(
-		OONewArray s) '''new «s.arrayType.generate(true)»«s.initializerList?.generateExpression»'''
+		OONewArray s) '''new «IF s.initializerList !== null»«s.arrayType.generate(false)»«ELSE»«s.arrayType.generate(true)»«ENDIF»«s.initializerList?.generateExpression»'''
 		
 	def String generateComment(OOComment s) '''«s.text»'''
 }
