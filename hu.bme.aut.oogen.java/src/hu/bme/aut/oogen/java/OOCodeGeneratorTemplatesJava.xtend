@@ -203,7 +203,25 @@ public class «cl.name» {
 	}
 
 	def String baseTypeNormal(OOType t) {
-		switch t.baseType {
+		if (t.arrayDimensions == 0 && t.numberOfIndirections > 0) {
+			switch t.baseType {
+			case OOBaseType.BOOLEAN:
+				"Boolean"
+			case OOBaseType.BYTE:
+				"Byte"
+			case OOBaseType.INT:
+				"Integer"
+			case OOBaseType.LONG:
+				"Long"
+			case OOBaseType.DOUBLE:
+				"Double"
+			case OOBaseType.STRING:
+				"String"
+			case OOBaseType.OBJECT:
+				if(t.classType !== null) t.classType.name else if (t.enumType !== null) t.enumType.name else "Object"
+			}
+		} else {
+			switch t.baseType {
 			case OOBaseType.BOOLEAN:
 				"boolean"
 			case OOBaseType.BYTE:
@@ -218,7 +236,8 @@ public class «cl.name» {
 				"String"
 			case OOBaseType.OBJECT:
 				if(t.classType !== null) t.classType.name else if (t.enumType !== null) t.enumType.name else "Object"
-		}
+			}
+		}	
 	}
 
 	def String baseTypeObject(OOType t) {
