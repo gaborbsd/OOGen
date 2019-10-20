@@ -80,6 +80,7 @@ import hu.bme.aut.oogen.OOWhile
 import hu.bme.aut.oogen.general.OOCodeGeneratorTemplates
 import java.util.List
 import hu.bme.aut.oogen.OOEnumeration
+import hu.bme.aut.oogen.OOEmptyExpression
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 
@@ -510,6 +511,8 @@ public class «cl.name» {
 
 	def dispatch String generateExpressionContent(
 		OONewArray s) '''new «IF s.initializerList !== null»«s.arrayType.generate(false)»«ELSE»«s.arrayType.generate(true)»«ENDIF»«s.initializerList?.generateExpression»'''
+		
+	def dispatch String generateExpressionContent(OOEmptyExpression s) ''''''	
 		
 	def String generateComment(OOComment s) '''«s.text»'''
 }

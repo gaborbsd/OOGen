@@ -265,5 +265,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOEnumeration/options"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OOEnumeration/package"/>
     </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOEmptyExpression"/>
   </genPackages>
 </genmodel:GenModel>
